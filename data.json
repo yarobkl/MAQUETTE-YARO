@@ -1,0 +1,870 @@
+{
+  "hero": {
+    "firstName": "YARO",
+    "lastName": "MAQUETTE",
+    "eyebrow": "Démo commerciale · site + espace admin",
+    "role": "Site institutionnel premium pour élus, cabinets, associations et personnalités publiques",
+    "slogan": "Un site vitrine <em>premium</em>.<br>Un admin <em>simple</em> pour tout gérer.",
+    "subtitle": "Cette maquette montre ce que YARO peut livrer à un client : présence digitale, contenus, formulaires, CRM, sécurité et tableau de bord privé.",
+    "btn1": "🤝 Demander une démo",
+    "btn2": "Voir les modules"
+  },
+  "about": {
+    "sectionTag": "La solution",
+    "badgeNum": "100%",
+    "badgeLbl": "Administrable",
+    "title": "Une maquette prête à <span class=\"r\">vendre</span>",
+    "intro": "Maquette YARO est un démonstrateur complet pour présenter un site institutionnel moderne avec espace admin privé. Le client peut publier ses contenus, suivre les demandes, gérer ses contacts et garder une présence professionnelle sans dépendre d’un développeur au quotidien.",
+    "paragraphs": [
+      "Le site public est pensé pour inspirer confiance dès la première visite : identité forte, biographie ou présentation, actualités, programme, galerie, vidéos, formulaire de contact et appels à l’action clairs.",
+      "L’espace admin permet de modifier les contenus, traiter les messages, gérer les demandes d’audience, organiser un CRM, consulter les logs, sauvegarder les données et suivre l’activité du site.",
+      "La base technique est duplicable pour plusieurs clients. Chaque client dispose de ses propres accès, de sa base de données, de ses images, de son domaine et de son URL admin secrète.",
+      "Cette maquette sert de support commercial : elle permet de montrer concrètement le rendu final avant de personnaliser les textes, les photos, les couleurs et les modules selon le client."
+    ],
+    "badges": [
+      "🌐 Site public premium",
+      "🔐 Admin privé",
+      "📩 Formulaires",
+      "📇 CRM",
+      "🖼️ Galerie",
+      "📊 Suivi et sécurité"
+    ]
+  },
+  "stats": [
+    {
+      "num": "1",
+      "label": "Site public"
+    },
+    {
+      "num": "1",
+      "label": "Espace admin"
+    },
+    {
+      "num": "∞",
+      "label": "Clients duplicables"
+    }
+  ],
+  "actus": {
+    "slides": [
+      {
+        "image": "images/IMG_9963.webp",
+        "alt": "Maquette YARO — actualité de démonstration",
+        "chipColor": "#1a237e",
+        "chip": "Démo client",
+        "date": "Maquette YARO",
+        "title": "Actualité personnalisable pour votre client",
+        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "source": "Maquette YARO",
+        "sourceUrl": ""
+      },
+      {
+        "image": "images/ewo.jpg",
+        "alt": "Maquette YARO — actualité de démonstration",
+        "chipColor": "#e65100",
+        "chip": "Démo client",
+        "date": "Maquette YARO",
+        "title": "Actualité personnalisable pour votre client",
+        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "source": "Maquette YARO",
+        "sourceUrl": ""
+      },
+      {
+        "image": "images/rwanda.JPG",
+        "alt": "Maquette YARO — actualité de démonstration",
+        "chipColor": "#1565C0",
+        "chip": "Démo client",
+        "date": "Maquette YARO",
+        "title": "Actualité personnalisable pour votre client",
+        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "source": "Maquette YARO",
+        "sourceUrl": ""
+      },
+      {
+        "image": "images/yaro.jpg.jpg",
+        "alt": "Maquette YARO — actualité de démonstration",
+        "chipColor": "#2e7d32",
+        "chip": "Démo client",
+        "date": "Maquette YARO",
+        "title": "Actualité personnalisable pour votre client",
+        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "source": "Maquette YARO",
+        "sourceUrl": ""
+      },
+      {
+        "image": "images/partenaire institutionnel.jpeg",
+        "alt": "Maquette YARO — actualité de démonstration",
+        "chipColor": "",
+        "chip": "Démo client",
+        "date": "Maquette YARO",
+        "title": "Actualité personnalisable pour votre client",
+        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "source": "Maquette YARO",
+        "sourceUrl": ""
+      },
+      {
+        "image": "images/yaro.jpg.jpg",
+        "alt": "Maquette YARO — actualité de démonstration",
+        "chipColor": "",
+        "chip": "Démo client",
+        "date": "Maquette YARO",
+        "title": "Actualité personnalisable pour votre client",
+        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "source": "Maquette YARO",
+        "sourceUrl": ""
+      },
+      {
+        "image": "images/yaro.jpg.jpg",
+        "alt": "Maquette YARO — actualité de démonstration",
+        "chipColor": "#2e7d32",
+        "chip": "Démo client",
+        "date": "Maquette YARO",
+        "title": "Actualité personnalisable pour votre client",
+        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "source": "Maquette YARO",
+        "sourceUrl": ""
+      },
+      {
+        "image": "images/yaro.jpg.jpg",
+        "alt": "Maquette YARO — actualité de démonstration",
+        "chipColor": "#1a237e",
+        "chip": "Démo client",
+        "date": "Maquette YARO",
+        "title": "Actualité personnalisable pour votre client",
+        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "source": "Maquette YARO",
+        "sourceUrl": ""
+      }
+    ],
+    "vedettes": [
+      {
+        "image": "images/rwanda.JPG",
+        "imageBg": "",
+        "placeholderEmoji": "🇷🇼",
+        "placeholderTitle": "partenaire régional × votre pays",
+        "placeholderDate": "12 déc. 2025",
+        "badgeColor": "#1565C0",
+        "badge": "🌍 Diplomatie",
+        "tagColor": "#1976D2",
+        "tag": "Coopération judiciaire partenaire régional–votre pays",
+        "date": "📅 12 Décembre 2025 · Brazzaville",
+        "title": "L'Ambassadeur du partenaire régional rend visite au Responsable YARO pour renforcer la coopération judiciaire bilatérale",
+        "text1": "Ce 12 décembre 2025, l'Ambassadeur du partenaire régional en votre pays (@parfaitbus) a rendu une visite de courtoisie au Responsable institutionnel, des Droits Humains et des Populations Autochtones, YARO Maquette. Cette rencontre diplomatique s'est tenue dans un esprit d'ouverture et de coopération entre les deux nations africaines.",
+        "quote": "« La rencontre a permis d'aborder la mise en place d'un partenariat judiciaire et le renforcement de la coopération entre les deux pays. »",
+        "text2": "Au cours de cet entretien, les deux parties ont examiné les voies et moyens de renforcer les liens judiciaires entre le partenaire régional et le votre pays. Des échanges de cadeaux protocolaires ont ponctué la visite, témoignant de la qualité des relations entre les deux pays. Cette initiative s'inscrit dans la dynamique internationale portée par le Responsable YARO, qui multiplie les partenariats judiciaires au bénéfice de la votre pays.",
+        "tags": [
+          "Diplomatie",
+          "partenaire régional",
+          "votre pays",
+          "Justice",
+          "Coopération judiciaire",
+          "Décembre 2025"
+        ]
+      },
+      {
+        "image": "images/IMG_9975.jpeg",
+        "imageBg": "linear-gradient(135deg,#0a1f0a,#1a3a1a)",
+        "placeholderEmoji": "🏘️",
+        "placeholderTitle": "13 villages\nsur l'axe Lebankaya",
+        "placeholderDate": "votre territoire · 9 mars 2026",
+        "badgeColor": "#2e7d32",
+        "badge": "🗳️ En direct d'votre territoire",
+        "tagColor": "#4caf50",
+        "tag": "Campagne présidentielle · District d'votre territoire",
+        "date": "📅 9 mars 2026 · Axe Lebankaya, votre zone",
+        "title": "YARO sillonne 13 villages pour porter le message du partenaire Denis partenaire national",
+        "text1": "En sa qualité de coordinateur de la campagne du partenaire Denis partenaire national dans le district et la commune d'votre territoire, YARO Maquette a effectué ce lundi une tournée de terrain sur l'axe Lebankaya, à la rencontre directe des populations de plusieurs localités de la zone.",
+        "quote": "Une forte mobilisation des populations venues écouter le message porté par la délégation de campagne, avec un soutien renouvelé à la candidature de Denis partenaire national.",
+        "text2": "Cette mission de proximité l'a conduit successivement dans les villages Oboukou, Oyendze, Eti, Ossele, Abeke, Okogo, Lembessi, Kebili, Bia 1, Ntsouo, Bia 2, Ngami et Ngayi. À chaque étape, les échanges ont permis de réaffirmer l'attachement des communautés locales à la candidature présidentielle, une dynamique qui témoigne du lien profond entre YARO et les habitants d'votre territoire qu'il représente depuis 2017.",
+        "tags": [
+          "Campagne 2026",
+          "partenaire national",
+          "District d'votre territoire",
+          "Terrain",
+          "13 villages",
+          "votre zone"
+        ]
+      },
+      {
+        "image": "images/partenaire institutionnel.jpeg",
+        "imageBg": "",
+        "placeholderEmoji": "",
+        "placeholderTitle": "",
+        "placeholderDate": "",
+        "badgeColor": "",
+        "badge": "Diplomatie",
+        "tagColor": "",
+        "tag": "Diplomatie judiciaire",
+        "date": "📅 18 Février 2026 · Paris, Place Vendôme",
+        "title": "YARO et partenaire institutionnel relancent la coopération judiciaire votre pays–France",
+        "text1": "Reçu Place Vendôme par son homologue français partenaire institutionnel, le Responsable institutionnel YARO Maquette a engagé des négociations décisives pour moderniser la convention judiciaire bilatérale liant les deux pays depuis 1974, un accord vieux de plus de 50 ans.",
+        "quote": "« Trois nouvelles conventions sont en cours de finalisation : entraide judiciaire, extraditions et transfèrements de personnes condamnées. L'objectif est une signature avant l'été 2026. »",
+        "text2": "Une démarche saluée par les deux Ministères de la Justice, qui ouvre un nouveau chapitre dans les relations franco-locales. Porté par sa vision d'une justice moderne et accessible, le Responsable YARO inscrit cette mission diplomatique dans la continuité directe de ses réformes institutionnelles au votre pays.",
+        "tags": [
+          "Diplomatie",
+          "Justice",
+          "votre pays–France",
+          "Réformes",
+          "Paris 2026"
+        ]
+      },
+      {
+        "image": "images/ewo.jpg",
+        "imageBg": "",
+        "placeholderEmoji": "⚡",
+        "placeholderTitle": "votre territoire & le réseau\nélectrique national",
+        "placeholderDate": "Août 2024",
+        "badgeColor": "#e65100",
+        "badge": "⚡ Énergie & Développement",
+        "tagColor": "#ff6d00",
+        "tag": "Boulevard énergétique · votre zone",
+        "date": "📅 20 Août 2024 · votre zone, votre pays",
+        "title": "Boulevard énergétique : votre territoire bientôt connecté au réseau électrique national",
+        "text1": "Le Premier responsable Anatole Collinet Makosso a effectué le 20 août 2024 une visite des travaux de construction de la ligne électrique de 110 KV et de la route bitumée Boundji-votre territoire. Il a annoncé la connexion imminente d'votre territoire, chef-lieu de la votre zone, au réseau électrique national local.",
+        "quote": "« Sur 180 pylônes, il y en a 116 qui sont déjà installés. Le poste transformateur est en train d'être construit. votre territoire sera connectée au réseau électrique national dans quelques mois. »",
+        "text2": "Cette avancée majeure pour la votre zone s'inscrit dans le cadre du boulevard énergétique, l'un des axes stratégiques du programme du Président Denis partenaire national. La route bitumée de 25 km reliant Boundji à votre territoire, déjà réalisée, et l'achèvement de la ligne 110 KV transformeront durablement le quotidien des habitants d'votre territoire. Une métamorphose attendue de longue date pour toute la région.",
+        "tags": [
+          "Énergie",
+          "votre territoire",
+          "Boulevard énergétique",
+          "votre zone",
+          "Développement",
+          "Août 2024"
+        ]
+      },
+      {
+        "image": "images/IMG_9973.jpeg",
+        "imageBg": "",
+        "placeholderEmoji": "⚖️",
+        "placeholderTitle": "EPU 2024\nGeneve — ONU",
+        "placeholderDate": "30 jan. 2024",
+        "badgeColor": "#1565C0",
+        "badge": "Droits Humains · ONU",
+        "tagColor": "#1976D2",
+        "tag": "Examen Periodique Universel — Geneve",
+        "date": "📅 30 Janvier 2024 · Geneve, Conseil des droits de l'homme ONU",
+        "title": "Droits humains au votre pays : des avancees appreciables presentees par YARO a l'ONU",
+        "text1": "Le 30 janvier 2024, le Responsable YARO a conduit la delegation locale devant le Conseil des droits de l'homme des Nations Unies a Geneve, dans le cadre du 4e Examen Periodique Universel (EPU) du votre pays. Devant les 14 Etats examines lors de la 44e session du Groupe de travail EPU, il a presente les avancees significatives realisees par le votre pays en matiere de droits humains.",
+        "quote": "Le votre pays reaffirme son engagement indefectible en faveur de la protection des droits humains, avec des avancees appreciables notamment pour les peuples autochtones, la justice restaurative et les conditions de detention.",
+        "text2": "La troika composee de la Cote d'Ivoire, du Luxembourg et des Maldives a rapporte les recommandations formulees. Le Groupe de travail a adopte les conclusions le 2 fevrier 2024. Cette mission diplomatique majeure, retransmise en direct par UN WebTV, illustre l'engagement international du votre pays sous la conduite du Responsable institutionnel YARO Maquette.",
+        "tags": [
+          "Droits humains",
+          "ONU",
+          "EPU 2024",
+          "Geneve",
+          "votre pays",
+          "Yaro",
+          "Peuples autochtones"
+        ],
+        "source": "La Semaine Africaine",
+        "sourceUrl": "https://lasemaineafricaine.info/droits-humains-au-congo-des-avancees-appreciables/",
+        "videoUrl": "https://media.un.org/en/asset/k14/k14xa31o6d"
+      },
+      {
+        "image": "images/IMG_9978.jpeg",
+        "imageBg": "",
+        "placeholderEmoji": "⚖️",
+        "placeholderTitle": "Justice restaurative\nvotre pays",
+        "placeholderDate": "",
+        "badgeColor": "#4a148c",
+        "badge": "Reforme judiciaire",
+        "tagColor": "#7b1fa2",
+        "tag": "Justice restaurative · Avant-projet de loi",
+        "date": "📅 Brazzaville — Republique du votre pays",
+        "title": "Droits de l'homme : validation de l'avant-projet de loi instituant la justice restaurative",
+        "text1": "Sous l'impulsion du Responsable YARO, le votre pays a franchi une etape decisive dans la modernisation de son systeme judiciaire avec la validation de l'avant-projet de loi instituant la justice restaurative. Ce dispositif innovant favorise la rehabilitation des auteurs d'infractions et la reparation des prejudices subis par les victimes.",
+        "quote": "La justice restaurative constitue une avancee majeure qui replace l'humain au coeur du systeme judiciaire local, en favorisant la reconciliation et la reparation.",
+        "text2": "Cette reforme s'inscrit dans la vision globale de modernisation de la justice portee par le Responsable institutionnel, qui vise a construire une justice plus humaine, plus accessible et plus efficace au service de tous les votre payslais.",
+        "tags": [
+          "Justice restaurative",
+          "Reforme judiciaire",
+          "Droits humains",
+          "votre pays",
+          "Avant-projet de loi"
+        ],
+        "source": "Adiac votre pays",
+        "sourceUrl": "https://www.adiac-congo.com/content/droits-de-lhomme-validation-de-lavant-projet-de-loi-instituant-la-justice-restaurative"
+      },
+      {
+        "image": "images/IMG_9976.jpeg",
+        "imageBg": "linear-gradient(135deg,#1b5e20,#2e7d32)",
+        "placeholderEmoji": "🌱",
+        "placeholderTitle": "Jeunesse autochtone\nPriorite nationale",
+        "placeholderDate": "",
+        "badgeColor": "#2e7d32",
+        "badge": "Droits humains · Peuples autochtones",
+        "tagColor": "#388e3c",
+        "tag": "Jeunesse autochtone · Priorite nationale",
+        "date": "📅 Brazzaville — Republique du votre pays",
+        "title": "Droits humains : la jeunesse autochtone, priorite du Leadere YARO",
+        "text1": "Le Leadere de la Justice, des Droits Humains et de la Promotion des Peuples Autochtones, sous la direction de YARO, a place la jeunesse autochtone au coeur de son agenda. Des programmes specifiques ont ete deployes pour garantir a ces jeunes un acces a l'education, a la sante et a l'emploi.",
+        "quote": "La promotion de la jeunesse autochtone est un imperatif moral et un investissement pour l'avenir du votre pays. Aucun enfant ne doit etre laisse pour compte.",
+        "text2": "Ces initiatives s'appuient sur un cadre juridique renforce et une collaboration etroite avec les organisations internationales et les communautes locales pour garantir que les droits fondamentaux des jeunes autochtones soient effectivement respectes sur l'ensemble du territoire local.",
+        "tags": [
+          "Jeunesse autochtone",
+          "Droits humains",
+          "Education",
+          "Emploi",
+          "votre pays",
+          "Peuples autochtones"
+        ],
+        "source": "Adiac votre pays",
+        "sourceUrl": "https://www.adiac-congo.com/content/droits-humains-priorite-la-jeunesse-autochtone-150512"
+      }
+    ],
+    "cards": [
+      {
+        "catColor": "",
+        "borderColor": "",
+        "cat": "Réforme · Anticorruption",
+        "icon": "🏛️",
+        "day": "07",
+        "month": "Mar",
+        "year": "2018",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "image": "images/IMG_9972.jpeg"
+      },
+      {
+        "catColor": "#1a237e",
+        "borderColor": "#1a237e",
+        "cat": "Justice",
+        "icon": "⚖️",
+        "day": "27",
+        "month": "Mars",
+        "year": "2023",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "source": "La Semaine Africaine",
+        "sourceUrl": "https://lasemaineafricaine.info/magistrature-des-sanctions-et-nominations-qui-ne-font-pas-lunanimite/",
+        "image": "images/IMG_9963.webp"
+      },
+      {
+        "catColor": "#1b5e20",
+        "borderColor": "#1b5e20",
+        "cat": "Droits Humains",
+        "icon": "🌿",
+        "day": "30",
+        "month": "Jan",
+        "year": "2024",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "source": "ACI — Agence votre payslaise d'Information",
+        "sourceUrl": "https://www.aci.cg/congo-societe-le-gouvernement-rappelle-les-avancees-dans-lamelioration-de-la-vie-des-autochtones/",
+        "auteur": "ACI",
+        "image": "images/IMG_9975.jpeg"
+      },
+      {
+        "catColor": "#e65100",
+        "borderColor": "rgba(230,81,0,.25)",
+        "cat": "Énergie · votre zone",
+        "icon": "⚡",
+        "day": "20",
+        "month": "Août",
+        "year": "2024",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "image": "images/ewo.jpg"
+      },
+      {
+        "catColor": "",
+        "borderColor": "",
+        "cat": "International · AIEA",
+        "icon": "🌍",
+        "day": "14",
+        "month": "Jul",
+        "year": "2025",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "image": "images/IMG_9973.jpeg"
+      },
+      {
+        "catColor": "",
+        "borderColor": "",
+        "cat": "Emploi · votre zone",
+        "icon": "💼",
+        "day": "05",
+        "month": "Sep",
+        "year": "2025",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "image": "images/IMG_9965.jpeg"
+      },
+      {
+        "catColor": "",
+        "borderColor": "",
+        "cat": "Éducation · Jeunesse",
+        "icon": "🎓",
+        "day": "22",
+        "month": "Oct",
+        "year": "2025",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "image": "images/IMG_9966.jpeg"
+      },
+      {
+        "catColor": "",
+        "borderColor": "",
+        "cat": "Dialogue social",
+        "icon": "🤝",
+        "day": "08",
+        "month": "Nov",
+        "year": "2025",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "image": "images/IMG_9977.jpeg"
+      },
+      {
+        "catColor": "#1565C0",
+        "borderColor": "rgba(21,101,192,.25)",
+        "cat": "Diplomatie judiciaire · partenaire régional",
+        "icon": "🌍",
+        "day": "12",
+        "month": "Déc",
+        "year": "2025",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "image": "images/rwanda.JPG"
+      },
+      {
+        "catColor": "",
+        "borderColor": "",
+        "cat": "Justice · votre territoire",
+        "icon": "⚖️",
+        "day": "15",
+        "month": "Déc",
+        "year": "2025",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "image": "images/IMG_9967.jpeg"
+      },
+      {
+        "catColor": "#4caf50",
+        "borderColor": "rgba(46,125,50,.25)",
+        "cat": "Campagne présidentielle · votre territoire",
+        "icon": "🗳️",
+        "day": "09",
+        "month": "Mars",
+        "year": "2026",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "image": "images/IMG_9964.jpeg"
+      },
+      {
+        "catColor": "#1b5e20",
+        "borderColor": "rgba(27,94,32,.25)",
+        "cat": "Droits humains · Emploi autochtone",
+        "icon": "💼",
+        "day": "",
+        "month": "",
+        "year": "2022",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "source": "Adiac votre pays",
+        "sourceUrl": "https://www.adiac-congo.com/content/droits-humains-lacces-des-peuples-autochtones-lemploi-pris-en-compte-135559",
+        "image": "images/IMG_9976.jpeg"
+      },
+      {
+        "catColor": "#0d47a1",
+        "borderColor": "rgba(13,71,161,.25)",
+        "cat": "Justice · Droits de l'homme",
+        "icon": "⚖️",
+        "day": "",
+        "month": "",
+        "year": "2019",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "source": "Adiac votre pays",
+        "sourceUrl": "https://www.adiac-congo.com/content/justice-le-congo-reitere-sa-volonte-dassurer-la-protection-des-droits-de-lhomme-73344",
+        "image": "images/IMG_9978.jpeg"
+      },
+      {
+        "catColor": "#1a237e",
+        "borderColor": "rgba(26,35,126,.25)",
+        "cat": "Legislatives 2017 · votre territoire",
+        "icon": "🗳️",
+        "day": "19",
+        "month": "Aout",
+        "year": "2017",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "source": "Les Echos du votre pays",
+        "sourceUrl": "https://lesechos-congobrazza.com/politique/3341-legislatives-2017-voici-la-liste-definitive-des-deputes-elus",
+        "image": "images/yaro.jpg.jpg"
+      },
+      {
+        "catColor": "#bf360c",
+        "borderColor": "rgba(191,54,12,.25)",
+        "cat": "Justice · Conditions de detention",
+        "icon": "🏛️",
+        "day": "",
+        "month": "",
+        "year": "2022",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "source": "Adiac votre pays",
+        "sourceUrl": "https://www.adiac-congo.com/content/justice-lamelioration-des-conditions-de-vie-dans-les-lieux-de-detention-se-poursuit-143760",
+        "image": "images/IMG_9964.jpeg"
+      },
+      {
+        "catColor": "#e65100",
+        "borderColor": "rgba(230,81,0,.25)",
+        "cat": "Justice · Reportage",
+        "icon": "📰",
+        "day": "",
+        "month": "",
+        "year": "2024",
+        "title": "Contenu client personnalisable",
+        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "source": "L'Observateur",
+        "sourceUrl": "https://lobservateur.info/ampArticle/116074",
+        "image": "images/IMG_9964.jpeg"
+      }
+    ]
+  },
+  "gallery": {
+    "slides": [
+      {
+        "image": "images/IMG_9963.webp",
+        "emoji": "",
+        "title": "Module personnalisable",
+        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
+        "alt": "Maquette YARO — image de démonstration"
+      },
+      {
+        "image": "images/IMG_9964.jpeg",
+        "emoji": "",
+        "title": "Module personnalisable",
+        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
+        "alt": "Maquette YARO — image de démonstration"
+      },
+      {
+        "image": "images/IMG_9965.jpeg",
+        "emoji": "",
+        "title": "Module personnalisable",
+        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
+        "alt": "Maquette YARO — image de démonstration"
+      },
+      {
+        "image": "images/IMG_9966.jpeg",
+        "emoji": "",
+        "title": "Module personnalisable",
+        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
+        "alt": "Maquette YARO — image de démonstration"
+      },
+      {
+        "image": "images/IMG_9967.jpeg",
+        "emoji": "",
+        "title": "Module personnalisable",
+        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
+        "alt": "Maquette YARO — image de démonstration"
+      },
+      {
+        "image": "images/partenaire institutionnel.jpeg",
+        "emoji": "",
+        "title": "Module personnalisable",
+        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
+        "alt": "Maquette YARO — image de démonstration"
+      },
+      {
+        "image": "images/rwanda.JPG",
+        "emoji": "",
+        "title": "Module personnalisable",
+        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
+        "alt": "Maquette YARO — image de démonstration"
+      },
+      {
+        "image": "images/ewo.jpg",
+        "emoji": "",
+        "title": "Module personnalisable",
+        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
+        "alt": "Maquette YARO — image de démonstration"
+      }
+    ],
+    "grid": [
+      {
+        "image": "images/IMG_9963.webp",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/IMG_9964.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/IMG_9965.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/IMG_9966.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/IMG_9967.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/IMG_9972.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/IMG_9973.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/IMG_9975.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/IMG_9976.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/IMG_9977.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/IMG_9978.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/yaro.jpg.jpg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/partenaire institutionnel.jpeg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/rwanda.JPG",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      },
+      {
+        "image": "images/ewo.jpg",
+        "alt": "Maquette YARO — visuel de démonstration client",
+        "emoji": ""
+      }
+    ],
+    "title": "Maquette YARO en action",
+    "accent": "modules client"
+  },
+  "programmeSection": {
+    "tag": "Modules inclus",
+    "title": "Une offre",
+    "titleAccent": "complète",
+    "subtitle": "Six modules prêts à personnaliser pour transformer la présence digitale d’un client."
+  },
+  "galerieSection": {
+    "tag": "En images",
+    "title": "Galerie",
+    "titleAccent": "client"
+  },
+  "actusSection": {
+    "tag": "Actualités",
+    "title": "Contenus",
+    "titleAccent": "personnalisables",
+    "gridTitle": "Exemples de contenus client"
+  },
+  "engagement": {
+    "tag": "Contactez-nous",
+    "title": "Une demande\nou un",
+    "titleAccent": "rendez-vous",
+    "desc": "Cette zone transforme les visiteurs en contacts qualifiés. Le client peut recevoir une demande, la traiter depuis l’admin et garder un historique clair.",
+    "cards": [
+      {
+        "icon": "📋",
+        "title": "Demande de rendez-vous",
+        "desc": "Collecter une demande structurée depuis le site."
+      },
+      {
+        "icon": "📣",
+        "title": "Signalement ou message",
+        "desc": "Recevoir les préoccupations importantes dans l’espace admin."
+      },
+      {
+        "icon": "🤝",
+        "title": "Contact direct",
+        "desc": "Mettre le visiteur en relation avec l’équipe du client."
+      }
+    ],
+    "formTitle": "Demande de rendez-vous",
+    "formSub": "Expliquez votre demande, l’équipe vous contactera rapidement."
+  },
+  "cta": {
+    "title": "Maquette YARO :\nun produit prêt à présenter",
+    "subtitle": "Un site public clair, un espace admin complet et une base duplicable pour vendre rapidement à plusieurs clients.",
+    "btn1": {
+      "text": "📋 Demander une démo",
+      "href": "#engagement"
+    },
+    "btn2": {
+      "text": "✉️ Nous contacter",
+      "href": "#contact"
+    },
+    "btn3": {
+      "text": "📋 Voir les modules",
+      "href": "#programme"
+    }
+  },
+  "parcoursSection": {
+    "tag": "Démonstration",
+    "title": "Un parcours",
+    "titleAccent": "client type"
+  },
+  "parcours": [
+    {
+      "side": "left",
+      "emoji": "01",
+      "year": "Étape 1",
+      "title": "Cadrage du client",
+      "desc": "On remplace les textes, les photos, le domaine, les couleurs et les modules selon le secteur du client.",
+      "tag": "Brief"
+    },
+    {
+      "side": "right",
+      "emoji": "02",
+      "year": "Étape 2",
+      "title": "Personnalisation du site public",
+      "desc": "Le site devient une vitrine claire avec identité, présentation, actualités, galerie, formulaires et appels à l’action.",
+      "tag": "Site public"
+    },
+    {
+      "side": "left",
+      "emoji": "03",
+      "year": "Étape 3",
+      "title": "Configuration de l’espace admin",
+      "desc": "Le client reçoit un accès privé pour piloter ses contenus, ses messages, ses contacts et ses demandes.",
+      "tag": "Admin"
+    },
+    {
+      "side": "right",
+      "emoji": "04",
+      "year": "Étape 4",
+      "title": "Base de données dédiée",
+      "desc": "Chaque projet peut fonctionner avec un stockage fichier pour la démo ou une base MySQL dédiée pour la production.",
+      "tag": "Données"
+    },
+    {
+      "side": "left",
+      "emoji": "05",
+      "year": "Étape 5",
+      "title": "Déploiement sur domaine client",
+      "desc": "La maquette est prête pour un hébergement client avec domaine, HTTPS, sauvegardes et configuration email.",
+      "tag": "Déploiement"
+    },
+    {
+      "side": "right",
+      "emoji": "06",
+      "year": "Étape 6",
+      "title": "Présentation commerciale",
+      "desc": "Cette version sert de démonstrateur complet pour montrer aux prospects un produit réel, manipulable et vendable.",
+      "tag": "Vente"
+    }
+  ],
+  "programme": {
+    "heroTitle": "Une maquette construite\npour vos clients",
+    "heroText": "Chaque bloc peut être adapté à une personnalité publique, une association, une entreprise locale, une mairie, un cabinet ou une campagne.",
+    "axes": [
+      {
+        "icon": "🌐",
+        "title": "Site vitrine premium",
+        "text": "Une page publique moderne, rapide et claire pour présenter l’identité, la mission, les actions et les preuves du client.",
+        "points": [
+          "Hero personnalisable",
+          "Présentation complète",
+          "Appels à l’action visibles"
+        ]
+      },
+      {
+        "icon": "🔐",
+        "title": "Espace admin privé",
+        "text": "Un tableau de bord protégé pour modifier les contenus, traiter les demandes et garder le contrôle sans développeur au quotidien.",
+        "points": [
+          "Connexion sécurisée",
+          "URL admin secrète",
+          "Sauvegarde des données"
+        ]
+      },
+      {
+        "icon": "📰",
+        "title": "Actualités et communiqués",
+        "text": "Le client peut publier ses actions, annonces, projets, événements et communiqués en quelques minutes.",
+        "points": [
+          "Articles illustrés",
+          "Mise en avant en page d’accueil",
+          "Catégories éditables"
+        ]
+      },
+      {
+        "icon": "📩",
+        "title": "Formulaires et suivi",
+        "text": "Les visiteurs peuvent écrire, demander un rendez-vous, signaler une situation ou contacter directement l’équipe.",
+        "points": [
+          "Demandes centralisées",
+          "Statuts de traitement",
+          "Notifications prêtes à brancher"
+        ]
+      },
+      {
+        "icon": "🖼️",
+        "title": "Galerie et médias",
+        "text": "Photos, vidéos et documents donnent de la crédibilité au projet et permettent de montrer le terrain.",
+        "points": [
+          "Images remplaçables",
+          "Vidéo de présentation",
+          "Supports PDF possibles"
+        ]
+      },
+      {
+        "icon": "📊",
+        "title": "CRM et pilotage",
+        "text": "L’admin aide à suivre les contacts, classer les demandes, consulter l’activité et préparer les actions commerciales.",
+        "points": [
+          "Contacts organisés",
+          "KPI de suivi",
+          "Historique et exports"
+        ]
+      }
+    ]
+  },
+  "seo": {
+    "title": "Maquette YARO — site institutionnel avec espace admin",
+    "description": "Maquette commerciale YARO pour vendre des sites institutionnels administrables avec espace privé, CRM, formulaires et sécurité.",
+    "keywords": "YARO, maquette site institutionnel, espace admin, site politique, site élu, CRM, votre pays, Afrique",
+    "author": "YARO Agency"
+  },
+  "contact": {
+    "sectionTag": "Nous écrire",
+    "sectionTitle": "Prenez",
+    "sectionAccent": "contact",
+    "sidebarTitle": "Espace commercial\nYARO",
+    "sidebarDesc": "Cette maquette permet de présenter un vrai produit à vos prospects, puis de le personnaliser pour chaque client.",
+    "phone": "+242 06 XXX XXXX",
+    "email": "contact@maquette-yaro.fr",
+    "address": "Brazzaville, République du Congo",
+    "social": "@YAROAgency",
+    "formTitle2": "Envoyez un message",
+    "bp": "BP : 1375",
+    "fax": "04 002 90 90",
+    "cabinet": "Equipe projet YARO",
+    "city": "Brazzaville"
+  },
+  "footer": {
+    "logoName": "Maquette YARO",
+    "logoSub": "Site + admin · prêt à vendre",
+    "brandText": "Démonstrateur commercial YARO pour sites institutionnels, politiques et professionnels avec espace admin complet.",
+    "copyright": "© 2026 YARO Agency · Maquette commerciale"
+  }
+}

@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YARO — Espace Admin</title>
+<link rel="stylesheet" href="static/admin.css">
+<link rel="stylesheet" href="static/mobile.css">
+</head>
+<body>
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- Barre de progression upload (globale, visible pendant un upload) -->
+<div id="upload-progress-wrap" style="display:none;position:fixed;top:0;left:0;right:0;z-index:10000;height:4px;background:rgba(0,0,0,.3)">
+  <div id="upload-progress-bar" style="height:100%;background:var(--r);width:0%;transition:width .2s ease;font-size:0;line-height:0;color:transparent"></div>
+</div>
+
+<!-- ═══════════════════════════════ LOGIN ═══════════════════════════════ -->
+<div id="login">
+  <div class="login-box">
+    <div class="login-logo">B</div>
+    <h1>Espace Administration</h1>
+    <p>Administration du site YARO · Accès sécurisé</p>
+    <label for="u" class="sr-only">Identifiant</label>
+    <input class="login-field" type="text" id="u" placeholder="Identifiant" autocomplete="username" aria-label="Identifiant">
+    <label for="p" class="sr-only">Mot de passe</label>
+    <input class="login-field" type="password" id="p" placeholder="Mot de passe" autocomplete="current-password" aria-label="Mot de passe">
+    <!-- Champ 2FA — affiché uniquement si le serveur signale require_2fa -->
+    <div id="totp-row" style="display:none">
+      <label for="totp" class="sr-only">Code d'authentification 2FA</label>
+      <input class="login-field" type="text" id="totp" placeholder="Code 2FA (6 chiffres)" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" aria-label="Code 2FA">
+    </div>
+    <button class="login-btn" onclick="doLogin()">Connexion</button>
+    <div class="login-err" id="err" role="alert" aria-live="polite"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ APP ════════════════════════════════ -->
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <div class="sb-header">
+      <div class="sb-logo">
+        <div class="sb-logo-badge">B</div>
+        <div>
+          <div class="sb-logo-txt">YARO Admin</div>
+          <div class="sb-logo-sub">Espace sécurisé</div>
+        </div>
+      </div>
+      <div class="sb-admin-card">
+        <div class="sb-admin-avatar" id="profile-avatar">--</div>
+        <div class="sb-admin-meta">
+          <div class="sb-admin-name" id="profile-name">Profil</div>
+          <div class="sb-admin-role" id="profile-role">Connectez-vous</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sb-nav">
+      <div class="sb-section">Vue d'ensemble</div>
+      <div class="sb-item active" onclick="showPanel('dashboard',this)">
+        <span class="icon i-dashboard" aria-hidden="true"></span> Tableau de bord
+      </div>
+
+      <div class="sb-section">Gestion</div>
+      <div class="sb-item" onclick="showPanel('audiences',this)">
+        <span class="icon i-calendar" aria-hidden="true"></span> Demandes d'audience
+        <span class="sb-badge" id="badge-aud" style="display:none"></span>
+      </div>
+      <div class="sb-item" onclick="showPanel('reclamations',this)">
+        <span class="icon i-alert" aria-hidden="true"></span> Réclamations
+        <span class="sb-badge warn" id="badge-recl" style="display:none"></span>
+      </div>
+      <div class="sb-item" onclick="showPanel('contacts',this)">
+        <span class="icon i-mail" aria-hidden="true"></span> Messages
+        <span class="sb-badge" id="badge-ct" style="display:none"></span>
+      </div>
+      <div class="sb-item role-admin" style="display:none" onclick="showPanel('crm',this)">
+        <span class="icon i-users" aria-hidden="true"></span> CRM Contacts
+        <span class="sb-badge" id="badge-crm" style="display:none"></span>
+      </div>
+
+      <div class="sb-section role-editeur" style="display:none">Contenu du site</div>
+      <div class="sb-item role-superadmin" style="display:none" onclick="showPanel('hero',this)">
+        <span class="icon i-home" aria-hidden="true"></span> Hero
+      </div>
+      <div class="sb-item role-superadmin" style="display:none" onclick="showPanel('about',this)">
+        <span class="icon i-user" aria-hidden="true"></span> À propos
+      </div>
+      <div class="sb-item role-editeur" style="display:none" onclick="showPanel('stats',this)">
+        <span class="icon i-chart" aria-hidden="true"></span> Statistiques
+      </div>
+      <div class="sb-item role-editeur" style="display:none" onclick="showPanel('galerie',this)">
+        <span class="icon i-image" aria-hidden="true"></span> Galerie
+      </div>
+      <div class="sb-item role-editeur" style="display:none" onclick="showPanel('actus',this)">
+        <span class="icon i-news" aria-hidden="true"></span> Actualités
+      </div>
+      <div class="sb-item role-superadmin" style="display:none" onclick="showPanel('parcours',this)">
+        <span class="icon i-route" aria-hidden="true"></span> Parcours
+      </div>
+      <div class="sb-item role-editeur" style="display:none" onclick="showPanel('programme',this)">
+        <span class="icon i-list" aria-hidden="true"></span> Programme
+      </div>
+      <div class="sb-item role-editeur" style="display:none" onclick="showPanel('seo',this)">
+        <span class="icon i-search" aria-hidden="true"></span> SEO
+      </div>
+      <div class="sb-item role-editeur" style="display:none" onclick="showPanel('engagement',this)">
+        <span class="icon i-handshake" aria-hidden="true"></span> Engagement
+      </div>
+      <div class="sb-item role-editeur" style="display:none" onclick="showPanel('cta',this)">
+        <span class="icon i-target" aria-hidden="true"></span> Bandeau CTA
+      </div>
+      <div class="sb-item role-editeur" style="display:none" onclick="showPanel('contact-info',this)">
+        <span class="icon i-phone" aria-hidden="true"></span> Contact
+      </div>
+      <div class="sb-item role-editeur" style="display:none" onclick="showPanel('footer',this)">
+        <span class="icon i-footer" aria-hidden="true"></span> Footer
+      </div>
+
+      <div class="sb-section role-responsable" style="display:none">Intelligence</div>
+      <div class="sb-item role-responsable" style="display:none" onclick="showPanel('veille',this)">
+        <span class="icon i-activity" aria-hidden="true"></span> YARO IA
+        <span class="sb-badge" id="badge-veille" style="display:none"></span>
+      </div>
+      <div class="sb-item role-responsable" style="display:none" onclick="showPanel('editorial',this)">
+        <span class="icon i-edit" aria-hidden="true"></span> Éditorial IA
+        <span class="sb-badge" id="badge-editorial" style="display:none"></span>
+      </div>
+      <div class="sb-item role-responsable" style="display:none" onclick="showPanel('yaro-legal',this)">
+        <span class="icon i-scale" aria-hidden="true"></span> Veille Juridique
+        <span class="sb-badge" id="badge-yaro-legal" style="display:none"></span>
+      </div>
+
+      <div class="sb-section role-admin" style="display:none">Système</div>
+      <div class="sb-item role-admin" style="display:none" onclick="showPanel('monitoring',this)">
+        <span class="icon i-pulse" aria-hidden="true"></span> Monitoring
+        <span class="sb-badge warn" id="badge-mon" style="display:none"></span>
+      </div>
+      <div class="sb-item role-admin" style="display:none" onclick="showPanel('backups',this)">
+        <span class="icon i-database" aria-hidden="true"></span> Sauvegardes
+      </div>
+      <div class="sb-item role-admin" style="display:none" onclick="showPanel('logs',this)">
+        <span class="icon i-clipboard" aria-hidden="true"></span> Journaux d'audit
+      </div>
+      <div class="sb-item role-admin" style="display:none" onclick="showPanel('users',this)">
+        <span class="icon i-user-cog" aria-hidden="true"></span> Utilisateurs
+        <span class="sb-badge" id="badge-users" style="display:none"></span>
+      </div>
+      <div class="sb-item role-admin" style="display:none" onclick="showPanel('security',this)">
+        <span class="icon i-shield" aria-hidden="true"></span> Sécurité
+        <span class="sb-badge warn" id="badge-sec" style="display:none"></span>
+      </div>
+
+      <div class="sb-section">Liens rapides</div>
+      <a href="responsable.html" class="sb-item sb-link-item role-admin" id="btn-responsable" style="display:none;text-decoration:none">
+        <span class="icon i-deputy" aria-hidden="true"></span> Espace du Client
+      </a>
+      <a href="index.html" target="_blank" class="sb-item sb-link-item" style="text-decoration:none">
+        <span class="icon i-external" aria-hidden="true"></span> Voir le site
+      </a>
+    </nav>
+
+    <div class="sb-footer">
+      <button class="sb-btn sb-btn-logout" onclick="logout()">Déconnexion</button>
+    </div>
+  </div>
+
+  <!-- Poignée rideau sidebar -->
+  <button class="sb-pull" id="sb-pull" onclick="closeSidebar()" aria-label="Fermer le menu">&#8249;</button>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleSidebar()">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="topbar-title" id="topbar-title">Tableau de bord</div>
+      <span id="autosave-indicator"></span>
+      <div class="topbar-info" style="margin-left:auto"><span id="topbar-user">—</span> · <span id="last-login">—</span></div>
+      <button class="topbar-logout" onclick="logout()" title="Déconnexion">Déconnexion</button>
+      <!-- Cloche de notifications — extrême droite -->
+      <div class="notif-bell-wrap" id="notif-bell-wrap" style="margin-left:12px">
+        <button class="notif-bell" id="notif-bell" onclick="toggleNotifPanel()" title="Notifications">
+          N
+          <span class="notif-badge" id="notif-badge" style="display:none">0</span>
+        </button>
+        <!-- Panel dropdown -->
+        <div class="notif-panel" id="notif-panel" style="display:none">
+          <div class="notif-panel-header">
+            <span>Notifications</span>
+            <div style="display:flex;gap:6px">
+              <button class="notif-clear" onclick="_addNotif('visit',{ip:'test***',page:'/'})">Test</button>
+              <button class="notif-clear" onclick="clearNotifs()">Tout effacer</button>
+            </div>
+          </div>
+          <div class="notif-list" id="notif-list">
+            <div class="notif-empty">Aucune notification</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- ── DASHBOARD ── -->
+      <div class="panel active" id="panel-dashboard">
+
+        <!-- Ligne 1 : Audiences -->
+        <div class="kpi-grid">
+          <div class="kpi-card red">
+            <div class="kpi-label">Audiences totales</div>
+            <div class="kpi-val" id="kpi-aud-total">0</div>
+            <div class="kpi-sub">demandes reçues</div>
+          </div>
+          <div class="kpi-card orange">
+            <div class="kpi-label">En attente</div>
+            <div class="kpi-val" id="kpi-aud-wait">0</div>
+            <div class="kpi-sub">à traiter</div>
+          </div>
+          <div class="kpi-card blue">
+            <div class="kpi-label">En cours</div>
+            <div class="kpi-val" id="kpi-aud-progress">0</div>
+            <div class="kpi-sub">en traitement</div>
+          </div>
+          <div class="kpi-card green">
+            <div class="kpi-label">Traitées</div>
+            <div class="kpi-val" id="kpi-aud-done">0</div>
+            <div class="kpi-sub">complétées</div>
+          </div>
+        </div>
+
+        <!-- Ligne 2 : Autres métriques -->
+        <div class="kpi-grid">
+          <div class="kpi-card red">
+            <div class="kpi-label">Réclamations</div>
+            <div class="kpi-val" id="kpi-recl">0</div>
+            <div class="kpi-sub">non traitées</div>
+          </div>
+          <div class="kpi-card gold">
+            <div class="kpi-label">Contacts reçus</div>
+            <div class="kpi-val" id="kpi-ct">0</div>
+            <div class="kpi-sub">messages</div>
+          </div>
+          <div class="kpi-card green">
+            <div class="kpi-label">Lectures programme</div>
+            <div class="kpi-val" id="kpi-prog">0</div>
+            <div class="kpi-sub">consultations</div>
+          </div>
+          <div class="kpi-card blue">
+            <div class="kpi-label">Visiteurs</div>
+            <div class="kpi-val" id="kpi-visit">0</div>
+            <div class="kpi-sub">visites enregistrées</div>
+          </div>
+        </div>
+
+        <!-- Ligne 3 : Détails -->
+        <div class="dashboard-bottom-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Activité récente</div>
+            </div>
+            <div id="feed"></div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Répartition des demandes</div>
+            </div>
+            <div id="aud-breakdown" style="display:flex;flex-direction:column;gap:16px;margin-top:4px"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── AUDIENCES ── -->
+      <div class="panel" id="panel-audiences">
+        <div class="card">
+          <div class="card-header">
+              <div class="card-title">Demandes d'audience</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="exportCSV('yaro_audiences','audiences')">CSV</button>
+              <button class="btn-danger" onclick="clearAll('yaro_audiences','audiences')">Tout effacer</button>
+            </div>
+          </div>
+          <div class="tabs">
+            <button class="tab active" onclick="filterAud('all',this)">Toutes</button>
+            <button class="tab" onclick="filterAud('en_attente',this)">En attente</button>
+            <button class="tab" onclick="filterAud('en_cours',this)">En cours</button>
+            <button class="tab" onclick="filterAud('traite',this)">Traitées</button>
+          </div>
+          <div class="msg-list" id="list-audiences"></div>
+        </div>
+      </div>
+
+      <!-- ── RÉCLAMATIONS ── -->
+      <div class="panel" id="panel-reclamations">
+        <div class="card">
+          <div class="card-header">
+              <div class="card-title">Réclamations</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="exportCSV('yaro_audiences','reclamations')">CSV</button>
+            </div>
+          </div>
+          <div class="tabs">
+            <button class="tab active" onclick="filterRecl('all',this)">Toutes</button>
+            <button class="tab" onclick="filterRecl('en_attente',this)">En attente</button>
+            <button class="tab" onclick="filterRecl('en_cours',this)">En cours</button>
+            <button class="tab" onclick="filterRecl('traite',this)">Traitées</button>
+          </div>
+          <div class="msg-list" id="list-reclamations"></div>
+        </div>
+      </div>
+
+      <!-- ── CONTACTS ── -->
+      <div class="panel" id="panel-contacts">
+        <div class="card">
+          <div class="card-header">
+              <div class="card-title">Messages de contact</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="exportCSV('yaro_contacts','contacts')">CSV</button>
+              <button class="btn-danger" onclick="clearAll('yaro_contacts','contacts')">Tout effacer</button>
+            </div>
+          </div>
+          <div class="tabs">
+            <button class="tab active" onclick="filterCt('all',this)">Tous</button>
+            <button class="tab" onclick="filterCt('non_lu',this)">Non lus</button>
+            <button class="tab" onclick="filterCt('lu',this)">✓ Lus</button>
+          </div>
+          <div class="msg-list" id="list-contacts"></div>
+        </div>
+      </div>
+
+      <!-- ── HERO ── -->
+      <div class="panel" id="panel-hero">
+        <div class="card">
+          <div class="card-header"><div class="card-title">Section Hero</div></div>
+          <div class="form-group"><label>Prénom</label><input type="text" data-key="hero.firstName"></div>
+          <div class="form-group"><label>Nom</label><input type="text" data-key="hero.lastName"></div>
+          <div class="form-group"><label>Texte d'accroche (sous la ligne rouge)</label><input type="text" data-key="hero.eyebrow" placeholder="Maquette commerciale · YARO Agency"></div>
+          <div class="form-group"><label>Rôle</label><input type="text" data-key="hero.role"></div>
+          <div class="form-group"><label>Slogan <small style="font-weight:400;color:rgba(255,255,255,.35)">(HTML accepté — &lt;em&gt;mot&lt;/em&gt; pour accentuer)</small></label><input type="text" data-key="hero.slogan"></div>
+          <div class="form-group"><label>Sous-titre</label><textarea data-key="hero.subtitle"></textarea></div>
+          <div class="form-group"><label>Bouton principal (texte)</label><input type="text" data-key="hero.btn1" placeholder="🤝 Rejoindre la campagne"></div>
+          <div class="form-group"><label>Bouton secondaire (texte)</label><input type="text" data-key="hero.btn2" placeholder="Notre programme"></div>
+        </div>
+      </div>
+
+      <!-- ── ABOUT ── -->
+      <div class="panel" id="panel-about">
+        <div class="card">
+          <div class="card-header"><div class="card-title">Qui est-il ? — Biographie</div></div>
+          <div class="form-group"><label>Étiquette de section</label><input type="text" data-key="about.sectionTag" placeholder="Qui est-il ?"></div>
+          <div class="form-group"><label>Badge photo — chiffre / lieu</label><input type="text" data-key="about.badgeNum" placeholder="votre territoire"></div>
+          <div class="form-group"><label>Badge photo — libellé</label><input type="text" data-key="about.badgeLbl" placeholder="Sa circonscription"></div>
+          <div class="form-group">
+            <label>Titre de la section</label>
+            <input type="text" data-key="about.title" placeholder="Un homme forgé par le terrain">
+            <small style="color:rgba(255,255,255,.3);font-size:11px">HTML autorisé — ex : Un homme forgé par &lt;span class="r"&gt;le terrain&lt;/span&gt;</small>
+          </div>
+          <div class="form-group">
+            <label>Phrase d'introduction (chapeau)</label>
+            <textarea data-key="about.intro" rows="3" placeholder="Phrase courte qui résume le personnage…"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Biographie complète</label>
+            <textarea id="about-paragraphs-ta" rows="16" placeholder="Écrivez la biographie ici. Séparez chaque paragraphe par une ligne vide.&#10;&#10;Paragraphe 1…&#10;&#10;Paragraphe 2…"></textarea>
+            <small style="color:rgba(255,255,255,.3);font-size:11px">Séparez chaque paragraphe par <strong style="color:rgba(255,255,255,.5)">une ligne vide</strong>. Le texte est affiché tel quel sur le site.</small>
+          </div>
+          <div class="form-group">
+            <label>Badges / Titres (un par ligne)</label>
+            <textarea id="about-badges-ta" rows="7" placeholder="Docteur en droit&#10;Inspecteur principal du Trésor&#10;Responsable de la Fonction publique"></textarea>
+            <small style="color:rgba(255,255,255,.3);font-size:11px">Un badge par ligne. Gardez des intitulés courts et professionnels.</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STATS ── -->
+      <div class="panel" id="panel-stats">
+        <div class="card">
+          <div class="card-header"><div class="card-title">Statistiques affichées sur le site</div></div>
+          <div id="stats-list"></div>
+        </div>
+      </div>
+
+      <!-- ── SEO ── -->
+      <div class="panel" id="panel-seo">
+        <div class="card">
+          <div class="card-header"><div class="card-title">Référencement (SEO)</div></div>
+          <div class="form-group"><label>Titre de la page</label><input type="text" data-key="seo.title"></div>
+          <div class="form-group"><label>Description</label><textarea data-key="seo.description"></textarea></div>
+        </div>
+      </div>
+
+      <!-- ── ENGAGEMENT ── -->
+      <div class="panel" id="panel-engagement">
+        <div class="card" style="margin-bottom:18px">
+          <div class="card-header"><div class="card-title">Textes de la section Audience / Contact</div></div>
+          <div class="form-group"><label>Étiquette (tag)</label><input type="text" data-key="engagement.tag" placeholder="Contactez-nous"></div>
+          <div class="form-group">
+            <label>Titre (utilisez \n pour les sauts de ligne)</label>
+            <input type="text" data-key="engagement.title" placeholder="Une réclamation\nou une">
+            <small style="color:rgba(255,255,255,.3);font-size:11px">La partie accentuée (en doré) est le champ ci-dessous.</small>
+          </div>
+          <div class="form-group"><label>Mot accentué (en doré)</label><input type="text" data-key="engagement.titleAccent" placeholder="demande"></div>
+          <div class="form-group"><label>Texte de description</label><textarea data-key="engagement.desc" rows="3" placeholder="Vous avez une réclamation…"></textarea></div>
+          <div class="form-group"><label>Titre du formulaire</label><input type="text" data-key="engagement.formTitle" placeholder="Demande d'audience auprès du Client"></div>
+          <div class="form-group"><label>Sous-titre du formulaire</label><input type="text" data-key="engagement.formSub" placeholder="Expliquez l'objet de votre demande…"></div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Cartes d'info (3 cartes)</div>
+          </div>
+          <div id="eng-cards-list"></div>
+        </div>
+      </div>
+
+      <!-- ── CTA ── -->
+      <div class="panel" id="panel-cta">
+        <div class="card">
+          <div class="card-header"><div class="card-title">Bandeau CTA</div></div>
+          <div class="form-group">
+            <label>Titre (utilisez \n pour les sauts de ligne)</label>
+            <input type="text" data-key="cta.title" placeholder="Votez YARO —\nle choix de l'expérience et du terrain">
+          </div>
+          <div class="form-group"><label>Sous-titre</label><input type="text" data-key="cta.subtitle" placeholder="Parce qu'votre territoire mérite un homme…"></div>
+          <div class="form-group"><label>Bouton 1 — texte</label><input type="text" id="cta-btn1-text" placeholder="Demande d'audience" oninput="updCtaBtn(1,'text',this.value)"></div>
+          <div class="form-group"><label>Bouton 1 — lien</label><input type="text" id="cta-btn1-href" placeholder="#engagement" oninput="updCtaBtn(1,'href',this.value)"></div>
+          <div class="form-group"><label>Bouton 2 — texte</label><input type="text" id="cta-btn2-text" placeholder="Nous contacter" oninput="updCtaBtn(2,'text',this.value)"></div>
+          <div class="form-group"><label>Bouton 2 — lien</label><input type="text" id="cta-btn2-href" placeholder="#contact" oninput="updCtaBtn(2,'href',this.value)"></div>
+          <div class="form-group"><label>Bouton 3 — texte</label><input type="text" id="cta-btn3-text" placeholder="Lire le programme" oninput="updCtaBtn(3,'text',this.value)"></div>
+          <div class="form-group"><label>Bouton 3 — lien</label><input type="text" id="cta-btn3-href" placeholder="#programme" oninput="updCtaBtn(3,'href',this.value)"></div>
+        </div>
+      </div>
+
+      <!-- ── CONTACT INFO ── -->
+      <div class="panel" id="panel-contact-info">
+        <div class="card">
+          <div class="card-header"><div class="card-title">Section Contact</div></div>
+          <div class="form-group"><label>Étiquette (tag)</label><input type="text" data-key="contact.sectionTag" placeholder="Nous écrire"></div>
+          <div class="form-group"><label>Titre (partie normale)</label><input type="text" data-key="contact.sectionTitle" placeholder="Prenez"></div>
+          <div class="form-group"><label>Titre (partie accentuée en rouge)</label><input type="text" data-key="contact.sectionAccent" placeholder="contact"></div>
+          <div class="form-group">
+            <label>Titre du bloc gauche</label>
+            <input type="text" data-key="contact.sidebarTitle" placeholder="Quartier Général\nde Campagne">
+            <small style="color:rgba(255,255,255,.3);font-size:11px">Utilisez \n pour un saut de ligne.</small>
+          </div>
+          <div class="form-group"><label>Texte du bloc gauche</label><textarea data-key="contact.sidebarDesc" rows="2" placeholder="Notre équipe répond à vos questions…"></textarea></div>
+          <div class="form-group"><label>Adresse</label><input type="text" data-key="contact.address" placeholder="votre territoire, votre zone, votre pays"></div>
+          <div class="form-group"><label>Téléphone</label><input type="text" data-key="contact.phone" placeholder="+242 06 XXX XXXX"></div>
+          <div class="form-group"><label>Email</label><input type="email" data-key="contact.email" placeholder="contact@maquette-yaro.fr"></div>
+          <div class="form-group"><label>Réseaux sociaux (handle)</label><input type="text" data-key="contact.social" placeholder="@AimeYaroOfficiel"></div>
+          <div class="form-group"><label>Titre du formulaire "Envoyer un message"</label><input type="text" data-key="contact.formTitle2" placeholder="Envoyez un message"></div>
+        </div>
+      </div>
+
+      <!-- ── FOOTER ── -->
+      <div class="panel" id="panel-footer">
+        <div class="card">
+          <div class="card-header"><div class="card-title">🦶 Pied de page</div></div>
+          <div class="form-group"><label>Nom dans le logo (pied de page)</label><input type="text" data-key="footer.logoName" placeholder="YARO"></div>
+          <div class="form-group"><label>Sous-titre dans le logo (pied de page)</label><input type="text" data-key="footer.logoSub" placeholder="Développé par Rodrin Bakala· Site de démonstration"></div>
+          <div class="form-group"><label>Texte de présentation (sous le logo)</label><textarea data-key="footer.brandText" rows="3" placeholder="Site officiel d'YARO Maquette…"></textarea></div>
+          <div class="form-group"><label>Mention copyright (bas de page)</label><input type="text" data-key="footer.copyright" placeholder="© 2026 Campagne YARO…"></div>
+        </div>
+      </div>
+
+      <!-- ── GALERIE ── -->
+      <div class="panel" id="panel-galerie">
+
+        <!-- En-tête de section -->
+        <div class="card" style="margin-bottom:18px">
+          <div class="card-header"><div class="card-title">En-tête de la section Galerie</div></div>
+          <div class="form-group"><label>Étiquette (tag)</label><input type="text" data-key="galerieSection.tag" placeholder="En images"></div>
+          <div class="form-group"><label>Titre (partie normale)</label><input type="text" data-key="galerieSection.title" placeholder="YARO"></div>
+          <div class="form-group"><label>Titre (partie accentuée en doré)</label><input type="text" data-key="galerieSection.titleAccent" placeholder="sur le terrain"></div>
+        </div>
+
+        <!-- Diaporama -->
+        <div class="card" style="margin-bottom:18px">
+          <div class="card-header">
+            <div class="card-title">Diaporama</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="addSlide()">+ Ajouter une slide</button>
+            </div>
+          </div>
+          <div id="slides-list"></div>
+        </div>
+
+        <!-- Grille -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Grille de photos</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="addGridPhoto()">+ Ajouter une photo</button>
+            </div>
+          </div>
+          <div id="grid-list"></div>
+        </div>
+
+      </div>
+
+      <!-- ── ACTUALITÉS ── -->
+      <div class="panel" id="panel-actus">
+
+        <!-- En-tête de section -->
+        <div class="card" style="margin-bottom:18px">
+          <div class="card-header"><div class="card-title">En-tête de la section Actualités</div></div>
+          <div class="form-group"><label>Étiquette (tag)</label><input type="text" data-key="actusSection.tag" placeholder="Actualités"></div>
+          <div class="form-group"><label>Titre (partie normale)</label><input type="text" data-key="actusSection.title" placeholder="Sur le"></div>
+          <div class="form-group"><label>Titre (partie accentuée en rouge)</label><input type="text" data-key="actusSection.titleAccent" placeholder="terrain"></div>
+          <div class="form-group"><label>Titre de la grille des actions</label><input type="text" data-key="actusSection.gridTitle" placeholder="Autres actions du Client Responsable"></div>
+        </div>
+
+        <!-- Slides hero -->
+        <div class="card" style="margin-bottom:18px">
+          <div class="card-header">
+            <div class="card-title">Diaporama hero <span id="slides-count" style="font-size:11px;color:rgba(255,255,255,.35);font-weight:400;margin-left:6px"></span></div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="addActuSlide()">+ Ajouter une slide</button>
+            </div>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,.3);margin-bottom:14px">Chaque slide s'affiche dans le grand diaporama en haut de la section Actualités.</p>
+          <div id="actu-slides-list"></div>
+        </div>
+
+        <!-- Articles vedette -->
+        <div class="card" style="margin-bottom:18px">
+          <div class="card-header">
+            <div class="card-title">⭐ Articles vedette <span id="vedettes-count" style="font-size:11px;color:rgba(255,255,255,.35);font-weight:400;margin-left:6px"></span></div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="addActuVedette()">+ Ajouter un article</button>
+            </div>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,.3);margin-bottom:14px">Articles mis en avant sous le diaporama, avec texte complet et citation.</p>
+          <div id="actu-vedettes-list"></div>
+        </div>
+
+        <!-- Cards grille -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Grille d'actions <span id="cards-count" style="font-size:11px;color:rgba(255,255,255,.35);font-weight:400;margin-left:6px"></span></div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="addActuCard()">+ Ajouter une carte</button>
+            </div>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,.3);margin-bottom:14px">Petites cartes d'action sous les articles vedette (date + titre + description).</p>
+          <div id="actu-cards-list"></div>
+        </div>
+
+      </div>
+
+      <!-- ── UTILISATEURS ── -->
+      <div class="panel" id="panel-users">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Gestion des utilisateurs</div>
+          </div>
+
+          <!-- Formulaire ajout / modification -->
+          <div class="card-actions" style="margin-bottom:16px">
+            <button class="sbtn sbtn-progress" id="btn-add-user" onclick="toggleUserForm()">+ Ajouter un utilisateur</button>
+          </div>
+          <div class="user-form" id="user-form-container" style="display:none">
+            <div class="user-form-title" id="user-form-title">Ajouter un utilisateur</div>
+            <div class="user-form-grid">
+              <div class="form-group" style="margin:0">
+                <label>Identifiant</label>
+                <input type="text" id="uf-username" placeholder="ex: secretaire">
+              </div>
+              <div class="form-group" style="margin:0">
+                <label>Nom affiché</label>
+                <input type="text" id="uf-nom" placeholder="ex: Secrétaire">
+              </div>
+              <div class="form-group" style="margin:0">
+                <label>Mot de passe <span style="color:rgba(255,255,255,.3);font-size:9px">(laisser vide = inchangé)</span></label>
+                <input type="password" id="uf-password" placeholder="••••••••">
+              </div>
+              <div class="form-group" style="margin:0">
+                <label>Rôle</label>
+                <select id="uf-role" class="form-input">
+                  <option value="lecteur">Lecteur — messages uniquement</option>
+                  <option value="editeur">Éditeur — contenu + messages</option>
+                  <option value="admin">Admin — accès complet</option>
+                </select>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="sbtn sbtn-progress" onclick="submitUserForm()">Enregistrer</button>
+              <button class="sbtn sbtn-wait" onclick="resetUserForm()">✕ Annuler</button>
+            </div>
+          </div>
+          </div>
+
+          <!-- Liste des utilisateurs -->
+          <div class="card-title" style="margin-bottom:12px">Comptes existants</div>
+          <div class="user-list" id="user-list">
+            <div class="msg-empty">Chargement…</div>
+          </div>
+        </div>
+
+        <!-- Légende des rôles supprimée -->
+      </div>
+
+      <!-- ── PARCOURS ── -->
+      <div class="panel" id="panel-parcours">
+        <!-- En-tête de section -->
+        <div class="card" style="margin-bottom:18px">
+          <div class="card-header"><div class="card-title">En-tête de la section Parcours</div></div>
+          <div class="form-group">
+            <label>Étiquette (tag)</label>
+            <input type="text" id="parcours-sec-tag" placeholder="Son parcours" oninput="updParcoursSection('tag',this.value)">
+          </div>
+          <div class="form-group">
+            <label>Titre (partie normale)</label>
+            <input type="text" id="parcours-sec-title" placeholder="Une carrière bâtie sur" oninput="updParcoursSection('title',this.value)">
+          </div>
+          <div class="form-group">
+            <label>Titre (partie accentuée en dégradé)</label>
+            <input type="text" id="parcours-sec-accent" placeholder="la confiance" oninput="updParcoursSection('titleAccent',this.value)">
+          </div>
+        </div>
+        <!-- Étapes -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Étapes de la timeline</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="addParcoursItem()">+ Ajouter une étape</button>
+            </div>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,.3);margin-bottom:16px">
+            Les étapes apparaissent en alternance gauche/droite sur la timeline du site public.
+          </p>
+          <div id="parcours-list"></div>
+        </div>
+      </div>
+
+      <!-- ── PROGRAMME ── -->
+      <div class="panel" id="panel-programme">
+        <!-- En-tête de section -->
+        <div class="card" style="margin-bottom:18px">
+          <div class="card-header"><div class="card-title">En-tête de la section Programme</div></div>
+          <div class="form-group"><label>Étiquette (tag)</label><input type="text" data-key="programmeSection.tag" placeholder="Notre vision"></div>
+          <div class="form-group"><label>Titre (partie normale)</label><input type="text" data-key="programmeSection.title" placeholder="Programme"></div>
+          <div class="form-group"><label>Titre (partie accentuée en rouge)</label><input type="text" data-key="programmeSection.titleAccent" placeholder="2027–2032"></div>
+          <div class="form-group"><label>Sous-titre de section</label><input type="text" data-key="programmeSection.subtitle" placeholder="Six axes stratégiques pour transformer votre territoire…"></div>
+        </div>
+        <!-- Bannière -->
+        <div class="card" style="margin-bottom:18px">
+          <div class="card-header"><div class="card-title">Bannière du programme</div></div>
+          <div class="form-group">
+            <label>Titre (utilisez \n pour les sauts de ligne)</label>
+            <textarea id="prog-heroTitle" style="min-height:60px" placeholder="Un programme construit&#10;avec les citoyens d'votre territoire"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Texte de présentation</label>
+            <textarea id="prog-heroText" style="min-height:80px" placeholder="Description du programme..."></textarea>
+          </div>
+        </div>
+        <!-- Axes -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Les axes stratégiques</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="addAxe()">+ Ajouter un axe</button>
+            </div>
+          </div>
+          <div id="axes-list"></div>
+        </div>
+      </div>
+
+      <!-- ── SÉCURITÉ ── -->
+      <div class="panel" id="panel-security">
+
+        <!-- Statistiques rapides -->
+        <div class="sec-grid" style="grid-template-columns:repeat(4,1fr)">
+          <div class="sec-stat">
+            <div class="sec-stat-n" id="sec-n-blocked" style="color:#e74c3c">—</div>
+            <div class="sec-stat-l">IPs bloquées</div>
+          </div>
+          <div class="sec-stat">
+            <div class="sec-stat-n" id="sec-n-suspects" style="color:#f39c12">—</div>
+            <div class="sec-stat-l">IPs suspectes</div>
+          </div>
+          <div class="sec-stat">
+            <div class="sec-stat-n" id="sec-n-attacks" style="color:#9b59b6">—</div>
+            <div class="sec-stat-l">Attaques détectées</div>
+          </div>
+          <div class="sec-stat">
+            <div class="sec-stat-n" id="sec-n-honeypot" style="color:#C8102E">—</div>
+            <div class="sec-stat-l">Pièges déclenchés</div>
+          </div>
+        </div>
+
+        <div class="sec-grid">
+          <!-- IPs bloquées -->
+          <div class="card" style="margin-top:0">
+            <div class="card-header">
+              <div class="card-title">IPs bloquées</div>
+              <div class="card-actions">
+                <button class="sbtn sbtn-progress" onclick="loadSecurity()">Actualiser</button>
+              </div>
+            </div>
+            <div style="margin-bottom:12px;display:flex;gap:8px">
+              <input id="sec-ip-input" type="text" placeholder="IP à bloquer manuellement"
+                style="flex:1;padding:8px 10px;background:var(--n3);border:1px solid rgba(255,255,255,.08);
+                       border-radius:7px;color:var(--w);font-size:13px;font-family:monospace;outline:none">
+              <button class="btn-danger" style="padding:8px 14px;font-size:11px" onclick="manualBlock()">Bloquer</button>
+            </div>
+            <div id="sec-blocked-list" class="msg-empty">Chargement…</div>
+          </div>
+
+          <!-- IPs suspectes (non bloquées) -->
+          <div class="card" style="margin-top:0">
+            <div class="card-header">
+              <div class="card-title">IPs suspectes</div>
+            </div>
+            <div id="sec-suspects-list" class="msg-empty">Chargement…</div>
+          </div>
+        </div>
+
+        <!-- Log d'attaques récentes -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Attaques récentes</div>
+            <div class="card-actions" style="font-size:11px;color:rgba(255,255,255,.3)">
+              100 dernières entrées
+            </div>
+          </div>
+          <div id="sec-attacks-list" class="msg-empty">Chargement…</div>
+        </div>
+
+        <!-- Carte 2FA -->
+        <div class="card" style="margin-top:16px">
+          <div class="card-header">
+            <div class="card-title">Authentification à deux facteurs (2FA)</div>
+          </div>
+          <div style="padding:16px">
+            <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:16px">
+              Protégez votre compte avec une application TOTP (Google Authenticator, Authy, etc.).
+            </p>
+            <div id="tfa-status" style="margin-bottom:16px;font-size:13px;font-weight:600"></div>
+            <!-- Setup -->
+            <div id="tfa-setup-box" style="display:none">
+              <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:8px">
+                Scannez ce QR code avec votre application, puis confirmez avec le code généré.
+              </p>
+              <div id="tfa-qr-uri" style="word-break:break-all;font-size:10px;color:rgba(255,255,255,.3);margin-bottom:8px;padding:8px;background:var(--n3);border-radius:6px"></div>
+              <p style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:12px">
+                Ou saisissez le secret manuellement dans votre app : <code id="tfa-secret" style="color:#d4b96a;font-size:11px"></code>
+              </p>
+              <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                <input type="text" id="tfa-confirm-code" placeholder="Code 6 chiffres" maxlength="6" inputmode="numeric"
+                  style="padding:9px 13px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:14px;font-family:inherit;outline:none;width:160px">
+                <button onclick="tfaActivate()" style="padding:9px 18px;background:var(--r);color:#fff;border:none;border-radius:7px;font-weight:700;font-size:13px;cursor:pointer">Activer</button>
+                <button onclick="tfaCancel()" style="padding:9px 12px;background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);border-radius:7px;font-size:12px;cursor:pointer">Annuler</button>
+              </div>
+            </div>
+            <!-- Disable -->
+            <div id="tfa-disable-box" style="display:none">
+              <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                <input type="text" id="tfa-disable-code" placeholder="Code 2FA actuel" maxlength="6" inputmode="numeric"
+                  style="padding:9px 13px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:14px;font-family:inherit;outline:none;width:180px">
+                <button onclick="tfaDisable()" style="padding:9px 18px;background:#e74c3c;color:#fff;border:none;border-radius:7px;font-weight:700;font-size:13px;cursor:pointer">Désactiver le 2FA</button>
+                <button onclick="tfaCancelDisable()" style="padding:9px 12px;background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);border-radius:7px;font-size:12px;cursor:pointer">Annuler</button>
+              </div>
+            </div>
+            <!-- Actions principales -->
+            <div id="tfa-actions" style="display:flex;gap:8px;flex-wrap:wrap">
+              <button id="tfa-btn-setup" onclick="tfaStartSetup()" style="padding:9px 18px;background:rgba(184,151,58,.1);color:#d4b96a;border:1px solid rgba(184,151,58,.2);border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;display:none">Configurer le 2FA</button>
+              <button id="tfa-btn-disable" onclick="tfaStartDisable()" style="padding:9px 18px;background:rgba(231,76,60,.08);color:#e74c3c;border:1px solid rgba(231,76,60,.2);border-radius:7px;font-size:13px;cursor:pointer;display:none">Désactiver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── BOUCLIER IA — Forces Spéciales Numériques ── -->
+        <div class="card" style="margin-top:16px;border-color:rgba(200,16,46,.25)" id="bouclier-card">
+          <div class="card-header">
+            <div class="card-title">Bouclier IA — Protection numérique</div>
+            <div class="card-actions">
+              <span id="bouclier-badge" style="display:none;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(231,76,60,.15);color:#e74c3c;border:1px solid rgba(231,76,60,.3)">LOCKDOWN</span>
+              <button class="sbtn sbtn-progress" onclick="loadBouclier()">Actualiser</button>
+            </div>
+          </div>
+
+          <!-- Statut global -->
+          <div id="bouclier-status-bar" style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;margin-bottom:14px;background:rgba(46,204,113,.06);border:1px solid rgba(46,204,113,.15)">
+            <span id="bouclier-status-icon" style="font-size:12px;font-weight:800;color:#2ecc71">OK</span>
+            <div style="flex:1">
+              <div id="bouclier-status-txt" style="font-size:13px;font-weight:700;color:#2ecc71">Bouclier actif — protection en cours</div>
+              <div id="bouclier-status-sub" style="font-size:11px;color:rgba(255,255,255,.35);margin-top:2px">6 couches de défense opérationnelles</div>
+            </div>
+            <div id="bouclier-lockdown-timer" style="display:none;font-size:12px;font-weight:700;color:#e74c3c;background:rgba(231,76,60,.12);padding:4px 10px;border-radius:6px;border:1px solid rgba(231,76,60,.3)"></div>
+          </div>
+
+          <!-- Couches de défense (visuelles) -->
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px;text-align:center">
+              <div style="font-size:15px;margin-bottom:4px">01</div>
+              <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.6)">RECONNAISSANCE</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.3)">30+ agents IA</div>
+            </div>
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px;text-align:center">
+              <div style="font-size:15px;margin-bottom:4px">02</div>
+              <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.6)">FIREWALL</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.3)">Score 0–50+</div>
+            </div>
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px;text-align:center">
+              <div style="font-size:15px;margin-bottom:4px">03</div>
+              <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.6)">LOCKDOWN</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.3)">Mode sécurité</div>
+            </div>
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px;text-align:center">
+              <div style="font-size:15px;margin-bottom:4px">04</div>
+              <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.6)">COFFRE-FORT</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.3)">20+ fichiers</div>
+            </div>
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px;text-align:center">
+              <div style="font-size:15px;margin-bottom:4px">05</div>
+              <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.6)">CANARIS</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.3)">40+ pièges</div>
+            </div>
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px;text-align:center">
+              <div style="font-size:15px;margin-bottom:4px">06</div>
+              <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.6)">CONTRE-MESURES</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.3)">Tarpit → Ban</div>
+            </div>
+            <div style="background:rgba(155,89,182,.08);border:1px solid rgba(155,89,182,.25);border-radius:8px;padding:10px;text-align:center;grid-column:span 2">
+              <div style="font-size:15px;margin-bottom:4px">07</div>
+              <div style="font-size:10px;font-weight:700;color:#9b59b6">EMPREINTE TRAFIC</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.3)">Agents déguisés · Ratio API · Cadence lente · Fingerprint headers</div>
+            </div>
+          </div>
+
+          <!-- Stats rapides -->
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
+            <div class="sec-stat">
+              <div class="sec-stat-n" id="bouclier-n-tracked" style="color:#3498db">—</div>
+              <div class="sec-stat-l">IPs trackées</div>
+            </div>
+            <div class="sec-stat">
+              <div class="sec-stat-n" id="bouclier-n-banned" style="color:#e74c3c">—</div>
+              <div class="sec-stat-l">Bans temporaires</div>
+            </div>
+            <div class="sec-stat">
+              <div class="sec-stat-n" id="bouclier-n-lockdowns" style="color:#f39c12">—</div>
+              <div class="sec-stat-l">Lockdowns totaux</div>
+            </div>
+            <div class="sec-stat">
+              <div class="sec-stat-n" id="bouclier-n-ghosts" style="color:#9b59b6">—</div>
+              <div class="sec-stat-l">Agents fantômes</div>
+            </div>
+          </div>
+
+          <!-- Top menaces -->
+          <div style="margin-bottom:14px">
+            <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Top Menaces Actives</div>
+            <div id="bouclier-threats-list" style="display:flex;flex-direction:column;gap:5px">
+              <div class="msg-empty">Chargement…</div>
+            </div>
+          </div>
+
+          <!-- Contrôles Lockdown -->
+          <div style="background:rgba(231,76,60,.04);border:1px solid rgba(231,76,60,.15);border-radius:10px;padding:14px">
+            <div style="font-size:12px;font-weight:700;color:#e74c3c;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px">Contrôle Lockdown Manuel</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end">
+              <div style="flex:1;min-width:180px">
+                <div style="font-size:10px;color:rgba(255,255,255,.4);margin-bottom:4px">Raison</div>
+                <input id="lockdown-reason" type="text" placeholder="Ex : Attaque détectée"
+                  style="width:100%;box-sizing:border-box;padding:8px 10px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:12px;outline:none">
+              </div>
+              <div style="width:100px">
+                <div style="font-size:10px;color:rgba(255,255,255,.4);margin-bottom:4px">Durée (min)</div>
+                <input id="lockdown-duration" type="number" value="15" min="1" max="1440"
+                  style="width:100%;box-sizing:border-box;padding:8px 10px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:12px;outline:none">
+              </div>
+              <button onclick="activateLockdown()" style="padding:8px 16px;background:rgba(231,76,60,.15);color:#e74c3c;border:1px solid rgba(231,76,60,.35);border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Activer Lockdown</button>
+              <button onclick="deactivateLockdown()" style="padding:8px 16px;background:rgba(46,204,113,.08);color:#2ecc71;border:1px solid rgba(46,204,113,.25);border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Lever</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── RÉINITIALISATION ── -->
+        <div class="card role-admin" style="border-color:rgba(231,76,60,.25);margin-bottom:0" id="reset-card">
+          <div class="card-header"><div class="card-title" style="color:#e74c3c">Zone de réinitialisation</div></div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:16px">Ces actions sont irréversibles. Une double confirmation sera demandée avant chaque opération.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn-danger" onclick="resetSystem(['contacts'])">Vider messages &amp; audiences</button>
+            <button class="btn-danger" onclick="resetSystem(['crm'])">Vider le CRM</button>
+            <button class="btn-danger" style="background:rgba(231,76,60,.2);font-weight:700" onclick="resetSystem(['contacts','crm'])">Réinitialisation totale</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LOGS D'AUDIT ── -->
+      <!-- ── YARO IA ── -->
+      <div class="panel" id="panel-veille">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">YARO IA — Actualités &amp; Lois</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="loadNews()">Actualiser</button>
+              <button class="sbtn" onclick="restartMonitor()" style="background:rgba(231,76,60,.08);color:#e74c3c;border:1px solid rgba(231,76,60,.2)">Redémarrer l'IA</button>
+              <button class="sbtn" onclick="markAllNewsRead()" style="background:rgba(46,204,113,.1);color:#2ecc71;border:1px solid rgba(46,204,113,.2)">Tout marquer lu</button>
+            </div>
+          </div>
+
+          <!-- Statut agent -->
+          <div id="veille-status" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:10px 14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:12px;color:rgba(255,255,255,.5)">
+            <span id="veille-dot" style="width:8px;height:8px;border-radius:50%;background:#555;flex-shrink:0"></span>
+            <span id="veille-status-txt">Chargement…</span>
+            <span style="margin-left:auto" id="veille-last-run"></span>
+          </div>
+          <div id="veille-start-hint" style="display:none;padding:12px 16px;background:rgba(243,156,18,.06);border:1px solid rgba(243,156,18,.15);border-radius:8px;font-size:12px;color:#f39c12;margin-bottom:12px">
+            YARO IA n'est pas actif. Lancez-le avec :<br>
+            <code style="display:block;margin-top:6px;color:#fff;font-size:11px">python3 monitor.py &amp;</code>
+            <small style="color:rgba(255,255,255,.35);margin-top:4px;display:block">Configurez SMTP_HOST/SMTP_USER/SMTP_PASS/NOTIF_EMAIL pour les alertes email.<br>
+              <a href="https://myaccount.google.com/apppasswords" target="_blank" rel="noopener" style="color:#3498db;text-decoration:underline">→ Créer un mot de passe d'application Gmail</a>
+            </small>
+          </div>
+
+          <!-- Déclenchement manuel -->
+          <div style="background:rgba(52,152,219,.05);border:1px solid rgba(52,152,219,.15);border-radius:10px;padding:14px 16px;margin-bottom:14px">
+            <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Commander une recherche</div>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+              <input type="text" id="veille-custom-query" placeholder="Sujet à rechercher (laisser vide = cycle complet)" style="flex:1;min-width:200px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 12px;color:#fff;font-size:12px">
+              <button class="sbtn sbtn-progress" id="btn-run-veille" onclick="runVeille()" style="white-space:nowrap">Lancer maintenant</button>
+              <button class="sbtn" onclick="runVeille('Yaro votre pays justice 2026')" style="background:rgba(200,16,46,.1);color:#ff6b6b;border:1px solid rgba(200,16,46,.2);white-space:nowrap;font-size:11px">Yaro</button>
+              <button class="sbtn" onclick="runVeille('nouvelles lois justice Afrique 2026')" style="background:rgba(46,204,113,.08);color:#2ecc71;border:1px solid rgba(46,204,113,.2);white-space:nowrap;font-size:11px">Lois & Justice</button>
+              <button class="sbtn" onclick="runVeille('droits humains populations autochtones votre pays 2026')" style="background:rgba(155,89,182,.1);color:#bb8fce;border:1px solid rgba(155,89,182,.2);white-space:nowrap;font-size:11px">Droits humains</button>
+            </div>
+            <div id="veille-run-feedback" style="display:none;margin-top:8px;font-size:12px;color:#2ecc71"></div>
+          </div>
+
+          <!-- Logs YARO IA -->
+          <div style="margin-bottom:16px">
+            <button class="sbtn" onclick="toggleMonitorLog()" style="font-size:11px;background:rgba(255,255,255,.04);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.08)">Voir les logs de l'agent</button>
+            <pre id="monitor-log-box" style="display:none;margin-top:8px;background:#0d0d0d;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px;font-size:10px;color:#aaa;max-height:220px;overflow-y:auto;white-space:pre-wrap;word-break:break-all"></pre>
+          </div>
+
+          <!-- Onglets principaux -->
+          <div style="display:flex;gap:0;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.08)">
+            <button id="tab-yaro" data-filter="filter-yaro" onclick="setNewsFilter('yaro')"
+              style="padding:9px 20px;border:none;cursor:pointer;font-size:12px;font-weight:700;background:transparent;color:#fff;border-bottom:2px solid var(--r);margin-bottom:-1px">
+              Sur Yaro
+              <span id="tab-yaro-count" style="margin-left:6px;background:var(--r);color:#fff;border-radius:10px;padding:1px 7px;font-size:10px"></span>
+            </button>
+            <button id="tab-all" onclick="setNewsFilter('all')"
+              style="padding:9px 20px;border:none;cursor:pointer;font-size:12px;font-weight:700;background:transparent;color:rgba(255,255,255,.4);border-bottom:2px solid transparent;margin-bottom:-1px">
+              Toutes les infos
+              <span id="tab-all-count" style="margin-left:6px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.5);border-radius:10px;padding:1px 7px;font-size:10px"></span>
+            </button>
+            <button id="filter-yaro" onclick="setNewsFilter('yaro')" style="display:none"></button>
+            <button id="filter-loi_justice" onclick="setNewsFilter('loi_justice')" style="display:none"></button>
+            <button id="filter-recherche" onclick="setNewsFilter('recherche')" style="display:none"></button>
+          </div>
+
+          <!-- Contrôle de tri -->
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+            <span style="font-size:11px;color:rgba(255,255,255,.3);font-weight:600;text-transform:uppercase;letter-spacing:.5px">Trier :</span>
+            <button id="sort-pertinence" onclick="setNewsSort('pertinence')" style="padding:4px 12px;border-radius:6px;font-size:11px;font-weight:600;background:rgba(255,255,255,.04);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.08);cursor:pointer">Pertinence</button>
+            <button id="sort-date-desc" onclick="setNewsSort('date_desc')" style="padding:4px 12px;border-radius:6px;font-size:11px;font-weight:600;background:rgba(52,152,219,.15);color:#3498db;border:1px solid rgba(52,152,219,.3);cursor:pointer">Plus récent</button>
+            <button id="sort-date-asc" onclick="setNewsSort('date_asc')" style="padding:4px 12px;border-radius:6px;font-size:11px;font-weight:600;background:rgba(255,255,255,.04);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.08);cursor:pointer">Plus ancien</button>
+          </div>
+
+          <div id="veille-list" style="display:flex;flex-direction:column;gap:10px">
+            <div style="text-align:center;color:rgba(255,255,255,.3);padding:40px 0;font-size:13px">Chargement des actualités….</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ ÉDITORIAL IA ══ -->
+      <div class="panel" id="panel-editorial">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Éditorial IA</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="loadEditorial()">Actualiser</button>
+            </div>
+          </div>
+
+          <!-- Infos clés -->
+          <div style="padding:10px 14px;background:rgba(52,152,219,.06);border:1px solid rgba(52,152,219,.15);border-radius:8px;font-size:12px;color:rgba(255,255,255,.5);margin-bottom:14px;line-height:1.6">
+            Sélectionnez un article de la veille YARO IA et transformez-le en contenu éditorial structuré prêt à publier.<br>
+            <span style="color:rgba(255,255,255,.25)">Seuls les articles concernant le Client Yaro sont transformables.</span>
+          </div>
+
+          <!-- Onglets -->
+          <div style="display:flex;gap:0;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08)">
+            <button onclick="editorialTab('articles',this)" id="etab-articles"
+              style="flex:1;padding:9px 8px;border:none;cursor:pointer;font-size:12px;font-weight:700;background:transparent;color:#fff;border-bottom:2px solid var(--r);margin-bottom:-1px">
+              Articles
+              <span id="badge-editorial-count" style="margin-left:4px;background:var(--r);color:#fff;border-radius:10px;padding:1px 6px;font-size:10px">0</span>
+            </button>
+            <button onclick="editorialTab('generer',this)" id="etab-generer"
+              style="flex:1;padding:9px 8px;border:none;cursor:pointer;font-size:12px;font-weight:700;background:transparent;color:rgba(255,255,255,.4);border-bottom:2px solid transparent;margin-bottom:-1px">
+              Générer
+            </button>
+          </div>
+
+          <!-- Tab : liste articles -->
+          <div id="editorial-tab-articles">
+            <!-- Filtres statut -->
+            <div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap">
+              <button onclick="filterEditorial('tous',this)" class="ef-btn ef-active" style="padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;cursor:pointer">Tous</button>
+              <button onclick="filterEditorial('brouillon',this)" class="ef-btn" style="padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid rgba(243,156,18,.3);background:rgba(243,156,18,.06);color:#f39c12;cursor:pointer">Brouillons</button>
+              <button onclick="filterEditorial('valide',this)" class="ef-btn" style="padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid rgba(46,204,113,.3);background:rgba(46,204,113,.06);color:#2ecc71;cursor:pointer">Validés</button>
+              <button onclick="filterEditorial('publie',this)" class="ef-btn" style="padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid rgba(52,152,219,.3);background:rgba(52,152,219,.06);color:#3498db;cursor:pointer">Publiés</button>
+            </div>
+            <div id="editorial-list" style="display:flex;flex-direction:column;gap:12px">
+              <div style="text-align:center;color:rgba(255,255,255,.3);padding:40px 0;font-size:13px">Chargement…</div>
+            </div>
+          </div>
+
+          <!-- Tab : générer depuis veille -->
+          <div id="editorial-tab-generer" style="display:none">
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px;margin-bottom:12px">
+              <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Saisie manuelle</div>
+              <input id="ed-titre" type="text" placeholder="Titre de l'article source *" style="width:100%;box-sizing:border-box;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:9px 12px;color:#fff;font-size:12px;margin-bottom:8px">
+              <textarea id="ed-resume" placeholder="Résumé / contenu de l'article source *" rows="4" style="width:100%;box-sizing:border-box;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:9px 12px;color:#fff;font-size:12px;resize:vertical;margin-bottom:8px"></textarea>
+              <input id="ed-source" type="text" placeholder="Nom du média (ex: Les Dépêches de Brazzaville)" style="width:100%;box-sizing:border-box;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:9px 12px;color:#fff;font-size:12px;margin-bottom:8px">
+              <input id="ed-url" type="url" placeholder="URL de l'article (optionnel)" style="width:100%;box-sizing:border-box;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:9px 12px;color:#fff;font-size:12px;margin-bottom:12px">
+              <button onclick="generateEditorial()" id="btn-generate-ed" class="sbtn sbtn-progress" style="width:100%;justify-content:center;font-size:13px;padding:11px">
+                Générer l'article éditorial
+              </button>
+            </div>
+
+            <!-- Articles récents de la veille à transformer -->
+            <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;margin-top:4px">Ou choisir depuis la veille YARO IA</div>
+            <div id="ed-news-picker" style="display:flex;flex-direction:column;gap:8px">
+              <div style="text-align:center;color:rgba(255,255,255,.3);padding:20px 0;font-size:12px">Chargement des actualités…</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Modal article éditorial -->
+      <div id="ed-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);overflow-y:auto;-webkit-overflow-scrolling:touch">
+        <div style="max-width:640px;margin:0 auto;padding:16px">
+          <div style="background:#1a1a2e;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1)">
+            <!-- Header modal -->
+            <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:10px">
+              <div style="flex:1;font-size:14px;font-weight:700;color:#fff" id="ed-modal-titre-h">Article éditorial</div>
+              <button onclick="closeEdModal()" style="background:rgba(255,255,255,.08);border:none;color:rgba(255,255,255,.6);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:16px">✕</button>
+            </div>
+            <div style="padding:16px" id="ed-modal-body">
+              <!-- rempli par JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ VEILLE JURIDIQUE YARO IA ══ -->
+      <div class="panel" id="panel-yaro-legal" style="background:transparent;border:none;padding:0">
+
+        <!-- Header -->
+        <div class="card" style="margin-bottom:16px">
+          <div class="card-header">
+            <div class="card-title">Veille Juridique — YARO IA</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="yaroRunScraper()" id="yaro-btn-run">Lancer la veille</button>
+              <button class="sbtn" onclick="yaroLoadStats();yaroLoadArticles(1)" style="background:rgba(255,255,255,.06)">Actualiser</button>
+            </div>
+          </div>
+          <div id="yaro-last-run" style="display:none;font-size:11px;color:rgba(255,255,255,.35);margin-top:6px;padding:8px 12px;background:rgba(79,142,247,.06);border:1px solid rgba(79,142,247,.15);border-radius:8px">
+            Dernière exécution : <strong id="yaro-last-run-ts">—</strong> &nbsp;·&nbsp; Prochaine auto à <strong>02h00</strong>
+          </div>
+        </div>
+
+        <!-- Stats cards -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px">
+          <div class="yaro-stat-card" style="background:rgba(79,142,247,.08);border:1px solid rgba(79,142,247,.2);border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px">
+            <span class="metric-mark">AR</span>
+            <div><div style="font-size:1.5rem;font-weight:700" id="yl-total">—</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px">Articles</div></div>
+          </div>
+          <div class="yaro-stat-card" style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px">
+            <span class="metric-mark">J</span>
+            <div><div style="font-size:1.5rem;font-weight:700" id="yl-today">—</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px">Aujourd'hui</div></div>
+          </div>
+          <div class="yaro-stat-card" style="background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.2);border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px">
+            <span class="metric-mark">SO</span>
+            <div><div style="font-size:1.5rem;font-weight:700" id="yl-sources">—</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px">Sources</div></div>
+          </div>
+          <div class="yaro-stat-card" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px">
+            <span class="metric-mark">MC</span>
+            <div><div style="font-size:1.5rem;font-weight:700">4</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px">Mots-clés</div></div>
+          </div>
+        </div>
+
+        <!-- Keywords + Sources row -->
+        <div style="display:grid;grid-template-columns:1fr 260px;gap:12px;margin-bottom:16px">
+
+          <!-- Keywords bars -->
+          <div class="card" style="padding:16px">
+            <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Mots-clés détectés</div>
+            <div id="yl-kw-bars"></div>
+          </div>
+
+          <!-- Sources -->
+          <div class="card" style="padding:16px">
+            <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Sources</div>
+            <div id="yl-src-list"></div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card" style="padding:12px 16px;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+          <input type="text" id="yl-q" placeholder="Rechercher…" oninput="_yaroDebounce()"
+            style="flex:1;min-width:180px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#fff;font-size:12px;outline:none"/>
+          <select id="yl-source" onchange="yaroLoadArticles(1)"
+            style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#fff;font-size:12px;outline:none">
+            <option value="">Toutes les sources</option>
+            <option>Légifrance</option><option>JO Sénégal</option>
+            <option>JO Côte d'Ivoire</option><option>CCJA OHADA</option>
+          </select>
+          <select id="yl-kw" onchange="yaroLoadArticles(1)"
+            style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#fff;font-size:12px;outline:none">
+            <option value="">Tous les mots-clés</option>
+            <option value="pétrole">Pétrole</option><option value="forêt">Forêt</option>
+            <option value="justice">Justice</option><option value="contrat">Contrat</option>
+          </select>
+          <button class="sbtn" onclick="yaroResetFilters()" style="font-size:11px">Réinitialiser</button>
+        </div>
+
+        <!-- Table -->
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between">
+            <div style="font-size:13px;font-weight:600">Articles <span id="yl-cnt" style="background:var(--r);color:#fff;border-radius:20px;padding:1px 9px;font-size:11px;margin-left:4px">0</span></div>
+            <div style="font-size:11px;color:rgba(255,255,255,.35)" id="yl-tbl-info"></div>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="admin-table">
+              <thead>
+                <tr style="background:rgba(255,255,255,.03)">
+                  <th style="padding:9px 14px;text-align:left;font-size:10px;color:rgba(255,255,255,.35);font-weight:700;text-transform:uppercase;letter-spacing:.5px">Source</th>
+                  <th style="padding:9px 14px;text-align:left;font-size:10px;color:rgba(255,255,255,.35);font-weight:700;text-transform:uppercase;letter-spacing:.5px">Titre</th>
+                  <th style="padding:9px 14px;text-align:left;font-size:10px;color:rgba(255,255,255,.35);font-weight:700;text-transform:uppercase;letter-spacing:.5px">Mots-clés</th>
+                  <th style="padding:9px 14px;text-align:left;font-size:10px;color:rgba(255,255,255,.35);font-weight:700;text-transform:uppercase;letter-spacing:.5px">Date</th>
+                  <th style="padding:9px 14px"></th>
+                </tr>
+              </thead>
+              <tbody id="yl-tbody">
+                <tr><td colspan="5" style="text-align:center;padding:32px;color:rgba(255,255,255,.3);font-size:12px">Chargement…</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.35)">
+            <span id="yl-pag-info">—</span>
+            <div id="yl-pag-btns" style="display:flex;gap:4px"></div>
+          </div>
+        </div>
+
+      </div><!-- /panel-yaro-legal -->
+
+      <!-- ════════════════ MONITORING ════════════════ -->
+      <div class="panel" id="panel-monitoring">
+        <div class="panel-header">
+          <div class="panel-title">Monitoring — Surveillance temps réel</div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span id="mon-autorefresh-label" style="font-size:11px;color:rgba(255,255,255,.4)">Auto-refresh 30s</span>
+            <button class="sbtn sbtn-progress" onclick="loadMonitoring()">Actualiser</button>
+          </div>
+        </div>
+
+        <!-- Statut global -->
+        <div id="mon-status-bar" class="mon-status-bar mon-ok">
+          <span id="mon-status-icon">OK</span>
+          <span id="mon-status-text">Système opérationnel</span>
+          <span id="mon-status-ts" style="margin-left:auto;font-size:11px;opacity:.6"></span>
+        </div>
+
+        <!-- KPI cards -->
+        <div class="mon-kpi-grid">
+          <div class="mon-kpi-card">
+            <div class="mon-kpi-label">Requêtes 24h</div>
+            <div class="mon-kpi-val" id="mon-req-24h">—</div>
+          </div>
+          <div class="mon-kpi-card">
+            <div class="mon-kpi-label">Erreurs 24h</div>
+            <div class="mon-kpi-val" id="mon-err-24h" style="color:#e74c3c">—</div>
+          </div>
+          <div class="mon-kpi-card">
+            <div class="mon-kpi-label">Latence moy (1h)</div>
+            <div class="mon-kpi-val" id="mon-latency">—</div>
+          </div>
+          <div class="mon-kpi-card">
+            <div class="mon-kpi-label">Taux erreurs (5min)</div>
+            <div class="mon-kpi-val" id="mon-errrate">—</div>
+          </div>
+          <div class="mon-kpi-card">
+            <div class="mon-kpi-label">Sessions actives</div>
+            <div class="mon-kpi-val" id="mon-sessions">—</div>
+          </div>
+          <div class="mon-kpi-card">
+            <div class="mon-kpi-label">IPs bloquées</div>
+            <div class="mon-kpi-val" id="mon-blocked">—</div>
+          </div>
+        </div>
+
+        <!-- Système -->
+        <div class="mon-section-title">Métriques système</div>
+        <div class="mon-sys-grid">
+          <div class="mon-sys-item">
+            <div class="mon-sys-label">CPU</div>
+            <div class="mon-bar-wrap"><div class="mon-bar" id="mon-bar-cpu"></div></div>
+            <div class="mon-sys-val" id="mon-val-cpu">—</div>
+          </div>
+          <div class="mon-sys-item">
+            <div class="mon-sys-label">RAM</div>
+            <div class="mon-bar-wrap"><div class="mon-bar" id="mon-bar-mem"></div></div>
+            <div class="mon-sys-val" id="mon-val-mem">—</div>
+          </div>
+          <div class="mon-sys-item">
+            <div class="mon-sys-label">Disque</div>
+            <div class="mon-bar-wrap"><div class="mon-bar" id="mon-bar-disk"></div></div>
+            <div class="mon-sys-val" id="mon-val-disk">—</div>
+          </div>
+        </div>
+
+        <!-- Alertes actives -->
+        <div class="mon-section-title">
+          Alertes actives
+          <label style="font-size:11px;font-weight:400;cursor:pointer;margin-left:12px">
+            <input type="checkbox" id="mon-show-resolved" onchange="loadMonAlerts()"> Inclure résolues
+          </label>
+        </div>
+        <div id="mon-alerts-list" class="msg-empty">Chargement…</div>
+
+        <!-- Top endpoints -->
+        <div class="mon-section-title">Top endpoints (24h)</div>
+        <div id="mon-endpoints-list" class="msg-empty">Chargement…</div>
+
+        <!-- Requêtes récentes -->
+        <div class="mon-section-title">
+          Requêtes récentes
+          <input type="text" id="mon-req-filter" placeholder="Filtrer par path…"
+            style="margin-left:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;color:#fff;padding:3px 8px;font-size:11px;width:160px"
+            oninput="loadMonRequests()">
+        </div>
+        <div id="mon-requests-list" class="msg-empty">Chargement…</div>
+
+        <!-- Exceptions -->
+        <div class="mon-section-title">Dernières exceptions</div>
+        <div id="mon-errors-list" class="msg-empty">Chargement…</div>
+
+        <!-- Rapport -->
+        <div class="mon-section-title">Rapport automatique (24h)</div>
+        <div id="mon-report-box" class="mon-report-box">
+          <button class="sbtn sbtn-progress" onclick="loadMonReport()">Générer le rapport</button>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-backups">
+        <div class="panel-header">
+          <div class="panel-title">Sauvegardes — Données & Photos</div>
+          <div class="card-actions">
+            <button class="sbtn sbtn-progress" id="btn-run-backup" onclick="runBackupNow()">Créer une sauvegarde maintenant</button>
+            <button class="sbtn sbtn-read" onclick="loadBackups()">Actualiser</button>
+          </div>
+        </div>
+
+        <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr)">
+          <div class="kpi-card red">
+            <div class="kpi-label">Dernière sauvegarde</div>
+            <div class="kpi-val" id="backup-last-date" style="font-size:22px">—</div>
+            <div class="kpi-sub">créée automatiquement ou manuellement</div>
+          </div>
+          <div class="kpi-card blue">
+            <div class="kpi-label">Photos protégées</div>
+            <div class="kpi-val" id="backup-photo-count">—</div>
+            <div class="kpi-sub">images exportées depuis la base</div>
+          </div>
+          <div class="kpi-card orange">
+            <div class="kpi-label">Copies conservées</div>
+            <div class="kpi-val" id="backup-copy-count">—</div>
+            <div class="kpi-sub">rotation locale sur o2switch</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Historique des sauvegardes</div>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:16px">
+            Chaque sauvegarde contient le contenu du site, les utilisateurs, contacts, CRM et les photos stockées en base. Une tâche automatique tourne tous les jours à 02:17.
+          </p>
+          <div id="backup-list" class="msg-empty">Chargement…</div>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-logs">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Journaux d'audit</div>
+            <div class="card-actions">
+              <button class="sbtn sbtn-progress" onclick="loadAuditLogs()">Actualiser</button>
+            </div>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,.3);margin-bottom:16px">
+            Historique des 100 dernières actions — connexions, sauvegardes, uploads.
+          </p>
+          <div class="log-list" id="log-list">
+            <div class="msg-empty">Chargement…</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ CRM CONTACTS ══ -->
+      <div class="panel" id="panel-crm">
+
+        <!-- KPI -->
+        <div class="kpi-grid" style="grid-template-columns:repeat(2,1fr)">
+          <div class="kpi-card red">
+            <div class="kpi-label">Total contacts</div>
+            <div class="kpi-val" id="crm-kpi-total">0</div>
+            <div class="kpi-sub">dans le CRM</div>
+          </div>
+          <div class="kpi-card blue">
+            <div class="kpi-label">Abonnés newsletter</div>
+            <div class="kpi-val" id="crm-kpi-nl">0</div>
+            <div class="kpi-sub">avec email</div>
+          </div>
+        </div>
+
+        <!-- Onglets -->
+        <div class="tabs">
+          <button class="tab active" onclick="crmTab('contacts',this)">Contacts</button>
+          <button class="tab" onclick="crmTab('newsletter',this)">Newsletter</button>
+        </div>
+
+        <!-- ══ ONGLET CONTACTS ══ -->
+        <div id="crm-tab-contacts">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Base de contacts (rétention 10 ans)</div>
+              <div class="card-actions">
+                <button class="sbtn sbtn-progress" onclick="crmImport()">Importer demandes</button>
+                <button class="sbtn sbtn-done" onclick="crmAddModal()">＋ Ajouter contact</button>
+                <a href="/api/crm/export" class="sbtn" style="background:rgba(184,151,58,.1);color:#d4b96a;border:1px solid rgba(184,151,58,.2);text-decoration:none;padding:5px 11px;border-radius:6px;font-size:11px;font-weight:600">Export CSV</a>
+              </div>
+            </div>
+
+            <!-- Barre de recherche & filtres -->
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+              <input type="text" id="crm-search" placeholder="Rechercher nom, email, tél…"
+                oninput="loadCrm(1)"
+                style="flex:1;min-width:200px;padding:9px 13px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:13px;font-family:inherit;outline:none">
+              <select id="crm-filter-source" onchange="loadCrm(1)"
+                style="padding:9px 13px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:12px;font-family:inherit;outline:none">
+                <option value="">Toutes sources</option>
+                <option value="audience">Audience</option>
+                <option value="contact">Contact</option>
+                <option value="reclamation">Réclamation</option>
+                <option value="signalement">Signalement</option>
+                <option value="manuel">Manuel</option>
+              </select>
+              <select id="crm-filter-nl" onchange="loadCrm(1)"
+                style="padding:9px 13px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:12px;font-family:inherit;outline:none">
+                <option value="">Tous contacts</option>
+                <option value="oui">Abonnés newsletter</option>
+                <option value="non">Non abonnés</option>
+              </select>
+            </div>
+
+            <!-- Barre d'actions en masse -->
+            <div id="crm-bulk-bar" style="display:none;align-items:center;gap:10px;margin-bottom:12px;padding:10px 14px;background:rgba(200,16,46,.1);border:1px solid rgba(200,16,46,.2);border-radius:8px">
+              <span id="crm-bulk-count" style="font-size:13px;font-weight:600;color:var(--r)">0 sélectionné(s)</span>
+              <button onclick="crmBulkDelete()" style="padding:5px 12px;background:var(--r);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">Supprimer la sélection</button>
+              <button onclick="crmDeselectAll()" style="padding:5px 12px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1);border-radius:6px;font-size:12px;cursor:pointer">✕ Déselectionner</button>
+            </div>
+
+            <div id="crm-list"><div class="msg-empty">Chargement…</div></div>
+
+            <!-- Pagination CRM -->
+            <div id="crm-pagination" style="display:none;justify-content:center;align-items:center;gap:8px;margin-top:16px;flex-wrap:wrap">
+              <button id="crm-prev" onclick="crmChangePage(-1)" style="padding:6px 14px;background:var(--n3);border:1px solid rgba(255,255,255,.1);color:#fff;border-radius:6px;font-size:12px;cursor:pointer">← Précédent</button>
+              <span id="crm-page-info" style="font-size:12px;color:rgba(255,255,255,.4)">Page 1/1</span>
+              <button id="crm-next" onclick="crmChangePage(1)" style="padding:6px 14px;background:var(--n3);border:1px solid rgba(255,255,255,.1);color:#fff;border-radius:6px;font-size:12px;cursor:pointer">Suivant →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ONGLET NEWSLETTER ══ -->
+        <div id="crm-tab-newsletter" style="display:none">
+
+          <!-- Composer -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Composer une newsletter</div>
+            </div>
+            <div class="form-group">
+              <label>Destinataires</label>
+              <select id="nl-filtre" style="width:100%;padding:11px 13px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:14px;font-family:inherit;outline:none">
+                <option value="newsletter">Abonnés newsletter uniquement (recommandé)</option>
+                <option value="tous">Tous les contacts avec email</option>
+                <option value="audience">Tag : Audience</option>
+                <option value="contact">Tag : Contact</option>
+                <option value="reclamation">Tag : Réclamation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Objet du message</label>
+              <input type="text" id="nl-sujet" placeholder="Ex : Actualités du client YARO — Mars 2026"
+                style="width:100%;padding:11px 13px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:14px;font-family:inherit;outline:none">
+            </div>
+            <div class="form-group">
+              <label>Corps du message (HTML ou texte — <code style="color:#d4b96a">{{nom}}</code> sera remplacé par le prénom du destinataire)</label>
+              <textarea id="nl-corps" rows="10" placeholder="Bonjour {{nom}},&#10;&#10;Nous avons le plaisir de vous informer que…"
+                style="width:100%;padding:11px 13px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:13px;font-family:inherit;outline:none;resize:vertical;min-height:200px"></textarea>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <button onclick="nlSend()" id="btn-nl-send"
+                style="padding:12px 24px;background:var(--r);color:#fff;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit">
+                Envoyer la newsletter
+              </button>
+              <div id="nl-feedback" style="font-size:12px;display:none"></div>
+            </div>
+          </div>
+
+          <!-- Historique des newsletters -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Historique des envois</div>
+            </div>
+            <div id="nl-history"><div class="msg-empty">Aucune newsletter envoyée.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /main -->
+  <div class="admin-actionbar role-editeur" id="admin-actionbar" style="display:none" aria-label="Actions d'administration">
+    <div class="admin-actionbar-status">
+      <strong>Contenu du site</strong>
+      <span>Actions rapides et sauvegarde</span>
+    </div>
+    <div class="admin-actionbar-actions">
+      <button class="sb-btn sb-btn-primary" id="btn-save" onclick="saveData()">Enregistrer le contenu</button>
+      <button class="sb-btn sb-btn-soft" id="btn-reload-data" onclick="loadSiteData();showToast('Données rechargées')">Recharger les données</button>
+      <button class="sb-btn sb-btn-danger role-admin" id="btn-force-sync" style="display:none" onclick="forceSyncData()">Restaurer data.json</button>
+    </div>
+  </div>
+</div><!-- /app -->
+
+<div id="toast"></div>
+
+
+<!-- ══ MODAL : Ajouter / Modifier contact CRM ══ -->
+<div id="crm-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:3000;align-items:center;justify-content:center;overflow-y:auto">
+  <div style="background:#0e0e0e;border:1px solid rgba(200,16,46,.25);border-radius:16px;width:min(640px,95vw);max-height:90vh;overflow-y:auto;box-shadow:0 40px 120px rgba(0,0,0,.8);margin:20px auto">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;background:#0e0e0e;z-index:1">
+      <div style="font-size:15px;font-weight:700" id="crm-modal-title">Ajouter un contact</div>
+      <button onclick="closeCrmModal()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;border-radius:8px;padding:6px 14px;cursor:pointer;font-size:12px">✕ Fermer</button>
+    </div>
+    <div style="padding:24px">
+      <input type="hidden" id="crm-edit-id">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div class="form-group"><label>Nom *</label><input type="text" id="crm-f-nom" placeholder="DUPONT"></div>
+        <div class="form-group"><label>Prénom</label><input type="text" id="crm-f-prenom" placeholder="Jean"></div>
+        <div class="form-group"><label>Email</label><input type="email" id="crm-f-email" placeholder="jean@exemple.com"></div>
+        <div class="form-group"><label>Téléphone</label><input type="tel" id="crm-f-tel" placeholder="+242 06 123 45 67"></div>
+      </div>
+      <div class="form-group"><label>Sujet / Objet de la demande</label><input type="text" id="crm-f-sujet" placeholder="Demande d'audience, Signalement route…"></div>
+      <div class="form-group"><label>Message / Description</label><textarea id="crm-f-message" rows="4" placeholder="Détails du contact…"></textarea></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div class="form-group">
+          <label>Source</label>
+          <select id="crm-f-source" style="width:100%;padding:11px 13px;background:var(--n3);border:1px solid rgba(255,255,255,.08);border-radius:7px;color:#fff;font-size:14px;font-family:inherit;outline:none">
+            <option value="manuel">Manuel</option>
+            <option value="audience">Audience</option>
+            <option value="contact">Contact</option>
+            <option value="reclamation">Réclamation</option>
+            <option value="signalement">Signalement</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tags (virgule)</label>
+          <input type="text" id="crm-f-tags" placeholder="vip, ewo, projet-x">
+        </div>
+      </div>
+      <div class="form-group" style="display:flex;align-items:center;gap:10px">
+        <input type="checkbox" id="crm-f-nl" style="width:16px;height:16px;accent-color:var(--r)">
+        <label for="crm-f-nl" style="text-transform:none;font-size:13px;letter-spacing:0;color:rgba(255,255,255,.6)">Abonné à la newsletter</label>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:6px">
+        <button onclick="closeCrmModal()" class="sbtn sbtn-read">Annuler</button>
+        <button onclick="crmSave()" style="padding:10px 24px;background:var(--r);color:#fff;border:none;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MODAL : Détail contact CRM ══ -->
+<div id="crm-detail-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:3000;align-items:center;justify-content:center;overflow-y:auto">
+  <div style="background:#0e0e0e;border:1px solid rgba(200,16,46,.25);border-radius:16px;width:min(680px,95vw);max-height:90vh;overflow-y:auto;box-shadow:0 40px 120px rgba(0,0,0,.8);margin:20px auto">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;background:#0e0e0e;z-index:1">
+      <div style="font-size:15px;font-weight:700" id="crm-detail-title">Fiche contact</div>
+      <button onclick="closeCrmDetail()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;border-radius:8px;padding:6px 14px;cursor:pointer;font-size:12px">✕ Fermer</button>
+    </div>
+    <div id="crm-detail-body" style="padding:24px"></div>
+  </div>
+</div>
+
+<div id="file-browser-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:3000;align-items:center;justify-content:center">
+  <div style="background:#0e0e0e;border:1px solid rgba(200,16,46,.25);border-radius:16px;width:min(760px,95vw);max-height:85vh;display:flex;flex-direction:column;box-shadow:0 40px 120px rgba(0,0,0,.8)">
+    <!-- En-tête -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.06)">
+      <div>
+        <div style="font-size:15px;font-weight:700">Navigateur d'images</div>
+        <div id="fb-breadcrumb" style="font-size:11px;color:rgba(255,255,255,.3);margin-top:3px">images/</div>
+      </div>
+      <button onclick="closeBrowser()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;border-radius:8px;padding:6px 14px;cursor:pointer;font-size:12px">✕ Fermer</button>
+    </div>
+    <!-- Barre d'outils -->
+    <div style="padding:12px 24px;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:10px">
+      <button id="fb-back-btn" onclick="fbGoBack()" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.5);border-radius:7px;padding:5px 12px;cursor:pointer;font-size:12px" disabled>← Retour</button>
+      <span style="font-size:11px;color:rgba(255,255,255,.25)" id="fb-path-label">images/</span>
+    </div>
+    <!-- Grille de fichiers/dossiers -->
+    <div id="fb-grid" style="flex:1;overflow-y:auto;padding:16px 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;min-height:200px">
+      <div style="grid-column:1/-1;text-align:center;color:rgba(255,255,255,.25);padding:40px 0;font-size:13px">Chargement…</div>
+    </div>
+    <!-- Pied de page -->
+    <div style="padding:14px 24px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between">
+      <div id="fb-selected-preview" style="display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,.4)">Aucune image sélectionnée</div>
+      <button id="fb-confirm-btn" onclick="confirmBrowserSelection()" disabled style="background:#C8102E;color:#fff;border:none;border-radius:8px;padding:9px 22px;cursor:pointer;font-weight:700;font-size:13px;opacity:.4">Sélectionner</button>
+    </div>
+  </div>
+</div>
+
+<script src="static/admin.js?v=user-onclick-fix" defer></script>
+<script>
+/* ── YARO IA — Veille Juridique (panel-yaro-legal) ────────────────── */
+let _ylPage = 1, _ylDebTimer = null;
+
+function _yaroDebounce(){
+  clearTimeout(_ylDebTimer);
+  _ylDebTimer = setTimeout(()=>yaroLoadArticles(1), 400);
+}
+
+function yaroResetFilters(){
+  document.getElementById("yl-q").value="";
+  document.getElementById("yl-source").value="";
+  document.getElementById("yl-kw").value="";
+  yaroLoadArticles(1);
+}
+
+async function yaroLoadStats(){
+  try {
+    const r = await apiFetch("/api/yaro/stats",{headers:authHeaders()});
+    const d = await r.json();
+    if (!d.ok) {
+      document.getElementById("yl-kw-bars").innerHTML = `<span style="color:#ef4444;font-size:11px">${_ylEsc(d.message || "Statistiques indisponibles")}</span>`;
+      document.getElementById("yl-src-list").innerHTML = "<span style='color:rgba(255,255,255,.3);font-size:11px'>Sources indisponibles</span>";
+      return;
+    }
+
+    document.getElementById("yl-total").textContent   = d.total ?? 0;
+    document.getElementById("yl-today").textContent   = d.today ?? 0;
+    document.getElementById("yl-sources").textContent = (d.sources||[]).length;
+    const runBox = document.getElementById("yaro-last-run");
+    if (runBox && !d.last_run) {
+      runBox.style.display = "block";
+      document.getElementById("yl-last-run-ts").textContent = "Aucune veille lancée";
+    }
+
+    if (d.last_run){
+      document.getElementById("yl-last-run-ts").textContent = _ylFmtDate(d.last_run);
+      document.getElementById("yaro-last-run").style.display="block";
+    }
+
+    const kwBox = document.getElementById("yl-kw-bars");
+    const srcBox = document.getElementById("yl-src-list");
+    const sourceSelect = document.getElementById("yl-source");
+
+    // Keywords bars
+    const kw = Array.isArray(d.keywords) ? d.keywords : [];
+    const kwCounts = kw.map(k => Number(k.cnt || 0));
+    const maxK = Math.max(1, ...kwCounts);
+    const clrs = ["#4f8ef7","#22c55e","#f59e0b","#ef4444","#8b5cf6","#14b8a6"];
+    if (kwBox) {
+      kwBox.innerHTML = kw.map((k,i)=>{
+        const cnt = Number(k.cnt || 0);
+        const color = clrs[i % clrs.length];
+        return `<div style="margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px">
+            <span style="color:rgba(255,255,255,.5)">${_ylEsc(_ylCap(k.keyword))}</span>
+            <span style="font-weight:700;color:#fff">${cnt}</span>
+          </div>
+          <div style="background:rgba(255,255,255,.06);border-radius:99px;height:5px;overflow:hidden">
+            <div style="height:5px;border-radius:99px;width:${Math.max(4,cnt/maxK*100)}%;background:${color};transition:width .6s"></div>
+          </div>
+        </div>`;
+      }).join("") || "<span style='color:rgba(255,255,255,.3);font-size:11px'>Aucune donnée</span>";
+    }
+
+    // Sources
+    const sources = Array.isArray(d.sources) ? d.sources : [];
+    if (srcBox) {
+      srcBox.innerHTML = sources.map(s=>`
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 10px;background:rgba(255,255,255,.04);border-radius:8px;margin-bottom:6px;font-size:11px">
+          <span style="color:rgba(255,255,255,.7)">${_ylEsc(s.source)}</span>
+          <span style="color:#4f8ef7;font-weight:700">${Number(s.cnt || 0)}</span>
+        </div>`).join("") || "<span style='color:rgba(255,255,255,.3);font-size:11px'>Aucune source</span>";
+    }
+    if (sourceSelect && sources.length) {
+      const current = sourceSelect.value;
+      sourceSelect.innerHTML = `<option value="">Toutes les sources</option>` +
+        sources.map(s => `<option value="${_ylEsc(s.source)}">${_ylEsc(s.source)}</option>`).join("");
+      sourceSelect.value = sources.some(s => s.source === current) ? current : "";
+    }
+
+    // Badge sidebar
+    if ((d.today||0)>0){
+      const b=document.getElementById("badge-yaro-legal");
+      if(b){b.textContent=d.today;b.style.display="inline-block";}
+    }
+  } catch(e){
+    document.getElementById("yl-kw-bars").innerHTML = "<span style='color:#ef4444;font-size:11px'>Impossible de charger la veille juridique.</span>";
+    document.getElementById("yl-src-list").innerHTML = "<span style='color:rgba(255,255,255,.3);font-size:11px'>Vérifiez la connexion serveur.</span>";
+  }
+}
+
+async function yaroLoadArticles(page=1){
+  _ylPage=page;
+  const q   = encodeURIComponent((document.getElementById("yl-q")||{}).value||"");
+  const src = encodeURIComponent((document.getElementById("yl-source")||{}).value||"");
+  const kw  = encodeURIComponent((document.getElementById("yl-kw")||{}).value||"");
+  const url = `/api/yaro/articles?page=${page}&limit=15&q=${q}&source=${src}&keyword=${kw}`;
+
+  document.getElementById("yl-tbody").innerHTML =
+    `<tr><td colspan="5" style="text-align:center;padding:24px;color:rgba(255,255,255,.3);font-size:12px">Chargement…</td></tr>`;
+  try {
+    const r = await apiFetch(url,{headers:authHeaders()});
+    const d = await r.json();
+    if (!d.ok) {
+      document.getElementById("yl-tbody").innerHTML =
+        `<tr><td colspan="5" style="text-align:center;padding:32px;color:#ef4444;font-size:12px">${_ylEsc(d.message || "Impossible de charger les articles")}</td></tr>`;
+      return;
+    }
+
+    document.getElementById("yl-cnt").textContent = d.total;
+    document.getElementById("yl-tbl-info").textContent =
+      `Page ${d.page}/${d.pages} · ${d.total} résultat${d.total>1?"s":""}`;
+
+    if (!d.articles.length){
+      document.getElementById("yl-tbody").innerHTML=
+        `<tr><td colspan="5">
+          <div class="yaro-empty">
+            <strong>Aucun bulletin juridique pour le moment</strong>
+            <span>Lancez une veille pour générer des bulletins. Si aucune clé IA n'est disponible, le serveur produira quand même des résultats locaux structurés pour ne pas laisser le module vide.</span>
+          </div>
+        </td></tr>`;
+    } else {
+      document.getElementById("yl-tbody").innerHTML = d.articles.map(a=>{
+        const kws=(a.keywords||"").split(",").filter(Boolean);
+        const chips=kws.map(k=>`<span style="display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:600;margin:1px;background:rgba(79,142,247,.12);color:#4f8ef7">${_ylCap(k.trim())}</span>`).join("");
+        const orig=(a.lang_orig&&a.lang_orig!=="fr"&&a.titre&&a.titre!==a.titre_fr)
+          ?`<div style="font-size:10px;color:rgba(255,255,255,.3);font-style:italic;margin-top:2px">${_ylEsc(a.titre)}</div>`:"";
+        return `<tr style="border-bottom:1px solid rgba(255,255,255,.05)">
+          <td style="padding:11px 14px;white-space:nowrap">
+            <span style="display:inline-block;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:600;background:rgba(79,142,247,.12);color:#4f8ef7">${_ylEsc(a.source)}</span>
+          </td>
+          <td style="padding:11px 14px;max-width:320px">
+            <div style="font-size:12px;font-weight:500;line-height:1.4;color:#e2e8f0">${_ylEsc(a.titre_fr||a.titre)}</div>
+            ${orig}
+          </td>
+          <td style="padding:11px 14px">${chips||"—"}</td>
+          <td style="padding:11px 14px;white-space:nowrap;font-size:11px;color:rgba(255,255,255,.35)">${_ylFmtDate(a.ts)}</td>
+          <td style="padding:11px 14px;text-align:right;white-space:nowrap">
+            <a href="${_ylEsc(a.url)}" target="_blank" rel="noopener"
+              style="display:inline-block;padding:4px 10px;border:1px solid rgba(79,142,247,.3);border-radius:6px;color:#4f8ef7;font-size:11px;text-decoration:none">↗</a>
+            <button onclick="yaroDelArticle(${a.id})"
+              style="padding:4px 8px;background:transparent;border:1px solid transparent;border-radius:6px;color:rgba(255,255,255,.25);font-size:11px;cursor:pointer;margin-left:2px"
+              onmouseover="this.style.color='#ef4444';this.style.borderColor='rgba(239,68,68,.3)'"
+              onmouseout="this.style.color='rgba(255,255,255,.25)';this.style.borderColor='transparent'">Supprimer</button>
+          </td>
+        </tr>`;
+      }).join("");
+    }
+
+    // Pagination
+    let pag="";
+    pag+=`<button onclick="yaroLoadArticles(${page-1})" ${page<=1?"disabled":""} style="padding:4px 10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;color:${page<=1?"rgba(255,255,255,.2)":"#fff"};font-size:11px;cursor:pointer">‹</button>`;
+    const s=Math.max(1,page-2),e=Math.min(d.pages,page+2);
+    for(let p=s;p<=e;p++)
+      pag+=`<button onclick="yaroLoadArticles(${p})" style="padding:4px 10px;background:${p===page?"var(--r)":"rgba(255,255,255,.05)"};border:1px solid ${p===page?"var(--r)":"rgba(255,255,255,.1)"};border-radius:6px;color:#fff;font-size:11px;cursor:pointer">${p}</button>`;
+    pag+=`<button onclick="yaroLoadArticles(${page+1})" ${page>=d.pages?"disabled":""} style="padding:4px 10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;color:${page>=d.pages?"rgba(255,255,255,.2)":"#fff"};font-size:11px;cursor:pointer">›</button>`;
+    document.getElementById("yl-pag-btns").innerHTML=pag;
+    document.getElementById("yl-pag-info").textContent=`Page ${d.page} sur ${d.pages}`;
+  } catch(e){
+    document.getElementById("yl-tbody").innerHTML =
+      `<tr><td colspan="5" style="text-align:center;padding:32px;color:#ef4444;font-size:12px">Erreur réseau pendant le chargement.</td></tr>`;
+  }
+}
+
+async function yaroDelArticle(id){
+  if(!confirm("Supprimer cet article ?")) return;
+  try {
+    const r = await apiFetch("/api/yaro/article",{method:"POST",headers:authHeaders(),body:JSON.stringify({id})});
+    const d = await r.json();
+    if(d.ok){yaroLoadArticles(_ylPage);yaroLoadStats();showToast("Article supprimé");}
+    else showToast(d.message || "Suppression impossible", true);
+  } catch(e) {
+    showToast("Erreur réseau", true);
+  }
+}
+
+async function yaroRunScraper(){
+  const btn = document.getElementById("yaro-btn-run");
+  btn.disabled=true;
+  btn.classList.add("is-saving");
+  btn.textContent="Analyse juridique en cours…";
+  try {
+    const r = await apiFetch("/api/yaro/run",{method:"POST",headers:authHeaders(),body:"{}"});
+    const d = await r.json();
+    if(d.ok) {
+      showToast(d.message || "Veille lancée");
+      await yaroLoadStats();
+      await yaroLoadArticles(1);
+    } else {
+      showToast(d.message || "Veille indisponible", true);
+    }
+  } catch(e){
+    showToast("Erreur réseau pendant la veille", true);
+  } finally {
+    setTimeout(()=>{
+      btn.disabled=false;
+      btn.classList.remove("is-saving");
+      btn.textContent="Lancer la veille";
+    },800);
+  }
+}
+
+// Déclenche le chargement quand le panel s'ouvre
+document.addEventListener("DOMContentLoaded",()=>{
+  const orig = typeof showPanel==="function" ? showPanel : null;
+  if(orig){
+    window._origShowPanel = orig;
+    window.showPanel = function(name,...args){
+      window._origShowPanel(name,...args);
+      if(name==="yaro-legal"){ yaroLoadStats(); yaroLoadArticles(1); }
+    };
+  }
+});
+
+function _ylFmtDate(ts){
+  if(!ts) return "—";
+  try{
+    const d=new Date(ts.replace(" ","T")+"Z");
+    return d.toLocaleDateString("fr-FR",{day:"2-digit",month:"short",year:"numeric"});
+  }catch{return ts;}
+}
+function _ylCap(s){return s?s.charAt(0).toUpperCase()+s.slice(1):""}
+function _ylEsc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+</script>
+</body>
+</html>

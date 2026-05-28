@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+.venv/
+*.pyc
+*.pyo
+.env
+
+# Backups automatiques du serveur
+data_backup_*.json
+backups/
+
+# Certificats SSL
+cert.pem
+key.pem
+
+# Logs
+logs/
+*.log
+
+# Photos sinistres (uploadées par les citoyens, non versionnées)
+images/sinistres/*
+!images/sinistres/.gitkeep
+
+# Sessions runtime
+sessions.json
+
+# Données runtime (générées au démarrage, non versionnées)
+users.json
+contacts.json
+crm.json
+news_monitor.json
+blocked_ips.json
+attack_scores.json
+audit.log
+attacks.log
+data/ai_guard_state.json
+
+# PID files
+*.pid
+
+# OS
+.DS_Store
+Thumbs.db
+editorial.json
+monitoring.db
+monitoring.db-shm
+monitoring.db-wal
+news.db
+youtube.json
+
+# Heavy client media stays outside git
+images/video/*.mp4
