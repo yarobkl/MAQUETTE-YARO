@@ -179,8 +179,8 @@ const I18N = {
 
     // ── Vidéo ────────────────────────────────────────────────────
     "video.tag":        "La maquette en action",
-    "video.title":      "Discours &amp; terrain",
-    "video.title.accent":"terrain",
+    "video.title":      "Homme du peuple",
+    "video.title.accent":"peuple",
     "video.desc":       "Suivez les interventions, contenus et actions de terrain de la maquette Romi Oyo.",
     "video.un.badge":   " Nations Unies · UN WebTV",
     "video.un.title":   "YARO devant le Conseil des droits de l'homme — ONU",
@@ -409,8 +409,8 @@ const I18N = {
     "pub.order.success":        " Order registered! Our team will contact you within 48h.",
 
     "video.tag":        "The Romi Oyo in action",
-    "video.title":      "Speeches &amp; fieldwork",
-    "video.title.accent":"fieldwork",
+    "video.title":      "Man of the people",
+    "video.title.accent":"people",
     "video.desc":       "Follow the interventions, speeches and fieldwork of Romi Oyo, Institutional leader and Member of Parliament for the Ouenzé constituency.",
     "video.un.badge":   " United Nations · UN WebTV",
     "video.un.title":   "YARO before the Human Rights Council — UN",
@@ -635,8 +635,8 @@ const I18N = {
     "pub.order.success":        " ¡Pedido registrado! Nuestro equipo le contactará en 48h.",
 
     "video.tag":        "El Diputado en acción",
-    "video.title":      "Discursos &amp; terreno",
-    "video.title.accent":"terreno",
+    "video.title":      "Hombre del pueblo",
+    "video.title.accent":"pueblo",
     "video.desc":       "Siga las intervenciones, discursos y acciones de campo de Romi Oyo, Ministro de Justicia y Diputado de la circunscripción de Ouenzé.",
     "video.un.badge":   " Naciones Unidas · UN WebTV",
     "video.un.title":   "YARO ante el Consejo de Derechos Humanos — ONU",
@@ -861,8 +861,8 @@ const I18N = {
     "pub.order.success":        " 订单已登记！我们的团队将在48小时内与您联系。",
 
     "video.tag":        "议员的行动",
-    "video.title":      "演讲 &amp; 实地工作",
-    "video.title.accent":"实地工作",
+    "video.title":      "人民之友",
+    "video.title.accent":"人民",
     "video.desc":       "关注安热·艾梅·威尔弗里德·YARO的发言、演讲和实地行动——他既是印玺保管人、司法部长，也是埃沃选区议员。",
     "video.un.badge":   " 联合国 · UN WebTV",
     "video.un.title":   "YARO在联合国人权理事会上发言",
@@ -1087,8 +1087,8 @@ const I18N = {
     "pub.order.success":        " Заказ зарегистрирован! Наша команда свяжется с вами в течение 48 часов.",
 
     "video.tag":        "Депутат в действии",
-    "video.title":      "Речи &amp; полевая работа",
-    "video.title.accent":"полевая работа",
+    "video.title":      "Человек народа",
+    "video.title.accent":"народа",
     "video.desc":       "Следите за выступлениями, речами и полевой деятельностью Анж Эме Вильфрид YARO — хранителя печатей, министра юстиции и депутата округа Эво.",
     "video.un.badge":   " Организация Объединённых Наций · UN WebTV",
     "video.un.title":   "YARO перед Советом ООН по правам человека",
