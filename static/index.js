@@ -1,5 +1,6 @@
 
-const IMG = "images/yaro.jpg.jpg";
+const IMG = "images/romi-oyo.png";
+const THEME_STORAGE_KEY = "maquette_theme";
 function escHtml(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 function cleanLabel(s){
   return String(s || "")
@@ -42,6 +43,85 @@ function safeCta(href) {
   if (/^(https?:\/\/|\/|#|mailto:)/i.test(h)) return h;
   return null; // bloque javascript:, data:, etc.
 }
+
+function getPreferredMaquetteTheme() {
+  try {
+    const saved = localStorage.getItem(THEME_STORAGE_KEY);
+    if (saved === "light" || saved === "dark") return saved;
+  } catch (_) {}
+  return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+function setMaquetteTheme(theme) {
+  const next = theme === "light" ? "light" : "dark";
+  document.documentElement.classList.remove("theme-light-preload");
+  document.body.classList.toggle("theme-light", next === "light");
+  document.body.dataset.theme = next;
+  try { localStorage.setItem(THEME_STORAGE_KEY, next); } catch (_) {}
+  document.querySelectorAll("[data-theme-label]").forEach(el => {
+    el.textContent = next === "light" ? "Nuit" : "Jour";
+  });
+  document.querySelectorAll(".side-theme-toggle").forEach(btn => {
+    btn.setAttribute("aria-label", next === "light" ? "Passer en mode nuit" : "Passer en mode jour");
+  });
+}
+
+function toggleMaquetteTheme() {
+  const current = document.body.classList.contains("theme-light") ? "light" : "dark";
+  setMaquetteTheme(current === "light" ? "dark" : "light");
+}
+
+function setSideDrawerOpen(open) {
+  const drawer = document.getElementById("sideDrawer");
+  if (!drawer) return;
+  const shouldOpen = !!open;
+  drawer.classList.toggle("open", shouldOpen);
+  const handle = drawer.querySelector(".side-drawer-handle");
+  if (handle) {
+    handle.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+    handle.setAttribute("aria-label", shouldOpen ? "Fermer les raccourcis" : "Ouvrir les raccourcis");
+  }
+}
+
+function closeSideDrawer() { setSideDrawerOpen(false); }
+function toggleSideDrawer() {
+  const drawer = document.getElementById("sideDrawer");
+  setSideDrawerOpen(!(drawer && drawer.classList.contains("open")));
+}
+
+function cycleI18nLanguage() {
+  const langs = ["fr", "en", "es", "zh", "ru"];
+  const current = window._currentLang || localStorage.getItem("site_lang") || "fr";
+  const next = langs[(langs.indexOf(current) + 1 + langs.length) % langs.length];
+  if (typeof applyI18n === "function") applyI18n(next);
+  document.querySelectorAll("[data-lang-cycle-code]").forEach(el => {
+    el.textContent = next.toUpperCase();
+  });
+}
+
+window.toggleMaquetteTheme = toggleMaquetteTheme;
+window.closeSideDrawer = closeSideDrawer;
+window.toggleSideDrawer = toggleSideDrawer;
+window.cycleI18nLanguage = cycleI18nLanguage;
+
+document.addEventListener("DOMContentLoaded", () => {
+  setMaquetteTheme(getPreferredMaquetteTheme());
+  const drawer = document.getElementById("sideDrawer");
+  if (drawer) {
+    drawer.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener("click", closeSideDrawer));
+  }
+});
+
+document.addEventListener("click", e => {
+  const drawer = document.getElementById("sideDrawer");
+  if (!drawer || !drawer.classList.contains("open")) return;
+  if (drawer.contains(e.target)) return;
+  closeSideDrawer();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeSideDrawer();
+});
 
 // ── CHARGEMENT DU CONTENU DEPUIS data.json (synchronisé avec l'admin) ─────
 function loadContent() {
@@ -152,9 +232,9 @@ function loadContent() {
       // Parcours (timeline)
       const PARCOURS_DEFAULT = [
         { side:"left",  emoji:"01", year:"Formation",        title:"Doctorat en droit & Espace admin privé",                                tag:"Juriste",                            desc:"Site public premium, YARO Maquette bâtit une carrière de cadre supérieur de l'État au sein de la Direction générale du Trésor public, avant de rejoindre celle de la Santé comme conseiller stratégique du responsable." },
-        { side:"right", emoji:"02", year:"Engagement politique", title:"Adhésion au Votre organisation & premières actions",                                          tag:"Votre organisation",                                desc:"Militant du Votre organisation, il s'engage activement dans la vie politique d'votre territoire et de la Zone client, portant les aspirations de sa communauté." },
+        { side:"right", emoji:"02", year:"Engagement institutionnel", title:"Adhésion au Votre organisation & premières actions",                                          tag:"Votre organisation",                                desc:"Militant du Votre organisation, il s'engage activement dans la vie institutionnel d'votre territoire et de la Zone client, portant les aspirations de sa communauté." },
         { side:"left",  emoji:"03", year:"2016",               title:"CRM intégré et de la Réforme de l'État",                    tag:"Ministère de la Fonction publique",  desc:"Nommé par le Président de la République au sein du premier gouvernement de la nouvelle République, il porte la modernisation de l'administration publique et l'emploi des jeunes, piliers de la diversification économique nationale." },
-        { side:"right", emoji:"04", year:"19 août 2017",      title:"Élu Projet institutionnel de démonstration",                                    tag:"Assemblée Nationale",               desc:"Il est élu Client de la 1re circonscription électorale d'votre territoire (département de la Zone client) le 19 août 2017, représentant sa communauté à l'Organisation cliente." },
+        { side:"right", emoji:"04", year:"19 août 2017",      title:"Élu Projet institutionnel de démonstration",                                    tag:"organisation cliente",               desc:"Il est élu Client de la 1re zone client électorale d'votre territoire (département de la Zone client) le 19 août 2017, représentant sa communauté à l'Organisation cliente." },
         { side:"left",  emoji:"05", year:"2018",               title:"Admin complet & Haute Autorité anti-corruption",                        tag:"Confiance renouvelée",               desc:"En tant que Admin complet, il pilote l'adoption par 107 clients de la loi créant la Haute Autorité de lutte contre la corruption (2018), institution indépendante dotée du droit de saisine directe des instances judiciaires." },
         { side:"right", emoji:"06", year:"Aujourd'hui",        title:"Admin complet", tag:"Equipe projet", desc:"À ce poste clé du gouvernement, il incarne la diplomatie judiciaire du votre pays, notamment avec la renégociation en février 2026 à Paris de la convention de coopération judiciaire votre pays-France — accord vieux de plus de 50 ans, renouvelé sur de nouvelles bases modernes." },
         { side:"left",  emoji:"07", year:"Législatives 2027",  title:"Candidat pour votre territoire · Campagne 2027",                                             tag:"Campagne en cours",                  desc:"Plus motivé que jamais, fort de son expérience gouvernementale, il se présente aux prochaines élections législatives avec un programme ambitieux pour votre territoire et le votre pays." }
@@ -852,8 +932,8 @@ function fSub(e, f) {
   const isRecl = objet.normalize("NFC") === "R\u00e9clamation";
 
   if (isRecl) {
-    const desc = document.getElementById("desc-sinistre").value.trim();
-    if (!desc) { alert("Veuillez décrire le sinistre ou problème à signaler."); return; }
+    const desc = document.getElementById("desc-demande").value.trim();
+    if (!desc) { alert("Veuillez décrire la demande ou le projet à traiter."); return; }
   } else {
     const raison = document.getElementById("raison-text").value.trim();
     if (!raison) { alert("Veuillez rédiger la raison de votre demande."); return; }
@@ -900,7 +980,7 @@ function toggleGeoFields(sel) {
     ? "Envoyer le signalement" : "Soumettre ma demande";
 }
 
-function localizeSinistre() {
+function localizeDemande() {
   if (!navigator.geolocation) {
     alert("La géolocalisation n'est pas disponible sur cet appareil.");
     return;
@@ -964,7 +1044,7 @@ function localizeSinistre() {
   );
 }
 
-async function handleSinistrePhoto(input) {
+async function handleDemandePhoto(input) {
   const file = input.files[0];
   if (!file) return;
   const preview = document.getElementById("photo-preview");
@@ -985,13 +1065,13 @@ async function handleSinistrePhoto(input) {
         return;
       }
       const fd = new FormData();
-      fd.append("file", blob, "sinistre.jpg");
+      fd.append("file", blob, "demande.jpg");
       try {
-        const res  = await fetch("/api/upload-sinistre", { method: "POST", body: fd });
+        const res  = await fetch("/api/upload-demande", { method: "POST", body: fd });
         const data = await res.json();
         if (data.ok) {
           document.getElementById("photo-url").value = data.path;
-          preview.innerHTML = `<img src="${data.path}" alt="Photo du sinistre">
+          preview.innerHTML = `<img src="${data.path}" alt="Photo ou document visuel">
             <div style="font-size:11px;color:#2ecc71;margin-top:4px;font-weight:600">Photo enregistrée</div>`;
         } else {
           preview.innerHTML = `<div class="photo-loader" style="color:#e74c3c">${escHtml(data.message || "Erreur d'envoi")}</div>`;
@@ -1012,11 +1092,40 @@ function fCt(e, f) {
     "Message envoyé — Réponse sous 24h");
 }
 
+// ── RUBRIQUES LONGUES HORS FIL PRINCIPAL ─────────────────
+const ROUTE_SECTIONS = new Set(["publication", "galerie", "actu"]);
+
+function updateRouteSections() {
+  const key = (location.hash || "").replace("#", "").split("?")[0];
+  document.body.classList.remove(
+    "route-page-active",
+    "route-page-publication",
+    "route-page-galerie",
+    "route-page-actu"
+  );
+  if (ROUTE_SECTIONS.has(key)) {
+    document.body.classList.add("route-page-active", "route-page-" + key);
+  }
+  const target = document.getElementById(key || "hero");
+  if (target) setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 30);
+}
+
 // ── SMOOTH SCROLL ANCRES ─────────────────────────────────
 document.querySelectorAll("a[href^='#']").forEach(a => a.addEventListener("click", e => {
-  const t = document.querySelector(a.getAttribute("href"));
-  if(t){ e.preventDefault(); t.scrollIntoView({behavior:"smooth", block:"start"}); }
+  const href = a.getAttribute("href");
+  const key = (href || "").replace("#", "").split("?")[0];
+  if (ROUTE_SECTIONS.has(key)) {
+    e.preventDefault();
+    if (location.hash === href) updateRouteSections();
+    else location.hash = href;
+    return;
+  }
+  const t = document.querySelector(href);
+  if(t){ e.preventDefault(); location.hash = href; updateRouteSections(); }
 }));
+
+window.addEventListener("hashchange", updateRouteSections);
+updateRouteSections();
 
 // ── PAGE LOADER ───────────────────────────────────────────
 window.addEventListener("load", () => {
@@ -1119,15 +1228,15 @@ function showOrderForm() {
   document.getElementById("achat-step-2").style.display = "block";
 }
 function trackBuy(platform) {
-  try { window.plausible && window.plausible("Achat Livre", { props: { plateforme: platform } }); } catch(_){}
-  try { const l=JSON.parse(localStorage.getItem("yaro_livre_clics")||"[]"); l.push({platform,_date:new Date().toLocaleString("fr-FR")}); localStorage.setItem("yaro_livre_clics",JSON.stringify(l)); } catch(_){}
+  try { window.plausible && window.plausible("Achat Démo", { props: { plateforme: platform } }); } catch(_){}
+  try { const l=JSON.parse(localStorage.getItem("yaro_démo_clics")||"[]"); l.push({platform,_date:new Date().toLocaleString("fr-FR")}); localStorage.setItem("yaro_démo_clics",JSON.stringify(l)); } catch(_){}
 }
 async function submitOrder(e, f) {
   e.preventDefault();
   const btn = document.getElementById("order-btn");
   btn.disabled = true; btn.textContent = "⏳ Envoi…";
   const fd = new FormData(f);
-  const entry = { type:"yaro_commande_livre", livre:"Les mutations constitutionnelles en Afrique noire francophone", _date: new Date().toLocaleString("fr-FR"), _id: Date.now()+"-"+Math.random().toString(36).slice(2,8) };
+  const entry = { type:"yaro_demande_demo", démo:"Site client administrable", _date: new Date().toLocaleString("fr-FR"), _id: Date.now()+"-"+Math.random().toString(36).slice(2,8) };
   fd.forEach((v,k) => { entry[k] = v; });
   trackBuy("bureau");
   try { await fetch("/api/contact",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entry)}); } catch(_){}

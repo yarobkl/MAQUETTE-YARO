@@ -1,669 +1,475 @@
 {
   "hero": {
-    "firstName": "YARO",
-    "lastName": "MAQUETTE",
-    "eyebrow": "Démo commerciale · site + espace admin",
-    "role": "Site institutionnel premium pour élus, cabinets, associations et personnalités publiques",
-    "slogan": "Un site vitrine <em>premium</em>.<br>Un admin <em>simple</em> pour tout gérer.",
-    "subtitle": "Cette maquette montre ce que YARO peut livrer à un client : présence digitale, contenus, formulaires, CRM, sécurité et tableau de bord privé.",
-    "btn1": "🤝 Demander une démo",
-    "btn2": "Voir les modules"
+    "firstName": "ROMI",
+    "lastName": "OYO",
+    "eyebrow": "République du Congo · Ouenzé 3 · Campagne législative",
+    "role": "Député de la troisième circonscription de Ouenzé · PCT",
+    "slogan": "La proximité <em>terrain</em>.<br>Le dialogue <em>direct</em> avec les habitants.",
+    "subtitle": "Une maquette institutionnelle complète pour présenter un élu, ses actions, son programme, ses actualités, ses demandes d’audience et son espace admin.",
+    "btn1": "Demande d’audience",
+    "btn2": "Lire le programme"
   },
   "about": {
-    "sectionTag": "La solution",
-    "badgeNum": "100%",
-    "badgeLbl": "Administrable",
-    "title": "Une maquette prête à <span class=\"r\">vendre</span>",
-    "intro": "Maquette YARO est un démonstrateur complet pour présenter un site institutionnel moderne avec espace admin privé. Le client peut publier ses contenus, suivre les demandes, gérer ses contacts et garder une présence professionnelle sans dépendre d’un développeur au quotidien.",
+    "sectionTag": "Biographie",
+    "badgeNum": "Ouenzé 3",
+    "badgeLbl": "Circonscription",
+    "title": "Romi Oyo, une présence <span class=\"r\">de terrain</span>",
+    "intro": "Romi Oyo est député congolais de la troisième circonscription de Ouenzé à Brazzaville, membre du Parti Congolais du Travail (PCT), connu pour son implication politique et sociale auprès des populations locales.",
     "paragraphs": [
-      "Le site public est pensé pour inspirer confiance dès la première visite : identité forte, biographie ou présentation, actualités, programme, galerie, vidéos, formulaire de contact et appels à l’action clairs.",
-      "L’espace admin permet de modifier les contenus, traiter les messages, gérer les demandes d’audience, organiser un CRM, consulter les logs, sauvegarder les données et suivre l’activité du site.",
-      "La base technique est duplicable pour plusieurs clients. Chaque client dispose de ses propres accès, de sa base de données, de ses images, de son domaine et de son URL admin secrète.",
-      "Cette maquette sert de support commercial : elle permet de montrer concrètement le rendu final avant de personnaliser les textes, les photos, les couleurs et les modules selon le client."
+      "Son parcours public s’inscrit d’abord dans l’ancrage municipal à Ouenzé, notamment auprès des quartiers 56 et 57, avant son engagement parlementaire à l’Assemblée nationale.",
+      "Sa communication politique met en avant le contact direct avec les habitants : rencontres de proximité, échanges dans les parcelles, écoute des préoccupations quotidiennes et remontée des besoins locaux.",
+      "Les sujets régulièrement associés à son action concernent l’insalubrité, l’absence de canalisations, le chômage des jeunes, la sécurité, ainsi que l’accompagnement social des personnes âgées, des malades et des publics vulnérables.",
+      "Cette version maquette reprend la structure complète du projet Bininga : site public, actualités, galerie, programme, formulaires, suivi, chatbot, espace admin et base prête à personnaliser pour un client politique ou institutionnel."
     ],
     "badges": [
-      "🌐 Site public premium",
-      "🔐 Admin privé",
-      "📩 Formulaires",
-      "📇 CRM",
-      "🖼️ Galerie",
-      "📊 Suivi et sécurité"
+      "Député de Ouenzé 3",
+      "PCT",
+      "Proximité terrain",
+      "Action sociale",
+      "Demandes d’audience",
+      "Espace admin"
     ]
   },
   "stats": [
     {
-      "num": "1",
-      "label": "Site public"
+      "num": "3",
+      "label": "Circonscription de Ouenzé"
+    },
+    {
+      "num": "56",
+      "label": "Quartiers 56 et 57"
     },
     {
       "num": "1",
-      "label": "Espace admin"
-    },
-    {
-      "num": "∞",
-      "label": "Clients duplicables"
+      "label": "Espace admin complet"
     }
   ],
   "actus": {
     "slides": [
       {
-        "image": "images/IMG_9963.webp",
-        "alt": "Maquette YARO — actualité de démonstration",
+        "image": "images/romi-oyo.png",
+        "alt": "Romi Oyo — maquette institutionnelle",
         "chipColor": "#1a237e",
-        "chip": "Démo client",
-        "date": "Maquette YARO",
-        "title": "Actualité personnalisable pour votre client",
-        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
-        "source": "Maquette YARO",
-        "sourceUrl": ""
+        "chip": "Ouenzé 3",
+        "date": "Mars 2026",
+        "title": "À Ouenzé, Romi Oyo privilégie le contact direct avec les électeurs",
+        "subtitle": "Une approche de proximité fondée sur les échanges directs, l’écoute et le dialogue avec les habitants.",
+        "source": "24 News Agency",
+        "sourceUrl": "https://24newsagency.com/congo-a-ouenze-le-depute-romi-oyo-privilegie-le-contact-direct-avec-les-electeurs/"
       },
       {
-        "image": "images/ewo.jpg",
-        "alt": "Maquette YARO — actualité de démonstration",
+        "image": "images/_1.jpeg",
+        "alt": "Romi Oyo — maquette institutionnelle",
         "chipColor": "#e65100",
-        "chip": "Démo client",
-        "date": "Maquette YARO",
-        "title": "Actualité personnalisable pour votre client",
-        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "chip": "Actualité",
+        "date": "Maquette",
+        "title": "Actualité personnalisable depuis l’espace admin",
+        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
         "source": "Maquette YARO",
         "sourceUrl": ""
       },
       {
-        "image": "images/rwanda.JPG",
-        "alt": "Maquette YARO — actualité de démonstration",
+        "image": "images/_2.jpeg",
+        "alt": "Romi Oyo — maquette institutionnelle",
         "chipColor": "#1565C0",
-        "chip": "Démo client",
-        "date": "Maquette YARO",
-        "title": "Actualité personnalisable pour votre client",
-        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "chip": "Actualité",
+        "date": "Maquette",
+        "title": "Actualité personnalisable depuis l’espace admin",
+        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
         "source": "Maquette YARO",
         "sourceUrl": ""
       },
       {
-        "image": "images/yaro.jpg.jpg",
-        "alt": "Maquette YARO — actualité de démonstration",
+        "image": "images/_4.jpeg",
+        "alt": "Romi Oyo — maquette institutionnelle",
         "chipColor": "#2e7d32",
-        "chip": "Démo client",
-        "date": "Maquette YARO",
-        "title": "Actualité personnalisable pour votre client",
-        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "chip": "Actualité",
+        "date": "Maquette",
+        "title": "Actualité personnalisable depuis l’espace admin",
+        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
         "source": "Maquette YARO",
         "sourceUrl": ""
       },
       {
-        "image": "images/partenaire institutionnel.jpeg",
-        "alt": "Maquette YARO — actualité de démonstration",
+        "image": "images/_5.jpeg",
+        "alt": "Romi Oyo — maquette institutionnelle",
         "chipColor": "",
-        "chip": "Démo client",
-        "date": "Maquette YARO",
-        "title": "Actualité personnalisable pour votre client",
-        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "chip": "Actualité",
+        "date": "Maquette",
+        "title": "Actualité personnalisable depuis l’espace admin",
+        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
         "source": "Maquette YARO",
         "sourceUrl": ""
       },
       {
-        "image": "images/yaro.jpg.jpg",
-        "alt": "Maquette YARO — actualité de démonstration",
+        "image": "images/_6.jpeg",
+        "alt": "Romi Oyo — maquette institutionnelle",
         "chipColor": "",
-        "chip": "Démo client",
-        "date": "Maquette YARO",
-        "title": "Actualité personnalisable pour votre client",
-        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "chip": "Actualité",
+        "date": "Maquette",
+        "title": "Actualité personnalisable depuis l’espace admin",
+        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
         "source": "Maquette YARO",
         "sourceUrl": ""
       },
       {
-        "image": "images/yaro.jpg.jpg",
-        "alt": "Maquette YARO — actualité de démonstration",
+        "image": "images/_7.jpeg",
+        "alt": "Romi Oyo — maquette institutionnelle",
         "chipColor": "#2e7d32",
-        "chip": "Démo client",
-        "date": "Maquette YARO",
-        "title": "Actualité personnalisable pour votre client",
-        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "chip": "Actualité",
+        "date": "Maquette",
+        "title": "Actualité personnalisable depuis l’espace admin",
+        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
         "source": "Maquette YARO",
         "sourceUrl": ""
       },
       {
-        "image": "images/yaro.jpg.jpg",
-        "alt": "Maquette YARO — actualité de démonstration",
+        "image": "images/_8.jpeg",
+        "alt": "Romi Oyo — maquette institutionnelle",
         "chipColor": "#1a237e",
-        "chip": "Démo client",
-        "date": "Maquette YARO",
-        "title": "Actualité personnalisable pour votre client",
-        "subtitle": "Ce bloc peut devenir une annonce, une action terrain, un communiqué, un projet ou une publication institutionnelle.",
+        "chip": "Actualité",
+        "date": "Maquette",
+        "title": "Actualité personnalisable depuis l’espace admin",
+        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
         "source": "Maquette YARO",
         "sourceUrl": ""
       }
     ],
     "vedettes": [
       {
-        "image": "images/rwanda.JPG",
+        "image": "images/_1.jpeg",
         "imageBg": "",
         "placeholderEmoji": "🇷🇼",
         "placeholderTitle": "partenaire régional × votre pays",
         "placeholderDate": "12 déc. 2025",
         "badgeColor": "#1565C0",
-        "badge": "🌍 Diplomatie",
+        "badge": "Terrain",
         "tagColor": "#1976D2",
-        "tag": "Coopération judiciaire partenaire régional–votre pays",
-        "date": "📅 12 Décembre 2025 · Brazzaville",
-        "title": "L'Ambassadeur du partenaire régional rend visite au Responsable YARO pour renforcer la coopération judiciaire bilatérale",
-        "text1": "Ce 12 décembre 2025, l'Ambassadeur du partenaire régional en votre pays (@parfaitbus) a rendu une visite de courtoisie au Responsable institutionnel, des Droits Humains et des Populations Autochtones, YARO Maquette. Cette rencontre diplomatique s'est tenue dans un esprit d'ouverture et de coopération entre les deux nations africaines.",
-        "quote": "« La rencontre a permis d'aborder la mise en place d'un partenariat judiciaire et le renforcement de la coopération entre les deux pays. »",
-        "text2": "Au cours de cet entretien, les deux parties ont examiné les voies et moyens de renforcer les liens judiciaires entre le partenaire régional et le votre pays. Des échanges de cadeaux protocolaires ont ponctué la visite, témoignant de la qualité des relations entre les deux pays. Cette initiative s'inscrit dans la dynamique internationale portée par le Responsable YARO, qui multiplie les partenariats judiciaires au bénéfice de la votre pays.",
+        "tag": "Contact direct avec les habitants",
+        "date": "12 mars 2026 · Ouenzé, Brazzaville",
+        "title": "Romi Oyo privilégie le contact direct avec les électeurs",
+        "text1": "La maquette met en avant la démarche de proximité : porte-à-porte, écoute des habitants et mobilisation autour du dialogue local.",
+        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
+        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
         "tags": [
-          "Diplomatie",
-          "partenaire régional",
-          "votre pays",
-          "Justice",
-          "Coopération judiciaire",
-          "Décembre 2025"
-        ]
+          "Ouenzé",
+          "Terrain",
+          "PCT",
+          "Brazzaville",
+          "Suivi"
+        ],
+        "source": "24 News Agency",
+        "sourceUrl": "https://24newsagency.com/congo-a-ouenze-le-depute-romi-oyo-privilegie-le-contact-direct-avec-les-electeurs/"
       },
       {
-        "image": "images/IMG_9975.jpeg",
+        "image": "images/_2.jpeg",
         "imageBg": "linear-gradient(135deg,#0a1f0a,#1a3a1a)",
         "placeholderEmoji": "🏘️",
         "placeholderTitle": "13 villages\nsur l'axe Lebankaya",
-        "placeholderDate": "votre territoire · 9 mars 2026",
+        "placeholderDate": "Ouenzé · 9 mars 2026",
         "badgeColor": "#2e7d32",
-        "badge": "🗳️ En direct d'votre territoire",
+        "badge": "Programme",
         "tagColor": "#4caf50",
-        "tag": "Campagne présidentielle · District d'votre territoire",
-        "date": "📅 9 mars 2026 · Axe Lebankaya, votre zone",
-        "title": "YARO sillonne 13 villages pour porter le message du partenaire Denis partenaire national",
-        "text1": "En sa qualité de coordinateur de la campagne du partenaire Denis partenaire national dans le district et la commune d'votre territoire, YARO Maquette a effectué ce lundi une tournée de terrain sur l'axe Lebankaya, à la rencontre directe des populations de plusieurs localités de la zone.",
-        "quote": "Une forte mobilisation des populations venues écouter le message porté par la délégation de campagne, avec un soutien renouvelé à la candidature de Denis partenaire national.",
-        "text2": "Cette mission de proximité l'a conduit successivement dans les villages Oboukou, Oyendze, Eti, Ossele, Abeke, Okogo, Lembessi, Kebili, Bia 1, Ntsouo, Bia 2, Ngami et Ngayi. À chaque étape, les échanges ont permis de réaffirmer l'attachement des communautés locales à la candidature présidentielle, une dynamique qui témoigne du lien profond entre YARO et les habitants d'votre territoire qu'il représente depuis 2017.",
+        "tag": "Priorités locales",
+        "date": "Maquette personnalisable",
+        "title": "Les priorités locales peuvent être présentées clairement",
+        "text1": "Texte personnalisable depuis l’espace admin pour présenter une action, une annonce ou une preuve de terrain.",
+        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
+        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
         "tags": [
-          "Campagne 2026",
-          "partenaire national",
-          "District d'votre territoire",
+          "Ouenzé",
           "Terrain",
-          "13 villages",
-          "votre zone"
-        ]
+          "PCT",
+          "Brazzaville",
+          "Suivi"
+        ],
+        "source": "Maquette YARO",
+        "sourceUrl": ""
       },
       {
-        "image": "images/partenaire institutionnel.jpeg",
+        "image": "images/_4.jpeg",
         "imageBg": "",
         "placeholderEmoji": "",
         "placeholderTitle": "",
         "placeholderDate": "",
         "badgeColor": "",
-        "badge": "Diplomatie",
+        "badge": "Admin",
         "tagColor": "",
-        "tag": "Diplomatie judiciaire",
-        "date": "📅 18 Février 2026 · Paris, Place Vendôme",
-        "title": "YARO et partenaire institutionnel relancent la coopération judiciaire votre pays–France",
-        "text1": "Reçu Place Vendôme par son homologue français partenaire institutionnel, le Responsable institutionnel YARO Maquette a engagé des négociations décisives pour moderniser la convention judiciaire bilatérale liant les deux pays depuis 1974, un accord vieux de plus de 50 ans.",
-        "quote": "« Trois nouvelles conventions sont en cours de finalisation : entraide judiciaire, extraditions et transfèrements de personnes condamnées. L'objectif est une signature avant l'été 2026. »",
-        "text2": "Une démarche saluée par les deux Ministères de la Justice, qui ouvre un nouveau chapitre dans les relations franco-locales. Porté par sa vision d'une justice moderne et accessible, le Responsable YARO inscrit cette mission diplomatique dans la continuité directe de ses réformes institutionnelles au votre pays.",
+        "tag": "Espace admin complet",
+        "date": "Maquette personnalisable",
+        "title": "Un espace admin pour piloter le site",
+        "text1": "Texte personnalisable depuis l’espace admin pour présenter une action, une annonce ou une preuve de terrain.",
+        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
+        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
         "tags": [
-          "Diplomatie",
-          "Justice",
-          "votre pays–France",
-          "Réformes",
-          "Paris 2026"
-        ]
+          "Ouenzé",
+          "Terrain",
+          "PCT",
+          "Brazzaville",
+          "Suivi"
+        ],
+        "source": "Maquette YARO",
+        "sourceUrl": ""
       },
       {
-        "image": "images/ewo.jpg",
+        "image": "images/_5.jpeg",
         "imageBg": "",
         "placeholderEmoji": "⚡",
-        "placeholderTitle": "votre territoire & le réseau\nélectrique national",
+        "placeholderTitle": "Ouenzé & le réseau\nélectrique national",
         "placeholderDate": "Août 2024",
         "badgeColor": "#e65100",
-        "badge": "⚡ Énergie & Développement",
+        "badge": "Social",
         "tagColor": "#ff6d00",
-        "tag": "Boulevard énergétique · votre zone",
-        "date": "📅 20 Août 2024 · votre zone, votre pays",
-        "title": "Boulevard énergétique : votre territoire bientôt connecté au réseau électrique national",
-        "text1": "Le Premier responsable Anatole Collinet Makosso a effectué le 20 août 2024 une visite des travaux de construction de la ligne électrique de 110 KV et de la route bitumée Boundji-votre territoire. Il a annoncé la connexion imminente d'votre territoire, chef-lieu de la votre zone, au réseau électrique national local.",
-        "quote": "« Sur 180 pylônes, il y en a 116 qui sont déjà installés. Le poste transformateur est en train d'être construit. votre territoire sera connectée au réseau électrique national dans quelques mois. »",
-        "text2": "Cette avancée majeure pour la votre zone s'inscrit dans le cadre du boulevard énergétique, l'un des axes stratégiques du programme du Président Denis partenaire national. La route bitumée de 25 km reliant Boundji à votre territoire, déjà réalisée, et l'achèvement de la ligne 110 KV transformeront durablement le quotidien des habitants d'votre territoire. Une métamorphose attendue de longue date pour toute la région.",
+        "tag": "Actions sociales",
+        "date": "Maquette personnalisable",
+        "title": "Actions de proximité et accompagnement social",
+        "text1": "Texte personnalisable depuis l’espace admin pour présenter une action, une annonce ou une preuve de terrain.",
+        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
+        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
         "tags": [
-          "Énergie",
-          "votre territoire",
-          "Boulevard énergétique",
-          "votre zone",
-          "Développement",
-          "Août 2024"
-        ]
+          "Ouenzé",
+          "Terrain",
+          "PCT",
+          "Brazzaville",
+          "Suivi"
+        ],
+        "source": "Maquette YARO",
+        "sourceUrl": ""
       },
       {
-        "image": "images/IMG_9973.jpeg",
+        "image": "images/_6.jpeg",
         "imageBg": "",
         "placeholderEmoji": "⚖️",
         "placeholderTitle": "EPU 2024\nGeneve — ONU",
         "placeholderDate": "30 jan. 2024",
         "badgeColor": "#1565C0",
-        "badge": "Droits Humains · ONU",
+        "badge": "Communication",
         "tagColor": "#1976D2",
-        "tag": "Examen Periodique Universel — Geneve",
-        "date": "📅 30 Janvier 2024 · Geneve, Conseil des droits de l'homme ONU",
-        "title": "Droits humains au votre pays : des avancees appreciables presentees par YARO a l'ONU",
-        "text1": "Le 30 janvier 2024, le Responsable YARO a conduit la delegation locale devant le Conseil des droits de l'homme des Nations Unies a Geneve, dans le cadre du 4e Examen Periodique Universel (EPU) du votre pays. Devant les 14 Etats examines lors de la 44e session du Groupe de travail EPU, il a presente les avancees significatives realisees par le votre pays en matiere de droits humains.",
-        "quote": "Le votre pays reaffirme son engagement indefectible en faveur de la protection des droits humains, avec des avancees appreciables notamment pour les peuples autochtones, la justice restaurative et les conditions de detention.",
-        "text2": "La troika composee de la Cote d'Ivoire, du Luxembourg et des Maldives a rapporte les recommandations formulees. Le Groupe de travail a adopte les conclusions le 2 fevrier 2024. Cette mission diplomatique majeure, retransmise en direct par UN WebTV, illustre l'engagement international du votre pays sous la conduite du Responsable institutionnel YARO Maquette.",
+        "tag": "Communication institutionnelle",
+        "date": "Maquette personnalisable",
+        "title": "Une communication claire pour le terrain",
+        "text1": "Texte personnalisable depuis l’espace admin pour présenter une action, une annonce ou une preuve de terrain.",
+        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
+        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
         "tags": [
-          "Droits humains",
-          "ONU",
-          "EPU 2024",
-          "Geneve",
-          "votre pays",
-          "Yaro",
-          "Peuples autochtones"
+          "Ouenzé",
+          "Terrain",
+          "PCT",
+          "Brazzaville",
+          "Suivi"
         ],
-        "source": "La Semaine Africaine",
-        "sourceUrl": "https://lasemaineafricaine.info/droits-humains-au-congo-des-avancees-appreciables/",
+        "source": "Maquette YARO",
+        "sourceUrl": "",
         "videoUrl": "https://media.un.org/en/asset/k14/k14xa31o6d"
       },
       {
-        "image": "images/IMG_9978.jpeg",
+        "image": "images/_7.jpeg",
         "imageBg": "",
         "placeholderEmoji": "⚖️",
         "placeholderTitle": "Justice restaurative\nvotre pays",
         "placeholderDate": "",
         "badgeColor": "#4a148c",
-        "badge": "Reforme judiciaire",
+        "badge": "Suivi",
         "tagColor": "#7b1fa2",
-        "tag": "Justice restaurative · Avant-projet de loi",
-        "date": "📅 Brazzaville — Republique du votre pays",
-        "title": "Droits de l'homme : validation de l'avant-projet de loi instituant la justice restaurative",
-        "text1": "Sous l'impulsion du Responsable YARO, le votre pays a franchi une etape decisive dans la modernisation de son systeme judiciaire avec la validation de l'avant-projet de loi instituant la justice restaurative. Ce dispositif innovant favorise la rehabilitation des auteurs d'infractions et la reparation des prejudices subis par les victimes.",
-        "quote": "La justice restaurative constitue une avancee majeure qui replace l'humain au coeur du systeme judiciaire local, en favorisant la reconciliation et la reparation.",
-        "text2": "Cette reforme s'inscrit dans la vision globale de modernisation de la justice portee par le Responsable institutionnel, qui vise a construire une justice plus humaine, plus accessible et plus efficace au service de tous les votre payslais.",
+        "tag": "Suivi des demandes",
+        "date": "Maquette personnalisable",
+        "title": "Demandes, contacts et suivi centralisés",
+        "text1": "Texte personnalisable depuis l’espace admin pour présenter une action, une annonce ou une preuve de terrain.",
+        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
+        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
         "tags": [
-          "Justice restaurative",
-          "Reforme judiciaire",
-          "Droits humains",
-          "votre pays",
-          "Avant-projet de loi"
+          "Ouenzé",
+          "Terrain",
+          "PCT",
+          "Brazzaville",
+          "Suivi"
         ],
-        "source": "Adiac votre pays",
-        "sourceUrl": "https://www.adiac-congo.com/content/droits-de-lhomme-validation-de-lavant-projet-de-loi-instituant-la-justice-restaurative"
-      },
-      {
-        "image": "images/IMG_9976.jpeg",
-        "imageBg": "linear-gradient(135deg,#1b5e20,#2e7d32)",
-        "placeholderEmoji": "🌱",
-        "placeholderTitle": "Jeunesse autochtone\nPriorite nationale",
-        "placeholderDate": "",
-        "badgeColor": "#2e7d32",
-        "badge": "Droits humains · Peuples autochtones",
-        "tagColor": "#388e3c",
-        "tag": "Jeunesse autochtone · Priorite nationale",
-        "date": "📅 Brazzaville — Republique du votre pays",
-        "title": "Droits humains : la jeunesse autochtone, priorite du Leadere YARO",
-        "text1": "Le Leadere de la Justice, des Droits Humains et de la Promotion des Peuples Autochtones, sous la direction de YARO, a place la jeunesse autochtone au coeur de son agenda. Des programmes specifiques ont ete deployes pour garantir a ces jeunes un acces a l'education, a la sante et a l'emploi.",
-        "quote": "La promotion de la jeunesse autochtone est un imperatif moral et un investissement pour l'avenir du votre pays. Aucun enfant ne doit etre laisse pour compte.",
-        "text2": "Ces initiatives s'appuient sur un cadre juridique renforce et une collaboration etroite avec les organisations internationales et les communautes locales pour garantir que les droits fondamentaux des jeunes autochtones soient effectivement respectes sur l'ensemble du territoire local.",
-        "tags": [
-          "Jeunesse autochtone",
-          "Droits humains",
-          "Education",
-          "Emploi",
-          "votre pays",
-          "Peuples autochtones"
-        ],
-        "source": "Adiac votre pays",
-        "sourceUrl": "https://www.adiac-congo.com/content/droits-humains-priorite-la-jeunesse-autochtone-150512"
+        "source": "Maquette YARO",
+        "sourceUrl": ""
       }
     ],
     "cards": [
       {
         "catColor": "",
         "borderColor": "",
-        "cat": "Réforme · Anticorruption",
-        "icon": "🏛️",
+        "cat": "Terrain",
+        "icon": "01",
         "day": "07",
         "month": "Mar",
         "year": "2018",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "image": "images/IMG_9972.jpeg"
+        "title": "Rencontre de proximité",
+        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
+        "image": "images/romi-oyo.png"
       },
       {
         "catColor": "#1a237e",
         "borderColor": "#1a237e",
-        "cat": "Justice",
-        "icon": "⚖️",
+        "cat": "Programme",
+        "icon": "02",
         "day": "27",
         "month": "Mars",
         "year": "2023",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "title": "Priorités pour Ouenzé",
+        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
         "source": "La Semaine Africaine",
         "sourceUrl": "https://lasemaineafricaine.info/magistrature-des-sanctions-et-nominations-qui-ne-font-pas-lunanimite/",
-        "image": "images/IMG_9963.webp"
+        "image": "images/_1.jpeg"
       },
       {
         "catColor": "#1b5e20",
         "borderColor": "#1b5e20",
-        "cat": "Droits Humains",
-        "icon": "🌿",
+        "cat": "Social",
+        "icon": "03",
         "day": "30",
         "month": "Jan",
         "year": "2024",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
+        "title": "Action sociale locale",
+        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
         "source": "ACI — Agence votre payslaise d'Information",
         "sourceUrl": "https://www.aci.cg/congo-societe-le-gouvernement-rappelle-les-avancees-dans-lamelioration-de-la-vie-des-autochtones/",
         "auteur": "ACI",
-        "image": "images/IMG_9975.jpeg"
+        "image": "images/_2.jpeg"
       },
       {
         "catColor": "#e65100",
         "borderColor": "rgba(230,81,0,.25)",
-        "cat": "Énergie · votre zone",
-        "icon": "⚡",
+        "cat": "Admin",
+        "icon": "04",
         "day": "20",
         "month": "Août",
         "year": "2024",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "image": "images/ewo.jpg"
+        "title": "Suivi depuis l’espace admin",
+        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
+        "image": "images/_4.jpeg"
       },
       {
         "catColor": "",
         "borderColor": "",
-        "cat": "International · AIEA",
-        "icon": "🌍",
+        "cat": "Terrain",
+        "icon": "05",
         "day": "14",
         "month": "Jul",
         "year": "2025",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "image": "images/IMG_9973.jpeg"
+        "title": "Rencontre de proximité",
+        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
+        "image": "images/_5.jpeg"
       },
       {
         "catColor": "",
         "borderColor": "",
-        "cat": "Emploi · votre zone",
-        "icon": "💼",
+        "cat": "Programme",
+        "icon": "06",
         "day": "05",
         "month": "Sep",
         "year": "2025",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "image": "images/IMG_9965.jpeg"
+        "title": "Priorités pour Ouenzé",
+        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
+        "image": "images/_6.jpeg"
       },
       {
         "catColor": "",
         "borderColor": "",
-        "cat": "Éducation · Jeunesse",
-        "icon": "🎓",
+        "cat": "Social",
+        "icon": "07",
         "day": "22",
         "month": "Oct",
         "year": "2025",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "image": "images/IMG_9966.jpeg"
+        "title": "Action sociale locale",
+        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
+        "image": "images/_7.jpeg"
       },
       {
         "catColor": "",
         "borderColor": "",
-        "cat": "Dialogue social",
-        "icon": "🤝",
+        "cat": "Admin",
+        "icon": "08",
         "day": "08",
         "month": "Nov",
         "year": "2025",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "image": "images/IMG_9977.jpeg"
-      },
-      {
-        "catColor": "#1565C0",
-        "borderColor": "rgba(21,101,192,.25)",
-        "cat": "Diplomatie judiciaire · partenaire régional",
-        "icon": "🌍",
-        "day": "12",
-        "month": "Déc",
-        "year": "2025",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "image": "images/rwanda.JPG"
-      },
-      {
-        "catColor": "",
-        "borderColor": "",
-        "cat": "Justice · votre territoire",
-        "icon": "⚖️",
-        "day": "15",
-        "month": "Déc",
-        "year": "2025",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "image": "images/IMG_9967.jpeg"
-      },
-      {
-        "catColor": "#4caf50",
-        "borderColor": "rgba(46,125,50,.25)",
-        "cat": "Campagne présidentielle · votre territoire",
-        "icon": "🗳️",
-        "day": "09",
-        "month": "Mars",
-        "year": "2026",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "image": "images/IMG_9964.jpeg"
-      },
-      {
-        "catColor": "#1b5e20",
-        "borderColor": "rgba(27,94,32,.25)",
-        "cat": "Droits humains · Emploi autochtone",
-        "icon": "💼",
-        "day": "",
-        "month": "",
-        "year": "2022",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "source": "Adiac votre pays",
-        "sourceUrl": "https://www.adiac-congo.com/content/droits-humains-lacces-des-peuples-autochtones-lemploi-pris-en-compte-135559",
-        "image": "images/IMG_9976.jpeg"
-      },
-      {
-        "catColor": "#0d47a1",
-        "borderColor": "rgba(13,71,161,.25)",
-        "cat": "Justice · Droits de l'homme",
-        "icon": "⚖️",
-        "day": "",
-        "month": "",
-        "year": "2019",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "source": "Adiac votre pays",
-        "sourceUrl": "https://www.adiac-congo.com/content/justice-le-congo-reitere-sa-volonte-dassurer-la-protection-des-droits-de-lhomme-73344",
-        "image": "images/IMG_9978.jpeg"
-      },
-      {
-        "catColor": "#1a237e",
-        "borderColor": "rgba(26,35,126,.25)",
-        "cat": "Legislatives 2017 · votre territoire",
-        "icon": "🗳️",
-        "day": "19",
-        "month": "Aout",
-        "year": "2017",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "source": "Les Echos du votre pays",
-        "sourceUrl": "https://lesechos-congobrazza.com/politique/3341-legislatives-2017-voici-la-liste-definitive-des-deputes-elus",
-        "image": "images/yaro.jpg.jpg"
-      },
-      {
-        "catColor": "#bf360c",
-        "borderColor": "rgba(191,54,12,.25)",
-        "cat": "Justice · Conditions de detention",
-        "icon": "🏛️",
-        "day": "",
-        "month": "",
-        "year": "2022",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "source": "Adiac votre pays",
-        "sourceUrl": "https://www.adiac-congo.com/content/justice-lamelioration-des-conditions-de-vie-dans-les-lieux-de-detention-se-poursuit-143760",
-        "image": "images/IMG_9964.jpeg"
-      },
-      {
-        "catColor": "#e65100",
-        "borderColor": "rgba(230,81,0,.25)",
-        "cat": "Justice · Reportage",
-        "icon": "📰",
-        "day": "",
-        "month": "",
-        "year": "2024",
-        "title": "Contenu client personnalisable",
-        "desc": "Titre, catégorie, date, description et image sont administrables depuis l’espace privé.",
-        "source": "L'Observateur",
-        "sourceUrl": "https://lobservateur.info/ampArticle/116074",
-        "image": "images/IMG_9964.jpeg"
+        "title": "Suivi depuis l’espace admin",
+        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
+        "image": "images/_8.jpeg"
       }
     ]
   },
   "gallery": {
     "slides": [
       {
-        "image": "images/IMG_9963.webp",
+        "image": "images/romi-oyo.png",
         "emoji": "",
-        "title": "Module personnalisable",
-        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
-        "alt": "Maquette YARO — image de démonstration"
+        "title": "Portrait officiel",
+        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
+        "alt": "Romi Oyo — galerie maquette"
       },
       {
-        "image": "images/IMG_9964.jpeg",
+        "image": "images/_1.jpeg",
         "emoji": "",
-        "title": "Module personnalisable",
-        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
-        "alt": "Maquette YARO — image de démonstration"
+        "title": "Terrain et proximité",
+        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
+        "alt": "Romi Oyo — galerie maquette"
       },
       {
-        "image": "images/IMG_9965.jpeg",
+        "image": "images/_2.jpeg",
         "emoji": "",
-        "title": "Module personnalisable",
-        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
-        "alt": "Maquette YARO — image de démonstration"
+        "title": "Rencontres citoyennes",
+        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
+        "alt": "Romi Oyo — galerie maquette"
       },
       {
-        "image": "images/IMG_9966.jpeg",
+        "image": "images/_4.jpeg",
         "emoji": "",
-        "title": "Module personnalisable",
-        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
-        "alt": "Maquette YARO — image de démonstration"
+        "title": "Programme local",
+        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
+        "alt": "Romi Oyo — galerie maquette"
       },
       {
-        "image": "images/IMG_9967.jpeg",
+        "image": "images/_5.jpeg",
         "emoji": "",
-        "title": "Module personnalisable",
-        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
-        "alt": "Maquette YARO — image de démonstration"
+        "title": "Actions sociales",
+        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
+        "alt": "Romi Oyo — galerie maquette"
       },
       {
-        "image": "images/partenaire institutionnel.jpeg",
+        "image": "images/_6.jpeg",
         "emoji": "",
-        "title": "Module personnalisable",
-        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
-        "alt": "Maquette YARO — image de démonstration"
+        "title": "Communication",
+        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
+        "alt": "Romi Oyo — galerie maquette"
       },
       {
-        "image": "images/rwanda.JPG",
+        "image": "images/_7.jpeg",
         "emoji": "",
-        "title": "Module personnalisable",
-        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
-        "alt": "Maquette YARO — image de démonstration"
+        "title": "Administration",
+        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
+        "alt": "Romi Oyo — galerie maquette"
       },
       {
-        "image": "images/ewo.jpg",
+        "image": "images/_8.jpeg",
         "emoji": "",
-        "title": "Module personnalisable",
-        "subtitle": "Photo, texte et contexte remplacés pour chaque client.",
-        "alt": "Maquette YARO — image de démonstration"
+        "title": "Suivi",
+        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
+        "alt": "Romi Oyo — galerie maquette"
       }
     ],
     "grid": [
       {
-        "image": "images/IMG_9963.webp",
-        "alt": "Maquette YARO — visuel de démonstration client",
+        "image": "images/_4.jpeg",
+        "alt": "Romi Oyo — image de démonstration",
         "emoji": ""
       },
       {
-        "image": "images/IMG_9964.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/IMG_9965.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/IMG_9966.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/IMG_9967.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/IMG_9972.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/IMG_9973.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/IMG_9975.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/IMG_9976.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/IMG_9977.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/IMG_9978.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/yaro.jpg.jpg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/partenaire institutionnel.jpeg",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/rwanda.JPG",
-        "alt": "Maquette YARO — visuel de démonstration client",
-        "emoji": ""
-      },
-      {
-        "image": "images/ewo.jpg",
-        "alt": "Maquette YARO — visuel de démonstration client",
+        "image": "images/_5.jpeg",
+        "alt": "Romi Oyo — image de démonstration",
         "emoji": ""
       }
     ],
-    "title": "Maquette YARO en action",
-    "accent": "modules client"
+    "title": "Romi Oyo en images",
+    "accent": "terrain"
   },
   "programmeSection": {
-    "tag": "Modules inclus",
-    "title": "Une offre",
-    "titleAccent": "complète",
+    "tag": "Programme",
+    "title": "Priorités pour",
+    "titleAccent": "Ouenzé",
     "subtitle": "Six modules prêts à personnaliser pour transformer la présence digitale d’un client."
   },
   "galerieSection": {
@@ -678,193 +484,193 @@
     "gridTitle": "Exemples de contenus client"
   },
   "engagement": {
-    "tag": "Contactez-nous",
-    "title": "Une demande\nou un",
-    "titleAccent": "rendez-vous",
-    "desc": "Cette zone transforme les visiteurs en contacts qualifiés. Le client peut recevoir une demande, la traiter depuis l’admin et garder un historique clair.",
+    "tag": "Audience et demandes",
+    "title": "Une demande ou une",
+    "titleAccent": "audience",
+    "desc": "Les habitants, partenaires ou visiteurs peuvent transmettre une demande structurée. L’équipe peut ensuite la traiter depuis l’espace admin.",
     "cards": [
       {
-        "icon": "📋",
-        "title": "Demande de rendez-vous",
-        "desc": "Collecter une demande structurée depuis le site."
+        "icon": "AUD",
+        "title": "Demande d’audience",
+        "desc": "Planifier une rencontre ou un échange avec l’équipe."
       },
       {
-        "icon": "📣",
-        "title": "Signalement ou message",
-        "desc": "Recevoir les préoccupations importantes dans l’espace admin."
+        "icon": "SIG",
+        "title": "Signalement local",
+        "desc": "Faire remonter une préoccupation de quartier."
       },
       {
-        "icon": "🤝",
-        "title": "Contact direct",
-        "desc": "Mettre le visiteur en relation avec l’équipe du client."
+        "icon": "SUI",
+        "title": "Suivi de dossier",
+        "desc": "Conserver une trace claire des demandes reçues."
       }
     ],
-    "formTitle": "Demande de rendez-vous",
+    "formTitle": "Demande d’audience",
     "formSub": "Expliquez votre demande, l’équipe vous contactera rapidement."
   },
   "cta": {
-    "title": "Maquette YARO :\nun produit prêt à présenter",
-    "subtitle": "Un site public clair, un espace admin complet et une base duplicable pour vendre rapidement à plusieurs clients.",
+    "title": "Romi OYO :\nproximité, écoute et terrain",
+    "subtitle": "Une maquette prête à présenter : claire, mobile, administrable et pensée pour réduire le fil du site.",
     "btn1": {
-      "text": "📋 Demander une démo",
+      "text": "Demande d’audience",
       "href": "#engagement"
     },
     "btn2": {
-      "text": "✉️ Nous contacter",
+      "text": "Nous contacter",
       "href": "#contact"
     },
     "btn3": {
-      "text": "📋 Voir les modules",
+      "text": "Lire le programme",
       "href": "#programme"
     }
   },
   "parcoursSection": {
-    "tag": "Démonstration",
-    "title": "Un parcours",
-    "titleAccent": "client type"
+    "tag": "Parcours",
+    "title": "Un engagement",
+    "titleAccent": "local"
   },
   "parcours": [
     {
       "side": "left",
       "emoji": "01",
-      "year": "Étape 1",
-      "title": "Cadrage du client",
-      "desc": "On remplace les textes, les photos, le domaine, les couleurs et les modules selon le secteur du client.",
-      "tag": "Brief"
+      "year": "Ouenzé",
+      "title": "Ancrage municipal",
+      "desc": "Romi Oyo commence son parcours public dans le cinquième arrondissement de Brazzaville, Ouenzé, avec une présence locale auprès des quartiers 56 et 57.",
+      "tag": "Terrain"
     },
     {
       "side": "right",
       "emoji": "02",
-      "year": "Étape 2",
-      "title": "Personnalisation du site public",
-      "desc": "Le site devient une vitrine claire avec identité, présentation, actualités, galerie, formulaires et appels à l’action.",
-      "tag": "Site public"
+      "year": "PCT",
+      "title": "Investiture politique",
+      "desc": "Initialement positionné localement, il est investi par le Parti Congolais du Travail pour porter une candidature dans la troisième circonscription de Ouenzé.",
+      "tag": "Parti"
     },
     {
       "side": "left",
       "emoji": "03",
-      "year": "Étape 3",
-      "title": "Configuration de l’espace admin",
-      "desc": "Le client reçoit un accès privé pour piloter ses contenus, ses messages, ses contacts et ses demandes.",
-      "tag": "Admin"
+      "year": "Assemblée nationale",
+      "title": "Député de Ouenzé 3",
+      "desc": "Il représente la troisième circonscription de Ouenzé à Brazzaville et porte les préoccupations locales dans son action parlementaire.",
+      "tag": "Mandat"
     },
     {
       "side": "right",
       "emoji": "04",
-      "year": "Étape 4",
-      "title": "Base de données dédiée",
-      "desc": "Chaque projet peut fonctionner avec un stockage fichier pour la démo ou une base MySQL dédiée pour la production.",
-      "tag": "Données"
+      "year": "Actions sociales",
+      "title": "Présence auprès des habitants",
+      "desc": "Ses actions publiques mettent en avant l’écoute, les visites aux personnes vulnérables et la proximité avec les mandants.",
+      "tag": "Social"
     },
     {
       "side": "left",
       "emoji": "05",
-      "year": "Étape 5",
-      "title": "Déploiement sur domaine client",
-      "desc": "La maquette est prête pour un hébergement client avec domaine, HTTPS, sauvegardes et configuration email.",
-      "tag": "Déploiement"
+      "year": "2026",
+      "title": "Campagne de proximité",
+      "desc": "La communication récente insiste sur le porte-à-porte, le dialogue direct, la paix, la stabilité et le développement.",
+      "tag": "Proximité"
     },
     {
       "side": "right",
       "emoji": "06",
-      "year": "Étape 6",
-      "title": "Présentation commerciale",
-      "desc": "Cette version sert de démonstrateur complet pour montrer aux prospects un produit réel, manipulable et vendable.",
-      "tag": "Vente"
+      "year": "Maquette",
+      "title": "Site administrable complet",
+      "desc": "La version maquette montre comment centraliser actualités, programme, galerie, audiences, contacts, CRM et suivi depuis un espace admin.",
+      "tag": "YARO"
     }
   ],
   "programme": {
-    "heroTitle": "Une maquette construite\npour vos clients",
-    "heroText": "Chaque bloc peut être adapté à une personnalité publique, une association, une entreprise locale, une mairie, un cabinet ou une campagne.",
+    "heroTitle": "Un projet lisible\npour Ouenzé",
+    "heroText": "Une maquette qui permet de présenter clairement les priorités locales, les actions de terrain, les demandes citoyennes et le suivi de l’équipe.",
     "axes": [
       {
-        "icon": "🌐",
-        "title": "Site vitrine premium",
-        "text": "Une page publique moderne, rapide et claire pour présenter l’identité, la mission, les actions et les preuves du client.",
+        "icon": "01",
+        "title": "Proximité citoyenne",
+        "text": "Renforcer le contact direct avec les habitants et faciliter les demandes d’audience depuis le site.",
         "points": [
-          "Hero personnalisable",
-          "Présentation complète",
-          "Appels à l’action visibles"
-        ]
-      },
-      {
-        "icon": "🔐",
-        "title": "Espace admin privé",
-        "text": "Un tableau de bord protégé pour modifier les contenus, traiter les demandes et garder le contrôle sans développeur au quotidien.",
-        "points": [
-          "Connexion sécurisée",
-          "URL admin secrète",
-          "Sauvegarde des données"
-        ]
-      },
-      {
-        "icon": "📰",
-        "title": "Actualités et communiqués",
-        "text": "Le client peut publier ses actions, annonces, projets, événements et communiqués en quelques minutes.",
-        "points": [
-          "Articles illustrés",
-          "Mise en avant en page d’accueil",
-          "Catégories éditables"
-        ]
-      },
-      {
-        "icon": "📩",
-        "title": "Formulaires et suivi",
-        "text": "Les visiteurs peuvent écrire, demander un rendez-vous, signaler une situation ou contacter directement l’équipe.",
-        "points": [
+          "Écoute de terrain",
           "Demandes centralisées",
-          "Statuts de traitement",
-          "Notifications prêtes à brancher"
+          "Suivi des réponses"
         ]
       },
       {
-        "icon": "🖼️",
-        "title": "Galerie et médias",
-        "text": "Photos, vidéos et documents donnent de la crédibilité au projet et permettent de montrer le terrain.",
+        "icon": "02",
+        "title": "Cadre de vie",
+        "text": "Mettre en avant les préoccupations liées à l’assainissement, aux canalisations et à l’amélioration des quartiers.",
         "points": [
-          "Images remplaçables",
-          "Vidéo de présentation",
-          "Supports PDF possibles"
+          "Signalements locaux",
+          "Priorisation des sujets",
+          "Communication régulière"
         ]
       },
       {
-        "icon": "📊",
-        "title": "CRM et pilotage",
-        "text": "L’admin aide à suivre les contacts, classer les demandes, consulter l’activité et préparer les actions commerciales.",
+        "icon": "03",
+        "title": "Jeunesse et emploi",
+        "text": "Valoriser les initiatives orientées vers l’encadrement, la responsabilisation et l’insertion des jeunes.",
         "points": [
-          "Contacts organisés",
-          "KPI de suivi",
-          "Historique et exports"
+          "Jeunesse",
+          "Formation citoyenne",
+          "Opportunités locales"
+        ]
+      },
+      {
+        "icon": "04",
+        "title": "Sécurité et cohésion",
+        "text": "Présenter une ligne de travail centrée sur la stabilité, la paix sociale et le dialogue avec les populations.",
+        "points": [
+          "Prévention",
+          "Dialogue local",
+          "Cohésion"
+        ]
+      },
+      {
+        "icon": "05",
+        "title": "Action sociale",
+        "text": "Rendre visibles les actions auprès des personnes âgées, des malades et des publics vulnérables.",
+        "points": [
+          "Aide de proximité",
+          "Visites terrain",
+          "Accompagnement"
+        ]
+      },
+      {
+        "icon": "06",
+        "title": "Admin et suivi",
+        "text": "Donner à l’équipe un espace privé pour publier, suivre les demandes, gérer les contacts et mesurer l’activité.",
+        "points": [
+          "CRM",
+          "KPI",
+          "Historique des demandes"
         ]
       }
     ]
   },
   "seo": {
-    "title": "Maquette YARO — site institutionnel avec espace admin",
-    "description": "Maquette commerciale YARO pour vendre des sites institutionnels administrables avec espace privé, CRM, formulaires et sécurité.",
-    "keywords": "YARO, maquette site institutionnel, espace admin, site politique, site élu, CRM, votre pays, Afrique",
+    "title": "Romi Oyo · Député de Ouenzé 3",
+    "description": "Maquette institutionnelle pour Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville, avec espace admin, actualités, programme et demandes d’audience.",
+    "keywords": "Romi Oyo, Ouenzé 3, député Congo, PCT, Brazzaville, maquette YARO",
     "author": "YARO Agency"
   },
   "contact": {
-    "sectionTag": "Nous écrire",
+    "sectionTag": "Contact",
     "sectionTitle": "Prenez",
     "sectionAccent": "contact",
-    "sidebarTitle": "Espace commercial\nYARO",
-    "sidebarDesc": "Cette maquette permet de présenter un vrai produit à vos prospects, puis de le personnaliser pour chaque client.",
+    "sidebarTitle": "Bureau\nde proximité",
+    "sidebarDesc": "L’équipe reçoit les messages, demandes d’audience, signalements et contacts depuis l’espace admin.",
     "phone": "+242 06 XXX XXXX",
     "email": "contact@maquette-yaro.fr",
-    "address": "Brazzaville, République du Congo",
-    "social": "@YAROAgency",
+    "address": "Ouenzé, Brazzaville, République du Congo",
+    "social": "@RomiOyo",
     "formTitle2": "Envoyez un message",
     "bp": "BP : 1375",
     "fax": "04 002 90 90",
-    "cabinet": "Equipe projet YARO",
+    "cabinet": "Equipe Romi Oyo",
     "city": "Brazzaville"
   },
   "footer": {
-    "logoName": "Maquette YARO",
-    "logoSub": "Site + admin · prêt à vendre",
-    "brandText": "Démonstrateur commercial YARO pour sites institutionnels, politiques et professionnels avec espace admin complet.",
-    "copyright": "© 2026 YARO Agency · Maquette commerciale"
+    "logoName": "Romi OYO",
+    "logoSub": "Député · Ouenzé 3",
+    "brandText": "Maquette institutionnelle YARO personnalisée pour Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville.",
+    "copyright": "© 2026 Maquette Romi Oyo · YARO Agency"
   }
 }

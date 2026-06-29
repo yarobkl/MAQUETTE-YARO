@@ -3,41 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Maquette YARO · Site client avec espace admin</title>
-<meta name="description" content="Maquette commerciale YARO pour site institutionnel, espace admin, actualités, formulaires, galerie et déploiement client">
-<meta name="keywords" content="Yaro, Ange YARO Maquette, Client, Admin complet, Admin complet, Zone client, Votre organisation, votre pays">
-<meta name="author" content="YARO Maquette">
+<title>Romi Oyo · Maquette institutionnelle YARO</title>
+<meta name="description" content="Maquette institutionnelle pour Romi Oyo, député de la troisième circonscription de Ouenzé, avec espace admin, actualités, programme, galerie et demandes d’audience">
+<meta name="keywords" content="Romi Oyo, Ouenzé 3, député Congo, PCT, Brazzaville, maquette Romi Oyo, espace admin">
+<meta name="author" content="YARO Agency">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://maquette-yaro.fr/">
 
 <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://maquette-yaro.fr/">
-<meta property="og:title" content="Maquette YARO · Site client avec espace admin">
-<meta property="og:description" content="Maquette commerciale YARO pour site institutionnel avec espace admin, contenus dynamiques et formulaires.">
-<meta property="og:image" content="https://maquette-yaro.fr/images/yaro.jpg.jpg.jpg">
+<meta property="og:title" content="Romi Oyo · Maquette institutionnelle YARO">
+<meta property="og:description" content="Député de Ouenzé 3 · Proximité terrain, programme, actualités et espace admin de suivi.">
+<meta property="og:image" content="https://maquette-yaro.fr/images/romi-oyo.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_CG">
-<meta property="og:site_name" content="YARO Maquette">
+<meta property="og:site_name" content="Romi Oyo">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Maquette YARO · Site client avec espace admin">
-<meta name="twitter:description" content="Maquette commerciale YARO pour site institutionnel avec espace admin, contenus dynamiques et formulaires.">
-<meta name="twitter:image" content="https://maquette-yaro.fr/images/yaro.jpg.jpg.jpg">
+<meta name="twitter:title" content="Romi Oyo · Maquette institutionnelle YARO">
+<meta name="twitter:description" content="Député de Ouenzé 3 · Proximité terrain, programme, actualités et espace admin de suivi.">
+<meta name="twitter:image" content="https://maquette-yaro.fr/images/romi-oyo.png">
 
 <!-- Données structurées JSON-LD (Google Rich Results) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "YARO Maquette",
+  "name": "Romi Oyo",
   "honorificPrefix": "Honorable",
-  "jobTitle": "Admin complet",
-  "description": "Maquette commerciale YARO pour sites institutionnels administrables avec espace privé.",
+  "jobTitle": "Député de la troisième circonscription de Ouenzé",
+  "description": "Maquette institutionnelle YARO pour Romi Oyo, député de Ouenzé 3 à Brazzaville.",
   "url": "https://maquette-yaro.fr",
-  "image": "https://maquette-yaro.fr/images/yaro.jpg.jpg.jpg",
+  "image": "https://maquette-yaro.fr/images/romi-oyo.png",
   "nationality": {
     "@type": "Country",
     "name": "votre pays"
@@ -45,17 +45,17 @@
   "memberOf": [
     {
       "@type": "Organization",
-      "name": "Votre organisation",
-      "alternateName": "Votre organisation"
+      "name": "Parti Congolais du Travail",
+      "alternateName": "PCT"
     },
     {
       "@type": "Organization",
-      "name": "Organisation cliente"
+      "name": "Assemblée nationale de la République du Congo"
     }
   ],
   "hasOccupation": {
     "@type": "Occupation",
-    "name": "Client · Responsable",
+    "name": "Député",
     "occupationLocation": {
       "@type": "Country",
       "name": "votre pays"
@@ -63,7 +63,7 @@
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "contactType": "Equipe client",
+    "contactType": "Equipe de proximité",
     "email": "contact@maquette-yaro.fr",
     "availableLanguage": "French"
   },
@@ -71,6 +71,18 @@
     "https://maquette-yaro.fr"
   ]
 }
+</script>
+
+<script>
+(function(){
+  try {
+    var savedTheme = localStorage.getItem("maquette_theme");
+    var prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+    if ((savedTheme || (prefersLight ? "light" : "dark")) === "light") {
+      document.documentElement.classList.add("theme-light-preload");
+    }
+  } catch (_) {}
+})();
 </script>
 
 <!-- Analytics, Plausible (sans cookies, conforme RGPD) -->
@@ -100,9 +112,9 @@
 
 <!-- PAGE LOADER -->
 <div id="loader">
-  <div class="loader-logo">AB<span>.</span></div>
+  <div class="loader-logo">RO<span>.</span></div>
   <div class="loader-bar"><div class="loader-fill"></div></div>
-  <div class="loader-txt">YARO Maquette</div>
+  <div class="loader-txt">Romi Oyo</div>
   <div class="loader-dev">Développé par <span>Rodrin Bakala Mouengue</span></div>
 </div>
 
@@ -112,9 +124,15 @@
 
 <!-- NAV -->
 <nav id="nav" role="banner" aria-label="Navigation principale">
-  <a href="#hero" class="nlogo">
-    <div class="nlogo-badge">AB</div>
-    <div class="nlogo-txt">YARO <small>Site + admin · prêt à vendre</small></div>
+  <a href="#hero" class="nlogo" aria-label="Retour à l'accueil">
+    <div class="nlogo-badge nlogo-home" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false">
+        <path d="M4 11.5 12 5l8 6.5"></path>
+        <path d="M6.5 10.2V19h11v-8.8"></path>
+        <path d="M10 19v-5h4v5"></path>
+      </svg>
+    </div>
+    <div class="nlogo-txt">Accueil <small>Romi Oyo · Ouenzé 3</small></div>
   </a>
   <ul class="nlinks">
     <li><a href="#about" data-i18n="nav.biography">Biographie</a></li>
@@ -141,7 +159,7 @@
 <div class="mob-nav" id="mobNav">
   <a href="#about" onclick="cMob()" data-i18n="nav.biography">Biographie</a>
   <a href="#parcours" onclick="cMob()" data-i18n="nav.parcours">Parcours</a>
-  <a href="#publication" onclick="cMob()" data-i18n="nav.publication">Publication</a>
+  <a href="#publication" onclick="cMob()" data-i18n="nav.publication">Offre</a>
   <a href="#programme" onclick="cMob()" data-i18n="nav.programme">Programme</a>
   <a href="#galerie" onclick="cMob()" data-i18n="nav.gallery">Galerie</a>
   <a href="#actu" onclick="cMob()" data-i18n="nav.news">Actualités</a>
@@ -162,7 +180,7 @@
   <div class="hero-video-bg"></div>
   <div class="hero-noise"></div>
   <div class="hero-img-side">
-    <img loading="eager" src="images/yaro.jpg.jpg" alt="YARO Maquette">
+    <img loading="eager" src="images/romi-oyo.png" alt="Romi Oyo, député de Ouenzé 3">
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow">
@@ -174,8 +192,8 @@
       </div>
     </div>
     <h1 class="hero-name" id="dyn-name">
-      YARO
-      <span>YARO</span>
+      ROMI
+      <span>OYO</span>
     </h1>
     <div class="hero-rule"></div>
     <p class="hero-role" id="dyn-role">Site institutionnel premium · Espace admin · CRM · Formulaires</p>
@@ -185,8 +203,8 @@
     </h2>
     <p class="hero-sub" id="dyn-sub">Une maquette complète pour présenter, vendre et déployer des sites clients plus vite.</p>
     <div class="hero-btns">
-      <a href="#engagement" class="btn btn-r" id="dyn-hero-btn1" data-i18n="hero.btn1">Rejoindre la campagne</a>
-      <a href="#programme" class="btn btn-o" id="dyn-hero-btn2" data-i18n="hero.btn2">Notre programme</a>
+      <a href="#engagement" class="btn btn-r" id="dyn-hero-btn1" data-i18n="hero.btn1">Demander une démo</a>
+      <a href="#programme" class="btn btn-o" id="dyn-hero-btn2" data-i18n="hero.btn2">Voir les modules</a>
     </div>
   </div>
   <a href="#about" class="hero-scroll">
@@ -200,12 +218,12 @@
   <div class="about-grid">
     <div class="about-img-wrap rev-l">
       <div class="about-img-frame">
-        <img loading="lazy" src="images/yaro.jpg.jpg" alt="YARO">
+        <img loading="lazy" src="images/romi-oyo.png" alt="Romi Oyo">
       </div>
       <div class="about-img-deco"></div>
       <div class="about-img-deco2"></div>
       <div class="about-badge">
-        <div class="about-badge-num" id="dyn-about-badge-num">votre territoire</div>
+        <div class="about-badge-num" id="dyn-about-badge-num">Ouenzé</div>
         <div class="about-badge-lbl" id="dyn-about-badge-lbl">Démonstrateur</div>
       </div>
     </div>
@@ -213,15 +231,15 @@
       <span class="stag" id="dyn-about-tag">La solution</span>
       <h2 class="stitle" id="dyn-about-title">Une maquette prête à <span class="r">vendre</span></h2>
       <div class="sline"></div>
-      <p class="about-intro" id="dyn-about-intro">Maquette YARO est un démonstrateur complet pour vendre un site institutionnel moderne avec espace admin privé, contenus dynamiques, formulaires, CRM et suivi d'activité.</p>
+      <p class="about-intro" id="dyn-about-intro">Cette maquette institutionnelle présente Romi Oyo avec une base complète : espace admin privé, contenus dynamiques, formulaires, CRM et suivi d'activité.</p>
       <div id="dyn-about-body"></div>
       <div class="about-pills" id="dyn-about-pills">
         <span class="pill">Site public premium</span>
         <span class="pill">Espace admin privé</span>
         <span class="pill">CRM intégré</span>
-        <span class="pill">Admin complet</span>
+        <span class="pill">Député</span>
         <span class="pill">Formulaires inclus</span>
-        <span class="pill">Zone client</span>
+        <span class="pill">Ouenzé</span>
       </div>
     </div>
   </div>
@@ -241,53 +259,40 @@
   </div>
 </section>
 
-<!-- ═══════════ PUBLICATION ═══════════ -->
-<section id="publication" data-mob-tab="profil">
+<!-- ═══════════ OFFRE ═══════════ -->
+<section id="publication" data-mob-tab="profil" data-route-section="publication">
   <div class="pub-wrap">
 
-    <!-- Couverture -->
     <div class="pub-book rev-l">
       <div style="position:relative;display:inline-block">
-        <!-- Si l'image réelle est disponible, elle s'affiche ; sinon le CSS prend le relais -->
-        <img loading="lazy" src="images/livre-cover.jpg" alt="Couverture du livre Les mutations constitutionnelles" class="pub-cover-img"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <!-- Couverture CSS fidèle à l'original Harmattan (fond blanc, titre bleu) -->
-        <div class="pub-cover-css" style="display:none">
-          <span class="pcc-author">Aimé Ange Wilfrid B<small>ININGA</small></span>
-          <div class="pcc-title">Les mutations constitutionnelles en Afrique noire francophone</div>
-          <div class="pcc-sub">à partir des exemples du votre pays, du Bénin et du Sénégal</div>
-          <div style="font-size:9px;color:#888;text-align:center;margin-top:auto;margin-bottom:4px;font-style:italic">Préface du Pr Frédéric Joël Aïvo<br>Avant-propos du Pr Babacar Gueye</div>
-          <div class="pcc-harmattan">L'Harmattan votre pays</div>
-        </div>
-        <span class="pub-cover-badge" data-i18n="pub.cover.badge">En vente</span>
+        <img loading="lazy" src="images/romi-oyo.png" alt="Romi Oyo, maquette institutionnelle" class="pub-cover-img">
+        <span class="pub-cover-badge" data-i18n="pub.cover.badge">Démo prête</span>
       </div>
-      <div class="pub-price-badge">40 €</div>
+      <div class="pub-price-badge">100%</div>
     </div>
 
-    <!-- Informations -->
     <div class="pub-info rev">
-      <span class="pub-tag" data-i18n="pub.tag">Publication académique · Droit public</span>
-      <h2 class="pub-title" data-i18n-html="pub.title.html">Les mutations constitutionnelles<br>en Afrique noire francophone</h2>
-      <p class="pub-subtitle" data-i18n="pub.subtitle">À partir des exemples du votre pays, du Bénin et du Sénégal</p>
-      <p class="pub-desc" data-i18n="pub.desc">Ce livre traite des mutations constitutionnelles dans les États d'Afrique noire francophone depuis le renouveau démocratique des années 1990. Ces mutations se manifestent au moyen de la révision constitutionnelle, des lois et règlements infra-constitutionnels, de l'interprétation des normes et de la pratique des acteurs de la vie politique et institutionnelle.</p>
+      <span class="pub-tag" data-i18n="pub.tag">Pack commercial · Site administrable</span>
+      <h2 class="pub-title" data-i18n-html="pub.title.html">Un site complet<br>pour vos futurs clients</h2>
+      <p class="pub-subtitle" data-i18n="pub.subtitle">Site vitrine, contenus, formulaires, CRM et espace admin privé.</p>
+      <p class="pub-desc" data-i18n="pub.desc">Cette section présente l'offre YARO sous forme claire et vendable. Tout le contenu peut être remplacé selon le client : entreprise, association, cabinet, personnalité publique, mairie ou projet local.</p>
       <div class="pub-meta">
-        <span class="pub-meta-item" data-i18n-html="pub.meta.publisher"><strong>Éditeur</strong> L'Harmattan</span>
-        <span class="pub-meta-item" data-i18n-html="pub.meta.date"><strong>Parution</strong> 12 sept. 2019</span>
-        <span class="pub-meta-item" data-i18n-html="pub.meta.pages"><strong>Pages</strong> 353</span>
-        <span class="pub-meta-item" data-i18n-html="pub.meta.isbn"><strong>ISBN</strong> 978-2-343-18410-4</span>
-        <span class="pub-meta-item" data-i18n-html="pub.meta.format"><strong>Format</strong> 24 × 16 cm</span>
+        <span class="pub-meta-item" data-i18n-html="pub.meta.publisher"><strong>Inclus</strong> Site public</span>
+        <span class="pub-meta-item" data-i18n-html="pub.meta.date"><strong>Inclus</strong> Admin privé</span>
+        <span class="pub-meta-item" data-i18n-html="pub.meta.pages"><strong>Inclus</strong> CRM</span>
+        <span class="pub-meta-item" data-i18n-html="pub.meta.isbn"><strong>Inclus</strong> Formulaires</span>
+        <span class="pub-meta-item" data-i18n-html="pub.meta.format"><strong>Inclus</strong> Base client</span>
       </div>
 
-      <!-- Bloc achat -->
       <div class="pub-buy-block">
-        <div class="pub-buy-price">40 € <span data-i18n="pub.buy.shipping">port en sus selon destination</span></div>
-        <div class="pub-buy-note" data-i18n="pub.buy.note">Disponible en librairie et en ligne · Paiement sécurisé</div>
+        <div class="pub-buy-price">Démo commerciale <span data-i18n="pub.buy.shipping">prête à personnaliser</span></div>
+        <div class="pub-buy-note" data-i18n="pub.buy.note">Présentez le rendu, adaptez les contenus, démoz sur le domaine du client.</div>
         <div class="pub-buy-btns">
-          <button class="pub-btn-primary" onclick="openAchat()" data-i18n="pub.buy.btn">Acheter ce livre</button>
+          <a class="pub-btn-primary" href="#engagement" data-i18n="pub.buy.btn" style="text-decoration:none;display:inline-flex">Demander une démo</a>
         </div>
       </div>
 
-      <p class="pub-preface" data-i18n-html="pub.preface">Préface du Professeur Frédéric Joël Aïvo · Avant-propos du Professeur Babacar Gueye<br>Site public premium public, Université Cheikh Anta Diop de Dakar · Enseignant-chercheur, Université Marien Ngouabi</p>
+      <p class="pub-preface" data-i18n-html="pub.preface">Aucun contenu client réel n'est imposé : photos, textes, modules et couleurs sont remplacés pour chaque nouveau projet.</p>
     </div>
 
   </div>
@@ -297,8 +302,8 @@
 <section id="programme" data-mob-tab="programme">
   <div style="max-width:1300px;margin:0 auto;">
     <div style="text-align:center;" class="rev">
-      <span class="stag" id="dyn-prog-tag">Notre vision</span>
-      <h2 class="stitle" id="dyn-prog-title">Programme <span class="r" id="dyn-prog-accent">2027–2032</span></h2>
+      <span class="stag" id="dyn-prog-tag">Modules inclus</span>
+      <h2 class="stitle" id="dyn-prog-title">Une offre <span class="r" id="dyn-prog-accent">complète</span></h2>
       <div class="sline" style="margin:18px auto 0"></div>
       <p id="dyn-prog-sub" data-i18n="prog.sub" style="font-size:16px;color:rgba(255,255,255,.45);max-width:600px;margin:20px auto 0;font-weight:300;line-height:1.9">Six modules prêts à personnaliser pour chaque client.</p>
     </div>
@@ -309,11 +314,11 @@
 </section>
 
 <!-- GALERIE -->
-<section id="galerie" data-mob-tab="actu">
+<section id="galerie" data-mob-tab="actu" data-route-section="galerie">
   <div style="max-width:1300px;margin:0 auto;">
     <div style="text-align:center;" class="rev">
       <span class="stag" id="dyn-gal-tag">En images</span>
-      <h2 class="stitle" id="dyn-gal-title">YARO <span class="g" id="dyn-gal-accent">sur le terrain</span></h2>
+      <h2 class="stitle" id="dyn-gal-title">Galerie <span class="g" id="dyn-gal-accent">client</span></h2>
       <div class="sline" style="margin:18px auto 0"></div>
     </div>
     <div class="gal-wrap" id="gal-wrap">
@@ -323,7 +328,7 @@
 </section>
 
 <!-- ACTUALITÉS -->
-<section id="actu" data-mob-tab="actu">
+<section id="actu" data-mob-tab="actu" data-route-section="actu">
 
   <!-- ══ HERO SLIDESHOW ══════════════════════════════════════════════ -->
   <div class="actu-hero" id="actu-hero">
@@ -369,12 +374,12 @@
     <span class="stag" data-i18n="video.tag">La maquette en action</span>
     <h2 class="stitle">Discours &amp; <span class="r" data-i18n="video.title.accent">terrain</span></h2>
     <div class="sline" style="margin:16px auto 0"></div>
-    <p class="ssub" data-i18n="video.desc">Découvrez les modules, les contenus et les possibilités de personnalisation de la maquette YARO.</p>
+    <p class="ssub" data-i18n="video.desc">Découvrez les modules, les contenus et les possibilités de personnalisation de la maquette Romi Oyo.</p>
     <div class="video-frame-wrap">
       <img
         id="main-video"
-        src="images/yaro.jpg.jpg"
-        alt="Maquette YARO - aperçu client"
+        src="images/_4.jpeg"
+        alt="Romi Oyo - aperçu de maquette"
         style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block;background:#fff">
     </div>
 
@@ -454,15 +459,15 @@
         <div id="geo-extras" style="display:none">
           <div class="recl-badge" data-i18n="form.recl.badge">Signalement officiel</div>
           <div class="fgrp">
-            <label data-i18n="form.recl.desc">Description du sinistre / problème *</label>
-            <textarea name="description" id="desc-sinistre" rows="3" placeholder="Décrivez précisément la demande ou le projet à traiter…" data-i18n-ph="form.recl.desc.ph"></textarea>
+            <label data-i18n="form.recl.desc">Description de la demande / du projet *</label>
+            <textarea name="description" id="desc-demande" rows="3" placeholder="Décrivez précisément la demande ou le projet à traiter…" data-i18n-ph="form.recl.desc.ph"></textarea>
           </div>
 
           <!-- GÉOLOCALISATION -->
           <div class="geo-box">
-            <div class="geo-box-title" data-i18n="form.geo.title">Localisation du sinistre</div>
+            <div class="geo-box-title" data-i18n="form.geo.title">Localisation de la demande</div>
             <div class="geo-status" id="geo-status"><span class="dot"></span> <span data-i18n="form.geo.status">Non localisé, cliquez pour géolocaliser</span></div>
-            <button type="button" class="btn-geo" id="btn-geo" onclick="localizeSinistre()">
+            <button type="button" class="btn-geo" id="btn-geo" onclick="localizeDemande()">
               <span data-i18n="form.geo.btn">Géolocaliser ma position</span>
             </button>
             <div class="geo-addr" id="geo-addr" style="display:none"></div>
@@ -475,8 +480,8 @@
 
           <!-- PHOTO -->
           <div class="fgrp">
-            <label><span data-i18n="form.photo.lbl">Photo du sinistre</span> <span style="font-weight:400;text-transform:none;letter-spacing:0;color:#999" data-i18n="form.photo.opt">(optionnel, jpg/png, max 3 Mo)</span></label>
-            <input type="file" id="photo-file" accept="image/jpeg,image/png,image/webp" capture="environment" onchange="handleSinistrePhoto(this)" style="padding:8px">
+            <label><span data-i18n="form.photo.lbl">Photo ou document visuel</span> <span style="font-weight:400;text-transform:none;letter-spacing:0;color:#999" data-i18n="form.photo.opt">(optionnel, jpg/png/webp, max 3 Mo)</span></label>
+            <input type="file" id="photo-file" accept="image/jpeg,image/png,image/webp" capture="environment" onchange="handleDemandePhoto(this)" style="padding:8px">
             <div class="photo-preview" id="photo-preview"></div>
             <input type="hidden" name="photo_url" id="photo-url">
           </div>
@@ -492,12 +497,12 @@
 
 <!-- CTA -->
 <div class="cta-band" data-mob-tab="contact">
-  <h2 id="dyn-cta-title" data-i18n="cta.title">Votez YARO :<br>le choix de l'expérience et du terrain</h2>
+  <h2 id="dyn-cta-title" data-i18n="cta.title">Romi OYO :<br>proximité, écoute et terrain</h2>
   <p id="dyn-cta-sub" data-i18n="cta.sub">Un produit clair, duplicable et prêt à être présenté à vos clients.</p>
   <div class="cta-btns">
-    <a href="#engagement" class="btn btn-r" id="dyn-cta-btn1" data-i18n="cta.btn1">Demande d'audience</a>
+    <a href="#engagement" class="btn btn-r" id="dyn-cta-btn1" data-i18n="cta.btn1">Demander une démo</a>
     <a href="#contact" class="btn btn-g" id="dyn-cta-btn2" data-i18n="cta.btn2">Nous contacter</a>
-    <a href="#programme" class="btn btn-o" id="dyn-cta-btn3" data-i18n="cta.btn3">Lire le programme</a>
+    <a href="#programme" class="btn btn-o" id="dyn-cta-btn3" data-i18n="cta.btn3">Voir les modules</a>
   </div>
 </div>
 
@@ -549,12 +554,12 @@
 <section id="newsletter" data-mob-tab="contact">
   <div class="nl-inner rev">
     <h3 data-i18n="nl.title">Restez informé</h3>
-    <p data-i18n="nl.desc">Recevez les actualités, les initiatives et les avancées du Client directement dans votre boîte mail. Pas de spam, une lettre mensuelle.</p>
+    <p data-i18n="nl.desc">Recevez les actualités, les initiatives et les avancées du Romi Oyo directement dans votre boîte mail. Pas de spam, une lettre mensuelle.</p>
     <form class="nl-form" onsubmit="subNewsletter(event,this)">
       <input type="email" name="email" placeholder="votre@email.com" required autocomplete="email">
       <button type="submit" id="nl-btn" data-i18n="nl.btn">S'inscrire</button>
     </form>
-    <div class="nl-sub"><span data-i18n="nl.legal">En vous inscrivant, vous acceptez notre</span> <a href="#" onclick="event.preventDefault();openLegal('confidentialite')" style="color:rgba(255,255,255,.35);text-decoration:underline" data-i18n="nl.legal.link">politique de confidentialité</a>.</div>
+    <div class="nl-sub"><span data-i18n="nl.legal">En vous inscrivant, vous acceptez notre</span> <a href="#" onclick="event.preventDefault();openLegal('confidentialite')" style="color:rgba(255,255,255,.35);text-decoration:underline" data-i18n="nl.legal.link">institutionnel de confidentialité</a>.</div>
     <div class="nl-ok" id="nl-ok" data-i18n="nl.ok">Inscription confirmée, merci pour votre soutien !</div>
   </div>
 </section>
@@ -564,10 +569,10 @@
   <div class="ft-grid">
     <div>
       <div class="nlogo">
-        <div class="nlogo-badge">AB</div>
-        <div class="nlogo-txt"><span id="dyn-ft-logo-name">YARO</span><small id="dyn-ft-logo-sub">Site + admin · prêt à vendre</small></div>
+        <div class="nlogo-badge">RO</div>
+        <div class="nlogo-txt"><span id="dyn-ft-logo-name">Romi OYO</span><small id="dyn-ft-logo-sub">Député · Ouenzé 3</small></div>
       </div>
-      <p class="ft-brand-p" id="dyn-ft-brand">Site officiel d'YARO Maquette, Admin complet. Projet institutionnel de démonstration (Zone client) depuis le 19 août 2017. Votre organisation.</p>
+      <p class="ft-brand-p" id="dyn-ft-brand">Maquette institutionnelle de Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville.</p>
       <div class="social-row">
         <a href="#" class="soc">f</a>
         <a href="#" class="soc">𝕏</a>
@@ -578,13 +583,40 @@
     </div>
     <div class="ft-col"><div class="ft-col-t" data-i18n="ft.nav">Navigation</div><ul><li><a href="#about" data-i18n="nav.biography">Biographie</a></li><li><a href="#parcours" data-i18n="nav.parcours">Parcours</a></li><li><a href="#publication" data-i18n="nav.publication">Publication</a></li><li><a href="#programme" data-i18n="nav.programme">Programme</a></li><li><a href="#galerie" data-i18n="nav.gallery">Galerie</a></li><li><a href="#actu" data-i18n="nav.news">Actualités</a></li></ul></div>
     <div class="ft-col"><div class="ft-col-t" data-i18n="ft.engage">S'engager</div><ul><li><a href="#engagement" data-i18n="ft.volunteer">Devenir bénévole</a></li><li><a href="#newsletter" data-i18n="ft.newsletter">Newsletter</a></li><li><a href="#contact" data-i18n="ft.press">Presse</a></li></ul></div>
-    <div class="ft-col"><div class="ft-col-t" data-i18n="ft.legal">Légal</div><ul><li><a href="#" onclick="event.preventDefault();openLegal('mentions')" data-i18n="ft.mentions">Mentions légales</a></li><li><a href="#" onclick="event.preventDefault();openLegal('confidentialite')" data-i18n="ft.privacy">Confidentialité</a></li><li><a href="https://pct.cg/" target="_blank" rel="noopener">Votre organisation officiel</a></li></ul></div>
+    <div class="ft-col"><div class="ft-col-t" data-i18n="ft.legal">Légal</div><ul><li><a href="#" onclick="event.preventDefault();openLegal('mentions')" data-i18n="ft.mentions">Mentions légales</a></li><li><a href="#" onclick="event.preventDefault();openLegal('confidentialite')" data-i18n="ft.privacy">Confidentialité</a></li><li><a href="https://pct.cg/" target="_blank" rel="noopener">PCT officiel</a></li></ul></div>
   </div>
   <div class="ft-bottom">
-    <p id="dyn-ft-copyright" data-i18n="ft.copyright">© 2026 Campagne YARO · Votre organisation · Tous droits réservés</p>
+    <p id="dyn-ft-copyright" data-i18n="ft.copyright">© 2026 Campagne YARO · PCT · Tous droits réservés</p>
     <div class="ft-legal"><a href="#" onclick="event.preventDefault();openLegal('mentions')" data-i18n="ft.bottom.mentions">Mentions légales</a><a href="#" onclick="event.preventDefault();openLegal('confidentialite')" data-i18n="ft.bottom.privacy">Confidentialité</a><a href="#" onclick="event.preventDefault();openLegal('cookies')" data-i18n="ft.bottom.cookies">Cookies</a></div>
   </div>
 </footer>
+
+<aside class="side-drawer" id="sideDrawer" aria-label="Actions rapides">
+  <button class="side-drawer-handle" type="button" onclick="toggleSideDrawer()" aria-controls="sideDrawerPanel" aria-expanded="false" aria-label="Ouvrir les raccourcis">
+    <span class="side-handle-line" aria-hidden="true"></span>
+    <span>Raccourcis</span>
+  </button>
+  <div class="side-drawer-panel" id="sideDrawerPanel">
+    <div class="side-drawer-head">
+      <span>Accès rapide</span>
+      <button class="side-drawer-close" type="button" onclick="closeSideDrawer()" aria-label="Fermer le panneau">×</button>
+    </div>
+    <div class="side-drawer-actions">
+      <button class="side-drawer-action side-theme-toggle" type="button" onclick="toggleMaquetteTheme()" aria-label="Passer en mode jour">
+        <span class="side-action-mark side-theme-mark" aria-hidden="true"></span>
+        <span class="side-action-text" data-theme-label>Jour</span>
+      </button>
+      <button class="side-drawer-action side-lang-cycle" type="button" onclick="cycleI18nLanguage()" aria-label="Changer la langue">
+        <span class="side-action-mark side-lang-icon" aria-hidden="true">TR</span>
+        <span class="side-action-text">Traduire</span>
+        <span class="side-action-code" data-lang-cycle-code>FR</span>
+      </button>
+      <a class="side-drawer-action" href="#publication"><span class="side-action-mark" aria-hidden="true">01</span><span class="side-action-text">Publication</span></a>
+      <a class="side-drawer-action" href="#galerie"><span class="side-action-mark" aria-hidden="true">02</span><span class="side-action-text">Galerie</span></a>
+      <a class="side-drawer-action" href="#actu"><span class="side-action-mark" aria-hidden="true">03</span><span class="side-action-text">Actualités</span></a>
+    </div>
+  </div>
+</aside>
 
 <!-- BARRE DE NAVIGATION MOBILE (bottom tabbar) -->
 <nav class="mob-tabbar" id="mobTabbar" aria-label="Navigation rapide">
@@ -628,101 +660,72 @@
     </div>
     <div class="lmodal-body">
       <h4 data-i18n="modal.mentions.publisher.h">Éditeur du site</h4>
-      <p data-i18n-html="modal.mentions.publisher.p">Ce site est édité par la <strong>Cellule de communication de la campagne d'YARO Maquette</strong>, site de démonstration personnalisable pour la 1re circonscription d'votre territoire (Zone client), votre pays.</p>
+      <p data-i18n-html="modal.mentions.publisher.p">Ce site est édité par <strong>YARO Agency</strong> comme démonstrateur commercial personnalisable pour des sites clients administrables.</p>
       <h4 data-i18n="modal.mentions.resp.h">Responsable de la publication</h4>
-      <p data-i18n-html="modal.mentions.resp.p"><strong>YARO Maquette</strong>, Admin complet. Projet institutionnel de démonstration depuis le 19 août 2017. Membre du Votre organisation (Votre organisation).</p>
+      <p data-i18n-html="modal.mentions.resp.p"><strong>YARO Agency</strong>, responsable de la démonstration commerciale et de la personnalisation client.</p>
       <h4 data-i18n="modal.mentions.contact.h">Contact</h4>
       <p data-i18n-html="modal.mentions.contact.p">Brazzaville, République du Congo.<br>Pour toute demande : via le formulaire de contact disponible sur ce site.</p>
       <h4 data-i18n="modal.mentions.hosting.h">Hébergement</h4>
       <p data-i18n-html="modal.mentions.hosting.p">Ce site est hébergé par un prestataire tiers. Les informations relatives à l'hébergeur sont disponibles sur simple demande auprès de la cellule de communication.</p>
       <h4 data-i18n="modal.mentions.ip.h">Propriété intellectuelle</h4>
-      <p data-i18n-html="modal.mentions.ip.p">L'ensemble des contenus de ce site (textes, photos, graphismes) est la propriété exclusive de la campagne YARO ou de leurs auteurs respectifs. Toute reproduction sans autorisation préalable est interdite.</p>
+      <p data-i18n-html="modal.mentions.ip.p">L'ensemble des contenus de cette maquette (textes, photos, graphismes) est fourni à titre de démonstration et doit être remplacé pour chaque client.</p>
       <h4 data-i18n="modal.mentions.liability.h">Limitation de responsabilité</h4>
-      <p data-i18n-html="modal.mentions.liability.p">Les informations publiées sur ce site sont fournies à titre indicatif. La campagne ne saurait être tenue responsable des inexactitudes ou omissions qui pourraient y figurer.</p>
+      <p data-i18n-html="modal.mentions.liability.p">Les informations publiées sur ce site sont fournies à titre indicatif pour présenter le produit YARO.</p>
     </div>
   </div>
 </div>
 
-<!-- Modal achat du livre -->
+<!-- Modal demande de démonstration -->
 <div class="lmodal-overlay" id="modal-achat">
   <div class="lmodal" style="max-width:560px">
     <div class="lmodal-head">
-      <h3 data-i18n="pub.modal.title">Acheter le livre, 40 €</h3>
+      <h3 data-i18n="pub.modal.title">Demander une démonstration</h3>
       <button class="lmodal-close" onclick="document.getElementById('modal-achat').classList.remove('open');document.body.style.overflow=''" aria-label="Fermer" data-i18n="aria.close" data-i18n-attr="aria-label">✕</button>
     </div>
     <div class="lmodal-body" id="achat-step-1">
-      <!-- Aperçu livre -->
       <div class="buy-modal-book">
         <div class="buy-modal-cover">
-          <img loading="lazy" src="images/livre-cover.jpg" alt="Couverture" style="width:70px;border-radius:3px;display:block"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="pub-cover-css" style="display:none;width:70px">
-            <span class="pcc-author" style="font-size:4.5px">YARO Maquette</span>
-            <div class="pcc-title" style="font-size:6px">Les mutations constitutionnelles en Afrique noire francophone</div>
-            <div class="pcc-sub" style="font-size:4px">à partir des exemples du votre pays, du Bénin et du Sénégal</div>
-            <div class="pcc-harmattan" style="font-size:3.5px;padding-top:4px">L'Harmattan</div>
-          </div>
+          <img loading="lazy" src="images/_2.jpeg" alt="Aperçu de la maquette Romi Oyo" style="width:70px;border-radius:3px;display:block">
         </div>
         <div class="buy-modal-info">
-          <h4>Les mutations constitutionnelles en Afrique noire francophone</h4>
-          <p>YARO Maquette</p>
-          <p>Éditions L'Harmattan · 353 pages · 2019</p>
-          <p style="color:var(--r);font-weight:800;font-size:16px;margin-top:6px">40 €</p>
+          <h4>Maquette Romi Oyo</h4>
+          <p>Site public + espace admin + CRM</p>
+          <p>Produit duplicable pour vos clients</p>
+          <p style="color:var(--r);font-weight:800;font-size:16px;margin-top:6px">Démo personnalisable</p>
         </div>
       </div>
 
-      <!-- Options d'achat -->
-      <p style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:14px;letter-spacing:.5px;text-transform:uppercase" data-i18n="pub.modal.choose">Choisissez votre mode d'achat</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:14px;letter-spacing:.5px;text-transform:uppercase" data-i18n="pub.modal.choose">Choisissez la suite</p>
 
       <div class="buy-platforms">
-        <!-- Fnac -->
-        <a class="buy-platform" href="https://www.fnac.com/ia9160666/Aime-Ange-Wilfrid-Yaro"
-           target="_blank" rel="noopener" onclick="trackBuy('fnac')">
+        <a class="buy-platform" href="#engagement" onclick="document.getElementById('modal-achat').classList.remove('open')">
           <div class="buy-platform-left">
-            <div class="buy-platform-logo">FN</div>
+            <div class="buy-platform-logo">RD</div>
             <div>
-              <div class="buy-platform-name" data-i18n="pub.modal.fnac.name">Fnac</div>
-              <div class="buy-platform-desc" data-i18n="pub.modal.fnac.desc">Disponible en ligne · Livraison rapide · Retrait en magasin</div>
-            </div>
-          </div>
-          <div class="buy-platform-price">40 € →</div>
-        </a>
-
-        <!-- Harmattan, achat en ligne principal -->
-        <a class="buy-platform" href="https://www.editions-harmattan.fr/catalogue/livre/les-mutations-constitutionnelles-en-afrique-noire-francophone/13871"
-           target="_blank" rel="noopener" onclick="trackBuy('harmattan')">
-          <div class="buy-platform-left">
-            <div class="buy-platform-logo">LH</div>
-            <div>
-              <div class="buy-platform-name" data-i18n="pub.modal.harmattan.name">L'Harmattan (éditeur officiel)</div>
-              <div class="buy-platform-desc" data-i18n="pub.modal.harmattan.desc">Paiement sécurisé · Livraison mondiale · Broché ou numérique</div>
-            </div>
-          </div>
-          <div class="buy-platform-price">40 € →</div>
-        </a>
-
-        <!-- Amazon -->
-        <a class="buy-platform" href="https://www.amazon.fr/mutations-constitutionnelles-Afrique-noire-francophone/dp/2343184100"
-           target="_blank" rel="noopener" onclick="trackBuy('amazon')">
-          <div class="buy-platform-left">
-            <div class="buy-platform-logo">AM</div>
-            <div>
-              <div class="buy-platform-name">Amazon.fr</div>
-              <div class="buy-platform-desc" data-i18n="pub.modal.amazon.desc">Livraison rapide · Prime disponible</div>
+              <div class="buy-platform-name" data-i18n="pub.modal.fnac.name">Planifier une démo</div>
+              <div class="buy-platform-desc" data-i18n="pub.modal.fnac.desc">Présenter la maquette à un prospect ou client.</div>
             </div>
           </div>
           <div class="buy-platform-price">→</div>
         </a>
 
-        <div class="buy-divider" data-i18n="pub.modal.or">ou</div>
-
-        <!-- Commande directe via bureau -->
-        <a class="buy-platform local" href="#" onclick="event.preventDefault();showOrderForm()">
+        <a class="buy-platform" href="#programme" onclick="document.getElementById('modal-achat').classList.remove('open')">
           <div class="buy-platform-left">
-            <div class="buy-platform-logo">🇨🇬</div>
+            <div class="buy-platform-logo">MD</div>
             <div>
-              <div class="buy-platform-name" data-i18n="pub.modal.deputy.name">Demander via l’équipe YARO</div>
-              <div class="buy-platform-desc" data-i18n="pub.modal.deputy.desc">Livraison au votre pays · Paiement à la livraison · Dédicace possible</div>
+              <div class="buy-platform-name" data-i18n="pub.modal.harmattan.name">Voir les modules</div>
+              <div class="buy-platform-desc" data-i18n="pub.modal.harmattan.desc">Site vitrine, admin, CRM, contenus et formulaires.</div>
+            </div>
+          </div>
+          <div class="buy-platform-price">→</div>
+        </a>
+
+        <a class="buy-platform" href="#contact" onclick="document.getElementById('modal-achat').classList.remove('open')">
+          <div class="buy-platform-left">
+            <div class="buy-platform-logo">CT</div>
+            <div>
+              <div class="buy-platform-name">Contacter YARO</div>
+              <div class="buy-platform-desc" data-i18n="pub.modal.amazon.desc">Discuter d'une adaptation pour un client.</div>
             </div>
           </div>
           <div class="buy-platform-price">→</div>
@@ -730,33 +733,6 @@
       </div>
     </div>
 
-    <!-- Formulaire commande locale (caché par défaut) -->
-    <div class="lmodal-body" id="achat-step-2" style="display:none">
-      <button onclick="showBuyOptions()" style="background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:13px;margin-bottom:16px;padding:0" data-i18n="pub.order.back">← Retour aux options</button>
-      <p style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:18px" data-i18n="pub.order.note">Notre équipe vous contacte sous 48h pour confirmer la commande et organiser la livraison.</p>
-      <form class="order-form" onsubmit="submitOrder(event,this)">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div class="fgrp"><label data-i18n="form.firstname">Prénom *</label><input type="text" name="prenom" placeholder="Votre prénom" required data-i18n-ph="form.firstname.ph"></div>
-          <div class="fgrp"><label data-i18n="form.lastname">Nom *</label><input type="text" name="nom" placeholder="Votre nom" required data-i18n-ph="form.lastname.ph"></div>
-        </div>
-        <div class="fgrp"><label data-i18n="form.phone">Téléphone *</label><input type="tel" name="telephone" placeholder="+242 XX XXX XXXX" required></div>
-        <div class="fgrp"><label data-i18n="form.email">Email</label><input type="email" name="email" placeholder="votre@email.com"></div>
-        <div class="fgrp"><label data-i18n="form.address">Ville / Adresse *</label><input type="text" name="adresse" placeholder="Brazzaville, Pointe-Noire, votre territoire…" required data-i18n-ph="form.address.ph"></div>
-        <div class="fgrp"><label data-i18n="pub.order.qty.lbl">Quantité</label>
-          <select name="quantite">
-            <option value="1" data-i18n="pub.order.qty.1">1 exemplaire</option>
-            <option value="2" data-i18n="pub.order.qty.2">2 exemplaires</option>
-            <option value="3" data-i18n="pub.order.qty.3">3 exemplaires</option>
-            <option value="5" data-i18n="pub.order.qty.5">5 exemplaires</option>
-            <option value="autre" data-i18n="pub.order.qty.other">Autre (préciser en note)</option>
-          </select>
-        </div>
-        <div class="fgrp"><label data-i18n="pub.order.notes.lbl">Note (dédicace, précision…)</label><textarea name="note" rows="2" placeholder="Ex : dédicace souhaitée, heure de disponibilité…" data-i18n-ph="pub.order.notes.ph"></textarea></div>
-        <div class="order-note" data-i18n="pub.order.payment">Paiement à la livraison ou par virement Mobile Money / bancaire. Nos équipes vous confirmeront les détails.</div>
-        <button type="submit" class="pub-btn-primary" id="order-btn" data-i18n="pub.order.submit" style="width:100%;margin-top:16px;justify-content:center">Envoyer ma commande</button>
-      </form>
-      <div id="order-ok" data-i18n="pub.order.success" style="display:none;text-align:center;padding:20px 0;color:#2ecc71;font-size:15px;font-weight:600">Commande enregistrée. Notre équipe vous contacte sous 48h.</div>
-    </div>
   </div>
 </div>
 
@@ -764,7 +740,7 @@
 <div class="lmodal-overlay" id="modal-confidentialite">
   <div class="lmodal">
     <div class="lmodal-head">
-      <h3 data-i18n="modal.privacy.title">Politique de confidentialité</h3>
+      <h3 data-i18n="modal.privacy.title">Institutionnel de confidentialité</h3>
       <button class="lmodal-close" onclick="closeLegal('confidentialite')" aria-label="Fermer" data-i18n="aria.close" data-i18n-attr="aria-label">✕</button>
     </div>
     <div class="lmodal-body">
