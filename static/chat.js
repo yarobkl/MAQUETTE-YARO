@@ -65,7 +65,7 @@
     if (_ttsOn) {
       btn.classList.add("tts-on");
       btn.title = "Désactiver la voix";
-      speak("Voix activée. Je suis DA, l'assistant virtuel du Responsable YARO.");
+      speak("Voix activée. Je suis DA, l'assistant virtuel de la Maquette V2.");
     } else {
       window.speechSynthesis.cancel();
       btn.classList.remove("tts-on", "tts-speaking");
@@ -90,13 +90,13 @@
         _welcomed = true;
         addTimestamp();
         setTimeout(() => {
-          addMessage("bot", "👋 Bonjour ! Je suis DA, l'assistant virtuel du Responsable YARO Maquette. En quoi puis-je vous aider ?");
+          addMessage("bot", "Bonjour. Je suis DA, l'assistant virtuel de la Maquette V2. Je peux vous orienter sur le programme, les actualités, les demandes d'audience, le suivi de dossier et le contact.");
           setTimeout(() => {
             addSuggestions([
-              "Qui est le Responsable YARO ?",
-              "Ses projets & engagements",
-              "Comment le contacter ?",
-              "Démonstration politique"
+              "Faire une demande d'audience",
+              "Voir le programme",
+              "Consulter les actualités",
+              "Contacter l'équipe"
             ]);
           }, 600);
         }, 400);
@@ -179,6 +179,45 @@
     return div;
   }
 
+  function normalizeQuestion(text) {
+    return String(text || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
+  }
+
+  function localReply(text) {
+    const q = normalizeQuestion(text);
+    const outOfScope = "Je ne peux pas vous aider sur ce point depuis cette maquette. Pour une demande précise, rapprochez-vous de l'equipe via le formulaire de contact.";
+    if (!q) return "Je vous écoute. Vous pouvez poser une question sur le programme, les actualités, une demande d'audience, le suivi de dossier ou le contact.";
+    if (/\b(bonjour|salut|coucou|hello|bonsoir|comment ca va|comment vas tu|ca va)\b/.test(q)) {
+      return "Bonjour, ça va merci, et vous ? Je peux vous aider à trouver le programme, les actualités, le formulaire d'audience ou le contact.";
+    }
+    if (/\b(audience|rendez vous|rdv|demande|reservation|rencontrer|dossier|suivi|numero)\b/.test(q)) {
+      return "Pour une demande d'audience, utilisez le formulaire Audience. Après l'envoi, un numéro de suivi est généré afin de retrouver l'etat du dossier depuis la zone de suivi.";
+    }
+    if (/\b(programme|projet|engagement|priorite|quartier|ouenze|jeunesse|social|action)\b/.test(q)) {
+      return "Le programme met en avant la proximité, la jeunesse, l'emploi local, l'accompagnement social, les quartiers 56 et 57 et le suivi des demandes des habitants.";
+    }
+    if (/\b(actualite|article|source|presse|adiac|vox|courrier|allafrica|journal)\b/.test(q)) {
+      return "La rubrique Actualités regroupe des articles sourcés et datés. Elle sert à montrer les actions publiques, les prises de parole et les initiatives associées au projet.";
+    }
+    if (/\b(photo|image|galerie|video|youtube|mike tyson|baseron)\b/.test(q)) {
+      return "La galerie et la rubrique vidéo présentent les contenus visuels de la maquette. Les raccourcis permettent d'y accéder rapidement sans rallonger le fil principal.";
+    }
+    if (/\b(contact|telephone|mail|email|adresse|whatsapp|equipe)\b/.test(q)) {
+      return "Pour contacter l'equipe, allez dans la section Contact. Vous pouvez envoyer un message, une demande ou une information utile au suivi.";
+    }
+    if (/\b(admin|crm|tableau|kpi|statistique|gestion|connexion)\b/.test(q)) {
+      return "L'espace admin sert à suivre les demandes, gérer les contenus, consulter les contacts et piloter les indicateurs de la maquette.";
+    }
+    if (/\b(insulte|nul|merde|con|chiant|fais chier)\b/.test(q)) {
+      return "Je comprends. Je reste disponible pour vous orienter clairement sur le site : audience, programme, actualités, galerie, suivi ou contact.";
+    }
+    return outOfScope;
+  }
+
   async function sendChat() {
     if (_loading) return;
     const inp = document.getElementById("chatInput");
@@ -202,14 +241,14 @@
       clearTimeout(timer);
       const data = await res.json();
       if (typing) typing.remove();
-      const reply = data.reply || "Je n'ai pas pu répondre. Veuillez réessayer.";
+      const reply = data.reply || localReply(text);
       addMessage("bot", reply);
       _history.push({ role: "assistant", content: reply });
       if (_history.length > 20) _history = _history.slice(-20);
       if (!_open) { const b = document.getElementById("chatFabBadge"); if(b) b.style.display="flex"; }
     } catch(e) {
       if (typing) typing.remove();
-      addMessage("bot", e.name === "AbortError" ? "La réponse prend trop de temps." : "Une erreur s'est produite.");
+      addMessage("bot", e.name === "AbortError" ? "La réponse prend trop de temps. Voici une orientation rapide : " + localReply(text) : localReply(text));
     } finally {
       _loading = false;
       if (btn) btn.disabled = false;

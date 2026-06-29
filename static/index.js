@@ -1,5 +1,5 @@
 
-const IMG = "images/romi-oyo.png";
+const IMG = "images/romi-oyo-costume-rayure.png";
 const THEME_STORAGE_KEY = "maquette_theme";
 function escHtml(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 function cleanLabel(s){
@@ -837,6 +837,7 @@ window.addEventListener("scroll",()=>nav.classList.toggle("sc",scrollY>60));
 const hbg=document.getElementById("hbg"),mob=document.getElementById("mobNav");
 function mobOpen(v){
   mob.classList.toggle("open",v);
+  hbg.classList.toggle("open", mob.classList.contains("open"));
   hbg.setAttribute("aria-expanded", mob.classList.contains("open"));
   document.body.style.overflow = mob.classList.contains("open") ? "hidden" : "";
 }

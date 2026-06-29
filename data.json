@@ -5,7 +5,7 @@
     "eyebrow": "République du Congo · Ouenzé 3 · Campagne législative",
     "role": "Député de la troisième circonscription de Ouenzé · PCT",
     "slogan": "La proximité <em>terrain</em>.<br>Le dialogue <em>direct</em> avec les habitants.",
-    "subtitle": "Une maquette institutionnelle complète pour présenter un élu, ses actions, son programme, ses actualités, ses demandes d’audience et son espace admin.",
+    "subtitle": "Maquette V2 institutionnelle pour présenter un élu, ses actions, son programme, ses actualités, ses demandes d’audience et son espace admin.",
     "btn1": "Demande d’audience",
     "btn2": "Lire le programme"
   },
@@ -19,7 +19,7 @@
       "Selon ADIAC, Romi Oyo a été investi par le PCT pour les législatives 2017 après avoir initialement envisagé une candidature indépendante dans la troisième circonscription de Ouenzé, précisément les quartiers 56 et 57.",
       "L’article rappelle son ancrage local : il se présente comme ancien conseiller municipal du même arrondissement et met en avant la nécessité de construire avec les populations un futur répondant à leurs aspirations.",
       "Les contenus récents autour de Ouenzé 3 insistent sur l’accompagnement des jeunes, les actions sociales, les rencontres directes avec les habitants et la valorisation du terrain.",
-      "Cette maquette reprend la structure complète du projet Bininga : site public, actualités sourcées, galerie, programme, demandes d’audience, suivi, chatbot, espace admin et base prête à personnaliser pour un client politique ou institutionnel."
+      "Cette Maquette V2 reprend la structure complète du projet Bininga : site public, actualités sourcées, galerie, programme, demandes d’audience, suivi, chatbot, espace admin et base prête à personnaliser pour un client politique ou institutionnel."
     ],
     "badges": [
       "Député de Ouenzé 3",
@@ -897,9 +897,9 @@
     ]
   },
   "seo": {
-    "title": "Maquette Romi Oyo",
-    "description": "Maquette Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville, avec espace admin, actualités, programme et demandes d’audience.",
-    "keywords": "Romi Oyo, Ouenzé 3, député Congo, PCT, Brazzaville, maquette Romi Oyo",
+    "title": "Maquette V2 · Romi Oyo",
+    "description": "Maquette V2 Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville, avec espace admin, actualités, programme et demandes d’audience.",
+    "keywords": "Romi Oyo, Ouenzé 3, député Congo, PCT, Brazzaville, Maquette V2",
     "author": "YARO Agency"
   },
   "contact": {
@@ -921,7 +921,7 @@
   "footer": {
     "logoName": "Romi OYO",
     "logoSub": "Député · Ouenzé 3",
-    "brandText": "Maquette Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville.",
-    "copyright": "© 2026 Maquette Romi Oyo · YARO Agency"
+    "brandText": "Maquette V2 Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville.",
+    "copyright": "© 2026 Maquette V2 · YARO Agency"
   }
 }

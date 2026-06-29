@@ -158,8 +158,8 @@ img {
   }
 
   .hero-btns {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: 1fr;
+    max-width: none;
   }
 
   .hero-btns .btn {

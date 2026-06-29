@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Romi Oyo · Maquette Romi Oyo</title>
-<meta name="description" content="Maquette Romi Oyo, député de la troisième circonscription de Ouenzé, avec espace admin, actualités, programme, galerie et demandes d’audience">
-<meta name="keywords" content="Romi Oyo, Ouenzé 3, député Congo, PCT, Brazzaville, maquette Romi Oyo, espace admin">
+<title>Maquette V2 · Romi Oyo</title>
+<meta name="description" content="Maquette V2 Romi Oyo, député de la troisième circonscription de Ouenzé, avec espace admin, actualités, programme, galerie et demandes d’audience">
+<meta name="keywords" content="Romi Oyo, Ouenzé 3, député Congo, PCT, Brazzaville, Maquette V2, espace admin">
 <meta name="author" content="YARO Agency">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://maquette-yaro.fr/">
@@ -13,7 +13,7 @@
 <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://maquette-yaro.fr/">
-<meta property="og:title" content="Romi Oyo · Maquette Romi Oyo">
+<meta property="og:title" content="Maquette V2 · Romi Oyo">
 <meta property="og:description" content="Député de Ouenzé 3 · Proximité terrain, programme, actualités et espace admin de suivi.">
 <meta property="og:image" content="https://maquette-yaro.fr/images/romi-oyo.png">
 <meta property="og:image:width" content="1200">
@@ -23,7 +23,7 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Romi Oyo · Maquette Romi Oyo">
+<meta name="twitter:title" content="Maquette V2 · Romi Oyo">
 <meta name="twitter:description" content="Député de Ouenzé 3 · Proximité terrain, programme, actualités et espace admin de suivi.">
 <meta name="twitter:image" content="https://maquette-yaro.fr/images/romi-oyo.png">
 
@@ -35,7 +35,7 @@
   "name": "Romi Oyo",
   "honorificPrefix": "Honorable",
   "jobTitle": "Député de la troisième circonscription de Ouenzé",
-  "description": "Maquette Romi Oyo, député de Ouenzé 3 à Brazzaville.",
+  "description": "Maquette V2 Romi Oyo, député de Ouenzé 3 à Brazzaville.",
   "url": "https://maquette-yaro.fr",
   "image": "https://maquette-yaro.fr/images/romi-oyo.png",
   "nationality": {
@@ -91,8 +91,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="static/index.css?v=20260522-public-polish">
-<link rel="stylesheet" href="static/mobile.css?v=20260522-public-polish">
+<link rel="stylesheet" href="static/index.css?v=20260630-maquette-v2">
+<link rel="stylesheet" href="static/mobile.css?v=20260630-maquette-v2">
 <style>
 /* ── Sélecteur de langue ─────────────────────────────────── */
 .lang-switcher{display:flex;align-items:center;gap:4px;margin-left:10px}
@@ -105,7 +105,7 @@
 .lang-btn.lang-active{opacity:1;border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.1);box-shadow:0 0 0 2px rgba(200,16,46,.35)}
 @media(max-width:900px){.lang-switcher{display:none}}
 </style>
-<script src="static/i18n.js?v=20260522-public-polish"></script>
+<script src="static/i18n.js?v=20260630-maquette-v2"></script>
 </head>
 <body>
 <a href="#hero" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--r);color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;transition:top .2s" onfocus="this.style.top='0'" onblur="this.style.top='-40px'" data-i18n="skip.link">Aller au contenu principal</a>
@@ -114,7 +114,7 @@
 <div id="loader">
   <div class="loader-logo">RO<span>.</span></div>
   <div class="loader-bar"><div class="loader-fill"></div></div>
-  <div class="loader-txt">Romi Oyo</div>
+  <div class="loader-txt">Maquette V2</div>
   <div class="loader-dev">Développé par <span>Rodrin Bakala Mouengue</span></div>
 </div>
 
@@ -137,10 +137,7 @@
   <ul class="nlinks">
     <li><a href="#about" data-i18n="nav.biography">Biographie</a></li>
     <li><a href="#parcours" data-i18n="nav.parcours">Parcours</a></li>
-    <li><a href="#publication" data-i18n="nav.publication">Publication</a></li>
     <li><a href="#programme" data-i18n="nav.programme">Programme</a></li>
-    <li><a href="#galerie" data-i18n="nav.gallery">Galerie</a></li>
-    <li><a href="#actu" data-i18n="nav.news">Actualités</a></li>
     <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     <li><a href="#engagement" class="ncta" data-i18n="nav.audience">Audience</a></li>
   </ul>
@@ -152,17 +149,18 @@
     <button class="lang-btn" data-lang="zh" onclick="applyI18n('zh')" title="中文">ZH</button>
     <button class="lang-btn" data-lang="ru" onclick="applyI18n('ru')" title="Русский">RU</button>
   </div>
-  <button class="hbg" id="hbg" aria-label="Ouvrir le menu" aria-expanded="false" data-i18n="aria.menu.open" data-i18n-attr="aria-label"><span></span><span></span><span></span></button>
+  <button class="hbg" id="hbg" aria-label="Ouvrir le menu" aria-expanded="false" data-i18n="aria.menu.open" data-i18n-attr="aria-label">
+    <span class="hbg-text">Menu</span>
+    <span class="hbg-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+  </button>
 </nav>
 
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
+  <a href="#hero" onclick="cMob()" data-i18n="mob.tab.home">Accueil</a>
   <a href="#about" onclick="cMob()" data-i18n="nav.biography">Biographie</a>
   <a href="#parcours" onclick="cMob()" data-i18n="nav.parcours">Parcours</a>
-  <a href="#publication" onclick="cMob()" data-i18n="nav.publication">Offre</a>
   <a href="#programme" onclick="cMob()" data-i18n="nav.programme">Programme</a>
-  <a href="#galerie" onclick="cMob()" data-i18n="nav.gallery">Galerie</a>
-  <a href="#actu" onclick="cMob()" data-i18n="nav.news">Actualités</a>
   <a href="#engagement" onclick="cMob()" data-i18n="nav.audience">Audience</a>
   <a href="#contact" onclick="cMob()" data-i18n="nav.contact">Contact</a>
   <!-- Langue mobile -->
@@ -180,7 +178,7 @@
   <div class="hero-video-bg"></div>
   <div class="hero-noise"></div>
   <div class="hero-img-side">
-    <img loading="eager" src="images/romi-oyo.png" alt="Romi Oyo, député de Ouenzé 3">
+    <img loading="eager" src="images/romi-oyo-costume-rayure.png" alt="Romi Oyo, député de Ouenzé 3">
   </div>
   <div class="hero-content">
     <h1 class="hero-name" id="dyn-name">
@@ -218,7 +216,7 @@
   <div class="about-grid">
     <div class="about-img-wrap rev-l">
       <div class="about-img-frame">
-        <img loading="lazy" src="images/romi-oyo.png" alt="Romi Oyo">
+        <img loading="lazy" src="images/romi-oyo-costume-rayure.png" alt="Romi Oyo">
       </div>
       <div class="about-img-deco"></div>
       <div class="about-img-deco2"></div>
@@ -265,7 +263,7 @@
 
     <div class="pub-book rev-l">
       <div style="position:relative;display:inline-block">
-        <img loading="lazy" src="images/romi-oyo.png" alt="Romi Oyo, maquette institutionnelle" class="pub-cover-img">
+        <img loading="lazy" src="images/romi-oyo-costume-rayure.png" alt="Romi Oyo, maquette institutionnelle" class="pub-cover-img">
         <span class="pub-cover-badge" data-i18n="pub.cover.badge">Démo prête</span>
       </div>
       <div class="pub-price-badge">100%</div>
@@ -562,7 +560,7 @@
         <div class="nlogo-badge">RO</div>
         <div class="nlogo-txt"><span id="dyn-ft-logo-name">Romi OYO</span><small id="dyn-ft-logo-sub">Député · Ouenzé 3</small></div>
       </div>
-      <p class="ft-brand-p" id="dyn-ft-brand">Maquette Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville.</p>
+      <p class="ft-brand-p" id="dyn-ft-brand">Maquette V2 Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville.</p>
       <div class="social-row">
         <a href="#" class="soc">f</a>
         <a href="#" class="soc">𝕏</a>
@@ -571,7 +569,7 @@
         <a href="#" class="soc">WA</a>
       </div>
     </div>
-    <div class="ft-col"><div class="ft-col-t" data-i18n="ft.nav">Navigation</div><ul><li><a href="#about" data-i18n="nav.biography">Biographie</a></li><li><a href="#parcours" data-i18n="nav.parcours">Parcours</a></li><li><a href="#publication" data-i18n="nav.publication">Publication</a></li><li><a href="#programme" data-i18n="nav.programme">Programme</a></li><li><a href="#galerie" data-i18n="nav.gallery">Galerie</a></li><li><a href="#actu" data-i18n="nav.news">Actualités</a></li></ul></div>
+    <div class="ft-col"><div class="ft-col-t" data-i18n="ft.nav">Navigation</div><ul><li><a href="#about" data-i18n="nav.biography">Biographie</a></li><li><a href="#parcours" data-i18n="nav.parcours">Parcours</a></li><li><a href="#programme" data-i18n="nav.programme">Programme</a></li><li><a href="#engagement" data-i18n="nav.audience">Audience</a></li><li><a href="#contact" data-i18n="nav.contact">Contact</a></li></ul></div>
     <div class="ft-col"><div class="ft-col-t" data-i18n="ft.engage">S'engager</div><ul><li><a href="#engagement" data-i18n="ft.volunteer">Devenir bénévole</a></li><li><a href="#newsletter" data-i18n="ft.newsletter">Newsletter</a></li><li><a href="#contact" data-i18n="ft.press">Presse</a></li></ul></div>
     <div class="ft-col"><div class="ft-col-t" data-i18n="ft.legal">Légal</div><ul><li><a href="#" onclick="event.preventDefault();openLegal('mentions')" data-i18n="ft.mentions">Mentions légales</a></li><li><a href="#" onclick="event.preventDefault();openLegal('confidentialite')" data-i18n="ft.privacy">Confidentialité</a></li><li><a href="https://pct.cg/" target="_blank" rel="noopener">PCT officiel</a></li></ul></div>
   </div>
@@ -633,11 +631,11 @@
 </nav>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="static/i18n-data.en.js?v=20260522-public-polish"></script>
-<script src="static/i18n-data.es.js?v=20260522-public-polish"></script>
-<script src="static/i18n-data.zh.js?v=20260522-public-polish"></script>
-<script src="static/i18n-data.ru.js?v=20260522-public-polish"></script>
-<script src="static/index.js?v=20260522-public-polish" defer></script>
+<script src="static/i18n-data.en.js?v=20260630-maquette-v2"></script>
+<script src="static/i18n-data.es.js?v=20260630-maquette-v2"></script>
+<script src="static/i18n-data.zh.js?v=20260630-maquette-v2"></script>
+<script src="static/i18n-data.ru.js?v=20260630-maquette-v2"></script>
+<script src="static/index.js?v=20260630-maquette-v2" defer></script>
 
 <!-- ══ MODALES LÉGALES ══════════════════════════════════════════════ -->
 
@@ -678,7 +676,7 @@
           <img loading="lazy" src="images/_2.jpeg" alt="Aperçu de la maquette Romi Oyo" style="width:70px;border-radius:3px;display:block">
         </div>
         <div class="buy-modal-info">
-          <h4>Maquette Romi Oyo</h4>
+          <h4>Maquette V2</h4>
           <p>Site public + espace admin + CRM</p>
           <p>Produit duplicable pour vos clients</p>
           <p style="color:var(--r);font-weight:800;font-size:16px;margin-top:6px">Démo personnalisable</p>
@@ -774,7 +772,7 @@
 </div>
 
 <!-- ── CHATBOT WIDGET ────────────────────────────────────── -->
-<link rel="stylesheet" href="static/chat.css?v=20260522-public-polish">
+<link rel="stylesheet" href="static/chat.css?v=20260630-maquette-v2">
 
 <div class="chat-bubble" id="chatBubble" onclick="document.getElementById('chatBubble').classList.remove('visible');toggleChat()">
   Bonjour, je suis là pour vous aider.<span class="bubble-dots"><span></span><span></span><span></span></span>
@@ -813,7 +811,7 @@
   </div>
 </div>
 
-<script src="static/chat.js" defer></script>
+<script src="static/chat.js?v=20260630-maquette-v2" defer></script>
 
 <style>
 /* ── ANTI-SCROLL HORIZONTAL ────────────────────────── */
