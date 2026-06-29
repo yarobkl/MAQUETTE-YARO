@@ -91,6 +91,17 @@
         "sourceUrl": "https://fr.allafrica.com/stories/202008020100.html"
       },
       {
+        "image": "images/harris-oyo-noel-ouenze.png",
+        "alt": "Fondation Harris-Oyo remise de jouets aux enfants de Ouenzé",
+        "chipColor": "#b8973a",
+        "chip": "Noël solidaire",
+        "date": "26 décembre 2017 · Le Courrier de Kinshasa",
+        "title": "La Fondation Harris-Oyo offre des jouets aux enfants de Ouenzé",
+        "subtitle": "Le Courrier de Kinshasa rapporte une remise de cadeaux de Noël aux enfants des quartiers 56 et 57 de Ouenzé, par la Fondation Harris-Oyo.",
+        "source": "Le Courrier de Kinshasa",
+        "sourceUrl": "https://www.lecourrierdekinshasa.com/node/76124"
+      },
+      {
         "image": "images/romi-oyo-assemblee.png",
         "alt": "Romi Oyo à l’Assemblée nationale",
         "chipColor": "#2e7d32",
@@ -208,6 +219,27 @@
         ],
         "source": "AllAfrica / Les Dépêches de Brazzaville",
         "sourceUrl": "https://fr.allafrica.com/stories/202008020100.html"
+      },
+      {
+        "image": "images/harris-oyo-noel-ouenze.png",
+        "badgeColor": "#b8973a",
+        "badge": "Solidarité",
+        "tagColor": "#b8973a",
+        "tag": "Noël à Ouenzé",
+        "date": "26 décembre 2017 · 14:00 · Le Courrier de Kinshasa",
+        "title": "Fête de Noël : des jouets offerts aux enfants de Ouenzé",
+        "text1": "Le Courrier de Kinshasa indique que la Fondation Harris-Oyo a remis des jouets de Noël aux enfants de la troisième circonscription électorale du cinquième arrondissement de Brazzaville.",
+        "quote": "L’article situe l’action auprès des enfants des quartiers 56 et 57 de Ouenzé et souligne une démarche de partage et de proximité portée par la Fondation Harris-Oyo.",
+        "text2": "Cette actualité complète la maquette avec une action sociale datée, sourcée et illustrée par une image fournie pour renforcer la crédibilité du dossier.",
+        "tags": [
+          "Noël",
+          "Fondation Harris-Oyo",
+          "Ouenzé",
+          "Quartiers 56 et 57",
+          "Enfants"
+        ],
+        "source": "Le Courrier de Kinshasa",
+        "sourceUrl": "https://www.lecourrierdekinshasa.com/node/76124"
       },
       {
         "image": "images/romi-oyo-assemblee.png",
@@ -329,6 +361,20 @@
         "source": "AllAfrica / Les Dépêches de Brazzaville",
         "sourceUrl": "https://fr.allafrica.com/stories/202008020100.html",
         "image": "images/harris-oyo-fondation-action-sociale.png"
+      },
+      {
+        "catColor": "#b8973a",
+        "borderColor": "#b8973a",
+        "cat": "Solidarité",
+        "icon": "12",
+        "day": "26",
+        "month": "Déc",
+        "year": "2017",
+        "title": "Jouets de Noël à Ouenzé",
+        "desc": "La Fondation Harris-Oyo remet des cadeaux de Noël aux enfants des quartiers 56 et 57 de Ouenzé.",
+        "source": "Le Courrier de Kinshasa",
+        "sourceUrl": "https://www.lecourrierdekinshasa.com/node/76124",
+        "image": "images/harris-oyo-noel-ouenze.png"
       },
       {
         "catColor": "#2e7d32",
