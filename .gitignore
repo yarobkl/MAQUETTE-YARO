@@ -50,3 +50,4 @@ youtube.json
 
 # Heavy client media stays outside git
 images/video/*.mp4
+.vercel
