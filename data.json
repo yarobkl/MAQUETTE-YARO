@@ -69,6 +69,17 @@
         "sourceUrl": "https://www.adiac-congo.com/content/action-sociale-harris-oyo-fondation-au-plus-proche-de-sa-communaute-166908"
       },
       {
+        "image": "images/harrys-oyo-formation-223-jeunes.png",
+        "alt": "Fondation HARRYS OYO formation de jeunes",
+        "chipColor": "#1a237e",
+        "chip": "Formation",
+        "date": "24 février 2026 · VOX Congo",
+        "title": "La Fondation HARRYS OYO forme 223 jeunes pour booster leur employabilité",
+        "subtitle": "VOX Congo rapporte une remise de certificats à 223 jeunes de Ouenzé 3 après une session de formation professionnelle initiée par Romi Oyo.",
+        "source": "VOX Congo",
+        "sourceUrl": "https://www.vox.cg/la-fondation-harrys-oyo-forme-223-jeunes-pour-booster-leur-employabilite/"
+      },
+      {
         "image": "images/romi-oyo-assemblee.png",
         "alt": "Romi Oyo à l’Assemblée nationale",
         "chipColor": "#2e7d32",
@@ -144,6 +155,27 @@
         ],
         "source": "ADIAC / Les Dépêches de Brazzaville",
         "sourceUrl": "https://www.adiac-congo.com/content/action-sociale-harris-oyo-fondation-au-plus-proche-de-sa-communaute-166908"
+      },
+      {
+        "image": "images/harrys-oyo-formation-223-jeunes.png",
+        "badgeColor": "#1a237e",
+        "badge": "Formation",
+        "tagColor": "#1976D2",
+        "tag": "Employabilité des jeunes",
+        "date": "24 février 2026 · VOX Congo",
+        "title": "La Fondation HARRYS OYO forme 223 jeunes pour booster leur employabilité",
+        "text1": "Selon VOX Congo, la Fondation HARRYS OYO a clôturé une session de formation professionnelle à Brazzaville en remettant des certificats à 223 jeunes de Ouenzé 3.",
+        "quote": "La formation couvre plusieurs métiers pratiques, dont hôtellerie-restauration, accueil, mécanique automobile, cosmétique, coiffure, informatique, froid, énergie solaire, pâtisserie et couture.",
+        "text2": "La maquette valorise cette action comme un contenu fort sur l’insertion professionnelle, l’autonomie des jeunes et l’action concrète de terrain.",
+        "tags": [
+          "Formation",
+          "223 jeunes",
+          "Ouenzé 3",
+          "Employabilité",
+          "VOX Congo"
+        ],
+        "source": "VOX Congo",
+        "sourceUrl": "https://www.vox.cg/la-fondation-harrys-oyo-forme-223-jeunes-pour-booster-leur-employabilite/"
       },
       {
         "image": "images/romi-oyo-assemblee.png",
@@ -237,6 +269,20 @@
         "source": "ADIAC",
         "sourceUrl": "https://www.adiac-congo.com/content/action-sociale-harris-oyo-fondation-au-plus-proche-de-sa-communaute-166908",
         "image": "images/harris-oyo-fondation-action-sociale.png"
+      },
+      {
+        "catColor": "#1a237e",
+        "borderColor": "#1a237e",
+        "cat": "Formation",
+        "icon": "10",
+        "day": "24",
+        "month": "Fév",
+        "year": "2026",
+        "title": "223 jeunes formés par HARRYS OYO",
+        "desc": "Certificats, kits d’accompagnement et opportunités de stages pour renforcer l’employabilité des jeunes de Ouenzé 3.",
+        "source": "VOX Congo",
+        "sourceUrl": "https://www.vox.cg/la-fondation-harrys-oyo-forme-223-jeunes-pour-booster-leur-employabilite/",
+        "image": "images/harrys-oyo-formation-223-jeunes.png"
       },
       {
         "catColor": "#2e7d32",
@@ -355,6 +401,13 @@
         "alt": "Harris-Oyo Fondation action sociale"
       },
       {
+        "image": "images/harrys-oyo-formation-223-jeunes.png",
+        "emoji": "",
+        "title": "Formation de 223 jeunes",
+        "subtitle": "Cérémonie de remise des certificats de formation professionnelle.",
+        "alt": "Fondation HARRYS OYO formation jeunes"
+      },
+      {
         "image": "images/romi-oyo-portrait-casquette.png",
         "emoji": "",
         "title": "Portrait de proximité",
@@ -387,6 +440,11 @@
       {
         "image": "images/harris-oyo-fondation-action-sociale.png",
         "alt": "Harris-Oyo Fondation action sociale",
+        "emoji": ""
+      },
+      {
+        "image": "images/harrys-oyo-formation-223-jeunes.png",
+        "alt": "Fondation HARRYS OYO formation jeunes",
         "emoji": ""
       },
       {
