@@ -293,6 +293,9 @@ body.theme-light .side-action-code{background:rgba(139,10,30,.07);color:#17120d;
 .actu-vedette-quote{border-left:3px solid var(--r);padding:12px 20px;margin:20px 0;font-style:italic;font-size:14px;color:rgba(255,255,255,.7);line-height:1.6;background:rgba(200,16,46,.04)}
 .actu-vedette-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
 .actu-tag{font-size:10px;letter-spacing:1px;font-weight:700;text-transform:uppercase;color:rgba(255,255,255,.4);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:3px;padding:4px 12px}
+.actu-source-link{display:inline-flex;width:max-content;max-width:100%;margin-top:18px;padding:8px 12px;border:1px solid rgba(184,151,58,.35);border-radius:4px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;background:rgba(184,151,58,.08);transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.actu-source-link:hover{transform:translateY(-1px);border-color:rgba(184,151,58,.65);background:rgba(184,151,58,.14)}
+.actu-source-link.is-static{color:rgba(255,255,255,.5);border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.04)}
 
 /* Grille actions */
 .actu-grid-hd{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.2);font-weight:700;margin-bottom:28px}
@@ -310,6 +313,9 @@ body.theme-light .side-action-code{background:rgba(139,10,30,.07);color:#17120d;
 .actu-card-mon{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.25);font-weight:700;text-transform:uppercase}
 .actu-card-title{font-size:14px;font-weight:700;line-height:1.45;margin-bottom:10px;color:var(--w)}
 .actu-card-desc{font-size:12px;color:rgba(255,255,255,.38);line-height:1.65;font-weight:300}
+.actu-card-source{display:inline-flex;margin-top:16px;color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.45);padding-bottom:3px}
+.actu-card-source:hover{border-color:rgba(184,151,58,.9)}
+.actu-card-source.is-static{color:rgba(255,255,255,.45);border-color:rgba(255,255,255,.18)}
 .actu-card-ic{position:absolute;top:22px;right:22px;font-size:11px;font-weight:800;letter-spacing:.12em;opacity:.42;color:var(--g)}
 
 /* Responsive */

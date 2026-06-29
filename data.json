@@ -14,20 +14,20 @@
     "badgeNum": "Ouenzé 3",
     "badgeLbl": "Circonscription",
     "title": "Romi Oyo, une présence <span class=\"r\">de terrain</span>",
-    "intro": "Romi Oyo est député congolais de la troisième circonscription de Ouenzé à Brazzaville, membre du Parti Congolais du Travail (PCT), connu pour son implication politique et sociale auprès des populations locales.",
+    "intro": "Romi Oyo est député congolais de la troisième circonscription de Ouenzé à Brazzaville, membre du Parti Congolais du Travail (PCT), avec une communication fortement axée sur la proximité, les quartiers 56 et 57 et l’accompagnement des habitants.",
     "paragraphs": [
-      "Son parcours public s’inscrit d’abord dans l’ancrage municipal à Ouenzé, notamment auprès des quartiers 56 et 57, avant son engagement parlementaire à l’Assemblée nationale.",
-      "Sa communication politique met en avant le contact direct avec les habitants : rencontres de proximité, échanges dans les parcelles, écoute des préoccupations quotidiennes et remontée des besoins locaux.",
-      "Les sujets régulièrement associés à son action concernent l’insalubrité, l’absence de canalisations, le chômage des jeunes, la sécurité, ainsi que l’accompagnement social des personnes âgées, des malades et des publics vulnérables.",
-      "Cette version maquette reprend la structure complète du projet Bininga : site public, actualités, galerie, programme, formulaires, suivi, chatbot, espace admin et base prête à personnaliser pour un client politique ou institutionnel."
+      "Selon ADIAC, Romi Oyo a été investi par le PCT pour les législatives 2017 après avoir initialement envisagé une candidature indépendante dans la troisième circonscription de Ouenzé, précisément les quartiers 56 et 57.",
+      "L’article rappelle son ancrage local : il se présente comme ancien conseiller municipal du même arrondissement et met en avant la nécessité de construire avec les populations un futur répondant à leurs aspirations.",
+      "Les contenus récents autour de Ouenzé 3 insistent sur l’accompagnement des jeunes, les actions sociales, les rencontres directes avec les habitants et la valorisation du terrain.",
+      "Cette maquette reprend la structure complète du projet Bininga : site public, actualités sourcées, galerie, programme, demandes d’audience, suivi, chatbot, espace admin et base prête à personnaliser pour un client politique ou institutionnel."
     ],
     "badges": [
       "Député de Ouenzé 3",
       "PCT",
+      "Quartiers 56 et 57",
       "Proximité terrain",
-      "Action sociale",
-      "Demandes d’audience",
-      "Espace admin"
+      "Jeunesse",
+      "Actualités sourcées"
     ]
   },
   "stats": [
@@ -47,424 +47,313 @@
   "actus": {
     "slides": [
       {
-        "image": "images/romi-oyo.png",
-        "alt": "Romi Oyo — maquette institutionnelle",
+        "image": "images/romi-oyo-costume-rayure.png",
+        "alt": "Romi Oyo en costume",
         "chipColor": "#1a237e",
-        "chip": "Ouenzé 3",
-        "date": "Mars 2026",
-        "title": "À Ouenzé, Romi Oyo privilégie le contact direct avec les électeurs",
-        "subtitle": "Une approche de proximité fondée sur les échanges directs, l’écoute et le dialogue avec les habitants.",
-        "source": "24 News Agency",
-        "sourceUrl": "https://24newsagency.com/congo-a-ouenze-le-depute-romi-oyo-privilegie-le-contact-direct-avec-les-electeurs/"
-      },
-      {
-        "image": "images/_1.jpeg",
-        "alt": "Romi Oyo — maquette institutionnelle",
-        "chipColor": "#e65100",
-        "chip": "Actualité",
-        "date": "Maquette",
-        "title": "Actualité personnalisable depuis l’espace admin",
-        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
-        "source": "Maquette Romi Oyo",
+        "chip": "Portrait",
+        "date": "Maquette Romi Oyo",
+        "title": "Romi Oyo, une image institutionnelle forte",
+        "subtitle": "Une galerie renouvelée avec des photos réelles pour rendre la maquette plus crédible et vendable.",
+        "source": "Image fournie client",
         "sourceUrl": ""
       },
       {
-        "image": "images/_2.jpeg",
-        "alt": "Romi Oyo — maquette institutionnelle",
-        "chipColor": "#1565C0",
-        "chip": "Actualité",
-        "date": "Maquette",
-        "title": "Actualité personnalisable depuis l’espace admin",
-        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
-        "source": "Maquette Romi Oyo",
-        "sourceUrl": ""
-      },
-      {
-        "image": "images/_4.jpeg",
-        "alt": "Romi Oyo — maquette institutionnelle",
+        "image": "images/romi-oyo-assemblee.png",
+        "alt": "Romi Oyo à l’Assemblée nationale",
         "chipColor": "#2e7d32",
-        "chip": "Actualité",
-        "date": "Maquette",
-        "title": "Actualité personnalisable depuis l’espace admin",
-        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
-        "source": "Maquette Romi Oyo",
+        "chip": "Assemblée",
+        "date": "Ouenzé 3",
+        "title": "Un profil parlementaire mis en avant",
+        "subtitle": "La maquette présente le parcours, les actions et les contenus publics autour de Romi Oyo.",
+        "source": "Image fournie client",
         "sourceUrl": ""
       },
       {
-        "image": "images/_5.jpeg",
-        "alt": "Romi Oyo — maquette institutionnelle",
-        "chipColor": "",
-        "chip": "Actualité",
-        "date": "Maquette",
-        "title": "Actualité personnalisable depuis l’espace admin",
-        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
-        "source": "Maquette Romi Oyo",
-        "sourceUrl": ""
+        "image": "images/romi-oyo-mike-tyson.png",
+        "alt": "Romi Oyo avec Mike Tyson",
+        "chipColor": "#111827",
+        "chip": "International",
+        "date": "Vidéo / image",
+        "title": "Romi Oyo et Mike Tyson",
+        "subtitle": "Pendant ce temps l’Honorable Romi Oyo et la légende Mike Tyson : un contenu d’image publique à valoriser avec prudence et source.",
+        "source": "YouTube",
+        "sourceUrl": "https://www.youtube.com/watch?v=vPAVuuOhPoM"
       },
       {
-        "image": "images/_6.jpeg",
-        "alt": "Romi Oyo — maquette institutionnelle",
-        "chipColor": "",
-        "chip": "Actualité",
-        "date": "Maquette",
-        "title": "Actualité personnalisable depuis l’espace admin",
-        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
-        "source": "Maquette Romi Oyo",
-        "sourceUrl": ""
-      },
-      {
-        "image": "images/_7.jpeg",
-        "alt": "Romi Oyo — maquette institutionnelle",
-        "chipColor": "#2e7d32",
-        "chip": "Actualité",
-        "date": "Maquette",
-        "title": "Actualité personnalisable depuis l’espace admin",
-        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
-        "source": "Maquette Romi Oyo",
-        "sourceUrl": ""
-      },
-      {
-        "image": "images/_8.jpeg",
-        "alt": "Romi Oyo — maquette institutionnelle",
-        "chipColor": "#1a237e",
-        "chip": "Actualité",
-        "date": "Maquette",
-        "title": "Actualité personnalisable depuis l’espace admin",
-        "subtitle": "Ce module montre comment publier rapidement une action, un communiqué ou une information locale.",
-        "source": "Maquette Romi Oyo",
+        "image": "images/romi-oyo-portrait-casquette.png",
+        "alt": "Portrait de Romi Oyo",
+        "chipColor": "#b8973a",
+        "chip": "Proximité",
+        "date": "Terrain",
+        "title": "Une communication plus humaine",
+        "subtitle": "Des visuels plus naturels pour montrer aussi la proximité, les échanges et le quotidien politique.",
+        "source": "Image fournie client",
         "sourceUrl": ""
       }
     ],
     "vedettes": [
       {
-        "image": "images/_1.jpeg",
-        "imageBg": "",
-        "placeholderEmoji": "🇷🇼",
-        "placeholderTitle": "partenaire régional × votre pays",
-        "placeholderDate": "12 déc. 2025",
-        "badgeColor": "#1565C0",
-        "badge": "Terrain",
+        "image": "images/romi-oyo-portrait-casquette.png",
+        "badgeColor": "#1a237e",
+        "badge": "ADIAC",
         "tagColor": "#1976D2",
-        "tag": "Contact direct avec les habitants",
-        "date": "12 mars 2026 · Ouenzé, Brazzaville",
-        "title": "Romi Oyo privilégie le contact direct avec les électeurs",
-        "text1": "La maquette met en avant la démarche de proximité : porte-à-porte, écoute des habitants et mobilisation autour du dialogue local.",
-        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
-        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
+        "tag": "Investiture PCT",
+        "date": "1 juillet 2017 · Les Dépêches de Brazzaville / ADIAC",
+        "title": "Législatives 2017 : Romi Oyo explique son investiture par le PCT",
+        "text1": "ADIAC rapporte que Romi Oyo, initialement candidat indépendant dans Ouenzé 3, a finalement été investi par le Parti congolais du travail.",
+        "quote": "L’article situe son ancrage dans les quartiers 56 et 57 et rappelle son objectif de représenter les populations de Ouenzé à l’Assemblée nationale.",
+        "text2": "Cette source renforce la partie biographie et légitimité politique de la maquette, avec un lien direct vers l’article officiel.",
         "tags": [
-          "Ouenzé",
-          "Terrain",
+          "ADIAC",
           "PCT",
-          "Brazzaville",
-          "Suivi"
+          "Ouenzé 3",
+          "Quartiers 56 et 57",
+          "Assemblée nationale"
         ],
-        "source": "24 News Agency",
-        "sourceUrl": "https://24newsagency.com/congo-a-ouenze-le-depute-romi-oyo-privilegie-le-contact-direct-avec-les-electeurs/"
+        "source": "ADIAC / Les Dépêches de Brazzaville",
+        "sourceUrl": "https://www.adiac-congo.com/content/legislatives-2017-romi-oyo-donne-les-raisons-de-son-investiture-par-le-pct-66163"
       },
       {
-        "image": "images/_2.jpeg",
-        "imageBg": "linear-gradient(135deg,#0a1f0a,#1a3a1a)",
-        "placeholderEmoji": "🏘️",
-        "placeholderTitle": "13 villages\nsur l'axe Lebankaya",
-        "placeholderDate": "Ouenzé · 9 mars 2026",
+        "image": "images/romi-oyo-assemblee.png",
         "badgeColor": "#2e7d32",
-        "badge": "Programme",
-        "tagColor": "#4caf50",
-        "tag": "Priorités locales",
-        "date": "Maquette personnalisable",
-        "title": "Les priorités locales peuvent être présentées clairement",
-        "text1": "Texte personnalisable depuis l’espace admin pour présenter une action, une annonce ou une preuve de terrain.",
-        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
-        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
+        "badge": "Jeunesse",
+        "tagColor": "#2e7d32",
+        "tag": "Accompagnement des jeunes",
+        "date": "2024 · ADIAC",
+        "title": "Ouenzé 3 : environ 1000 jeunes à accompagner en 2024",
+        "text1": "L’article ADIAC met en avant un axe d’action autour de la jeunesse à Ouenzé 3, avec une ambition d’accompagnement structurée.",
+        "quote": "Ce type d’actualité permet à la maquette de montrer des actions concrètes et faciles à retrouver depuis l’espace actualités.",
+        "text2": "Le contenu reste résumé et sourcé, avec un renvoi vers la page ADIAC pour lecture complète.",
         "tags": [
-          "Ouenzé",
-          "Terrain",
-          "PCT",
-          "Brazzaville",
+          "Jeunes",
+          "Ouenzé 3",
+          "Action locale",
+          "ADIAC",
           "Suivi"
         ],
-        "source": "Maquette Romi Oyo",
-        "sourceUrl": ""
+        "source": "ADIAC / Les Dépêches de Brazzaville",
+        "sourceUrl": "https://www.adiac-congo.com/content/ouenze-3-environ-1000-jeunes-accompagner-en-2024-154685"
       },
       {
-        "image": "images/_4.jpeg",
-        "imageBg": "",
-        "placeholderEmoji": "",
-        "placeholderTitle": "",
-        "placeholderDate": "",
-        "badgeColor": "",
-        "badge": "Admin",
-        "tagColor": "",
-        "tag": "Espace admin complet",
-        "date": "Maquette personnalisable",
-        "title": "Un espace admin pour piloter le site",
-        "text1": "Texte personnalisable depuis l’espace admin pour présenter une action, une annonce ou une preuve de terrain.",
-        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
-        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
+        "image": "images/romi-oyo-mike-tyson.png",
+        "badgeColor": "#111827",
+        "badge": "Image publique",
+        "tagColor": "#111827",
+        "tag": "Romi Oyo et Mike Tyson",
+        "date": "Vidéo YouTube",
+        "title": "Pendant ce temps l’Honorable Romi Oyo et la légende Mike Tyson",
+        "text1": "La maquette intègre ce contenu comme élément d’image publique et de notoriété, relié à la vidéo fournie.",
+        "quote": "Le traitement reste clair : image, contexte court, source vidéo, sans extrapoler au-delà du contenu fourni.",
+        "text2": "Cette actualité peut être remplacée ou enrichie depuis l’espace admin selon la stratégie de communication.",
         "tags": [
-          "Ouenzé",
-          "Terrain",
-          "PCT",
-          "Brazzaville",
-          "Suivi"
+          "Mike Tyson",
+          "Image publique",
+          "Vidéo",
+          "YouTube",
+          "Communication"
         ],
-        "source": "Maquette Romi Oyo",
-        "sourceUrl": ""
+        "source": "YouTube",
+        "sourceUrl": "https://www.youtube.com/watch?v=vPAVuuOhPoM"
       },
       {
-        "image": "images/_5.jpeg",
-        "imageBg": "",
-        "placeholderEmoji": "⚡",
-        "placeholderTitle": "Ouenzé & le réseau\nélectrique national",
-        "placeholderDate": "Août 2024",
-        "badgeColor": "#e65100",
-        "badge": "Social",
-        "tagColor": "#ff6d00",
-        "tag": "Actions sociales",
-        "date": "Maquette personnalisable",
-        "title": "Actions de proximité et accompagnement social",
-        "text1": "Texte personnalisable depuis l’espace admin pour présenter une action, une annonce ou une preuve de terrain.",
-        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
-        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
+        "image": "images/romi-oyo-costume-rayure.png",
+        "badgeColor": "#b8973a",
+        "badge": "ADIAC",
+        "tagColor": "#b8973a",
+        "tag": "Dossier ADIAC",
+        "date": "Source officielle à suivre",
+        "title": "Articles ADIAC sur Romi Oyo : base documentaire de la maquette",
+        "text1": "La maquette est structurée pour accueillir les articles publiés par ADIAC concernant Romi Oyo et Ouenzé, avec source visible et lien vers l’article.",
+        "quote": "Objectif : montrer au client que le site peut centraliser les actualités fiables sans allonger le fil principal.",
+        "text2": "Le bouton source renvoie vers ADIAC, référence demandée pour les informations officielles.",
         "tags": [
-          "Ouenzé",
-          "Terrain",
-          "PCT",
-          "Brazzaville",
-          "Suivi"
+          "Sources",
+          "ADIAC",
+          "Presse",
+          "Actualités",
+          "Maquette"
         ],
-        "source": "Maquette Romi Oyo",
-        "sourceUrl": ""
-      },
-      {
-        "image": "images/_6.jpeg",
-        "imageBg": "",
-        "placeholderEmoji": "⚖️",
-        "placeholderTitle": "EPU 2024\nGeneve — ONU",
-        "placeholderDate": "30 jan. 2024",
-        "badgeColor": "#1565C0",
-        "badge": "Communication",
-        "tagColor": "#1976D2",
-        "tag": "Communication institutionnelle",
-        "date": "Maquette personnalisable",
-        "title": "Une communication claire pour le terrain",
-        "text1": "Texte personnalisable depuis l’espace admin pour présenter une action, une annonce ou une preuve de terrain.",
-        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
-        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
-        "tags": [
-          "Ouenzé",
-          "Terrain",
-          "PCT",
-          "Brazzaville",
-          "Suivi"
-        ],
-        "source": "Maquette Romi Oyo",
-        "sourceUrl": "",
-        "videoUrl": "https://media.un.org/en/asset/k14/k14xa31o6d"
-      },
-      {
-        "image": "images/_7.jpeg",
-        "imageBg": "",
-        "placeholderEmoji": "⚖️",
-        "placeholderTitle": "Justice restaurative\nvotre pays",
-        "placeholderDate": "",
-        "badgeColor": "#4a148c",
-        "badge": "Suivi",
-        "tagColor": "#7b1fa2",
-        "tag": "Suivi des demandes",
-        "date": "Maquette personnalisable",
-        "title": "Demandes, contacts et suivi centralisés",
-        "text1": "Texte personnalisable depuis l’espace admin pour présenter une action, une annonce ou une preuve de terrain.",
-        "quote": "Une maquette claire permet de montrer les actions, les priorités et les demandes citoyennes sans allonger inutilement le fil principal.",
-        "text2": "Le contenu peut être modifié depuis l’espace admin selon les besoins du client.",
-        "tags": [
-          "Ouenzé",
-          "Terrain",
-          "PCT",
-          "Brazzaville",
-          "Suivi"
-        ],
-        "source": "Maquette Romi Oyo",
-        "sourceUrl": ""
+        "source": "ADIAC",
+        "sourceUrl": "https://www.adiac-congo.com/"
       }
     ],
     "cards": [
       {
-        "catColor": "",
-        "borderColor": "",
-        "cat": "Terrain",
+        "catColor": "#1a237e",
+        "borderColor": "#1a237e",
+        "cat": "ADIAC",
         "icon": "01",
-        "day": "07",
-        "month": "Mar",
-        "year": "2018",
-        "title": "Rencontre de proximité",
-        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
-        "image": "images/romi-oyo.png"
+        "day": "01",
+        "month": "Juil",
+        "year": "2017",
+        "title": "Investiture par le PCT",
+        "desc": "Romi Oyo explique son investiture PCT pour les législatives 2017 dans Ouenzé 3.",
+        "source": "ADIAC",
+        "sourceUrl": "https://www.adiac-congo.com/content/legislatives-2017-romi-oyo-donne-les-raisons-de-son-investiture-par-le-pct-66163",
+        "image": "images/romi-oyo-portrait-casquette.png"
+      },
+      {
+        "catColor": "#2e7d32",
+        "borderColor": "#2e7d32",
+        "cat": "Jeunesse",
+        "icon": "02",
+        "day": "2024",
+        "month": "Ouenzé",
+        "year": "3",
+        "title": "Environ 1000 jeunes à accompagner",
+        "desc": "Un axe d’action locale centré sur l’accompagnement de la jeunesse à Ouenzé 3.",
+        "source": "ADIAC",
+        "sourceUrl": "https://www.adiac-congo.com/content/ouenze-3-environ-1000-jeunes-accompagner-en-2024-154685",
+        "image": "images/romi-oyo-assemblee.png"
+      },
+      {
+        "catColor": "#111827",
+        "borderColor": "#111827",
+        "cat": "Vidéo",
+        "icon": "03",
+        "day": "YT",
+        "month": "Mike",
+        "year": "Tyson",
+        "title": "Romi Oyo et Mike Tyson",
+        "desc": "Contenu image publique avec la vidéo fournie en source directe.",
+        "source": "YouTube",
+        "sourceUrl": "https://www.youtube.com/watch?v=vPAVuuOhPoM",
+        "image": "images/romi-oyo-mike-tyson.png"
+      },
+      {
+        "catColor": "#b8973a",
+        "borderColor": "#b8973a",
+        "cat": "Presse",
+        "icon": "04",
+        "day": "ADIAC",
+        "month": "Presse",
+        "year": "CG",
+        "title": "Base presse ADIAC",
+        "desc": "Rubrique prévue pour centraliser les articles publics et sourcés sur Romi Oyo.",
+        "source": "ADIAC",
+        "sourceUrl": "https://www.adiac-congo.com/",
+        "image": "images/romi-oyo-costume-rayure.png"
       },
       {
         "catColor": "#1a237e",
-        "borderColor": "#1a237e",
-        "cat": "Programme",
-        "icon": "02",
-        "day": "27",
-        "month": "Mars",
-        "year": "2023",
-        "title": "Priorités pour Ouenzé",
-        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
-        "source": "La Semaine Africaine",
-        "sourceUrl": "https://lasemaineafricaine.info/magistrature-des-sanctions-et-nominations-qui-ne-font-pas-lunanimite/",
-        "image": "images/_1.jpeg"
-      },
-      {
-        "catColor": "#1b5e20",
-        "borderColor": "#1b5e20",
-        "cat": "Social",
-        "icon": "03",
-        "day": "30",
-        "month": "Jan",
-        "year": "2024",
-        "title": "Action sociale locale",
-        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
-        "source": "ACI — Agence votre payslaise d'Information",
-        "sourceUrl": "https://www.aci.cg/congo-societe-le-gouvernement-rappelle-les-avancees-dans-lamelioration-de-la-vie-des-autochtones/",
-        "auteur": "ACI",
-        "image": "images/_2.jpeg"
-      },
-      {
-        "catColor": "#e65100",
-        "borderColor": "rgba(230,81,0,.25)",
-        "cat": "Admin",
-        "icon": "04",
-        "day": "20",
-        "month": "Août",
-        "year": "2024",
-        "title": "Suivi depuis l’espace admin",
-        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
-        "image": "images/_4.jpeg"
-      },
-      {
-        "catColor": "",
-        "borderColor": "",
+        "borderColor": "rgba(26,35,126,.25)",
         "cat": "Terrain",
         "icon": "05",
-        "day": "14",
-        "month": "Jul",
-        "year": "2025",
-        "title": "Rencontre de proximité",
-        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
-        "image": "images/_5.jpeg"
+        "day": "56",
+        "month": "& 57",
+        "year": "Ouenzé",
+        "title": "Quartiers 56 et 57",
+        "desc": "L’article ADIAC cite les quartiers 56 et 57 comme cœur de la circonscription travaillée.",
+        "source": "ADIAC",
+        "sourceUrl": "https://www.adiac-congo.com/content/legislatives-2017-romi-oyo-donne-les-raisons-de-son-investiture-par-le-pct-66163",
+        "image": "images/romi-oyo-portrait-casquette.png"
       },
       {
-        "catColor": "",
-        "borderColor": "",
-        "cat": "Programme",
+        "catColor": "#2e7d32",
+        "borderColor": "rgba(46,125,50,.25)",
+        "cat": "Assemblée",
         "icon": "06",
-        "day": "05",
-        "month": "Sep",
-        "year": "2025",
-        "title": "Priorités pour Ouenzé",
-        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
-        "image": "images/_6.jpeg"
+        "day": "AN",
+        "month": "Congo",
+        "year": "CG",
+        "title": "Représentation nationale",
+        "desc": "La maquette valorise le passage vers la représentation à l’Assemblée nationale.",
+        "source": "ADIAC",
+        "sourceUrl": "https://www.adiac-congo.com/content/legislatives-2017-romi-oyo-donne-les-raisons-de-son-investiture-par-le-pct-66163",
+        "image": "images/romi-oyo-assemblee.png"
       },
       {
-        "catColor": "",
-        "borderColor": "",
-        "cat": "Social",
+        "catColor": "#b8973a",
+        "borderColor": "rgba(184,151,58,.25)",
+        "cat": "Image",
         "icon": "07",
-        "day": "22",
-        "month": "Oct",
-        "year": "2025",
-        "title": "Action sociale locale",
-        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
-        "image": "images/_7.jpeg"
+        "day": "Photo",
+        "month": "Client",
+        "year": "2026",
+        "title": "Portrait institutionnel",
+        "desc": "Nouvelle photo ajoutée pour rendre le projet plus professionnel et présentable.",
+        "source": "Image fournie client",
+        "sourceUrl": "",
+        "image": "images/romi-oyo-costume-rayure.png"
       },
       {
-        "catColor": "",
-        "borderColor": "",
-        "cat": "Admin",
+        "catColor": "#111827",
+        "borderColor": "rgba(17,24,39,.25)",
+        "cat": "Culture",
         "icon": "08",
-        "day": "08",
-        "month": "Nov",
-        "year": "2025",
-        "title": "Suivi depuis l’espace admin",
-        "desc": "Carte de démonstration pour montrer les actualités, actions et contenus administrables du site.",
-        "image": "images/_8.jpeg"
+        "day": "Sai",
+        "month": "Sai",
+        "year": "Clip",
+        "title": "Baseron avec Saï Saï, Paterne Maestro et Ya Jean",
+        "desc": "Contenu culturel cité dans la demande, prêt à être enrichi avec lien média officiel.",
+        "source": "Information fournie client",
+        "sourceUrl": "",
+        "image": "images/romi-oyo-mike-tyson.png"
       }
     ]
   },
   "gallery": {
     "slides": [
       {
+        "image": "images/romi-oyo-costume-rayure.png",
+        "emoji": "",
+        "title": "Portrait institutionnel",
+        "subtitle": "Photo officielle ajoutée à la maquette.",
+        "alt": "Romi Oyo en costume"
+      },
+      {
+        "image": "images/romi-oyo-portrait-casquette.png",
+        "emoji": "",
+        "title": "Portrait de proximité",
+        "subtitle": "Image plus humaine pour varier la communication.",
+        "alt": "Portrait Romi Oyo"
+      },
+      {
+        "image": "images/romi-oyo-assemblee.png",
+        "emoji": "",
+        "title": "Assemblée nationale",
+        "subtitle": "Romi Oyo dans un cadre parlementaire.",
+        "alt": "Romi Oyo Assemblée"
+      },
+      {
+        "image": "images/romi-oyo-mike-tyson.png",
+        "emoji": "",
+        "title": "Avec Mike Tyson",
+        "subtitle": "Contenu image publique lié à la vidéo fournie.",
+        "alt": "Romi Oyo et Mike Tyson"
+      },
+      {
         "image": "images/romi-oyo.png",
         "emoji": "",
         "title": "Portrait officiel",
-        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
-        "alt": "Romi Oyo — galerie maquette"
-      },
-      {
-        "image": "images/_1.jpeg",
-        "emoji": "",
-        "title": "Terrain et proximité",
-        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
-        "alt": "Romi Oyo — galerie maquette"
-      },
-      {
-        "image": "images/_2.jpeg",
-        "emoji": "",
-        "title": "Rencontres citoyennes",
-        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
-        "alt": "Romi Oyo — galerie maquette"
-      },
-      {
-        "image": "images/_4.jpeg",
-        "emoji": "",
-        "title": "Programme local",
-        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
-        "alt": "Romi Oyo — galerie maquette"
-      },
-      {
-        "image": "images/_5.jpeg",
-        "emoji": "",
-        "title": "Actions sociales",
-        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
-        "alt": "Romi Oyo — galerie maquette"
-      },
-      {
-        "image": "images/_6.jpeg",
-        "emoji": "",
-        "title": "Communication",
-        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
-        "alt": "Romi Oyo — galerie maquette"
-      },
-      {
-        "image": "images/_7.jpeg",
-        "emoji": "",
-        "title": "Administration",
-        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
-        "alt": "Romi Oyo — galerie maquette"
-      },
-      {
-        "image": "images/_8.jpeg",
-        "emoji": "",
-        "title": "Suivi",
-        "subtitle": "Visuel remplaçable depuis l’espace admin selon le client.",
-        "alt": "Romi Oyo — galerie maquette"
+        "subtitle": "Visuel initial de la maquette.",
+        "alt": "Romi Oyo portrait officiel"
       }
     ],
     "grid": [
       {
-        "image": "images/_4.jpeg",
-        "alt": "Romi Oyo — image de démonstration",
+        "image": "images/romi-oyo-costume-rayure.png",
+        "alt": "Romi Oyo costume",
         "emoji": ""
       },
       {
-        "image": "images/_5.jpeg",
-        "alt": "Romi Oyo — image de démonstration",
+        "image": "images/romi-oyo-portrait-casquette.png",
+        "alt": "Romi Oyo portrait",
+        "emoji": ""
+      },
+      {
+        "image": "images/romi-oyo-assemblee.png",
+        "alt": "Romi Oyo Assemblée",
+        "emoji": ""
+      },
+      {
+        "image": "images/romi-oyo-mike-tyson.png",
+        "alt": "Romi Oyo Mike Tyson",
         "emoji": ""
       }
     ],
     "title": "Romi Oyo en images",
-    "accent": "terrain"
+    "accent": "presse et terrain"
   },
   "programmeSection": {
     "tag": "Programme",
@@ -475,13 +364,13 @@
   "galerieSection": {
     "tag": "En images",
     "title": "Galerie",
-    "titleAccent": "client"
+    "titleAccent": "Romi Oyo"
   },
   "actusSection": {
-    "tag": "Actualités",
-    "title": "Contenus",
-    "titleAccent": "personnalisables",
-    "gridTitle": "Exemples de contenus client"
+    "tag": "Actualités sourcées",
+    "title": "Romi Oyo dans",
+    "titleAccent": "la presse",
+    "gridTitle": "Articles, images et contenus publics"
   },
   "engagement": {
     "tag": "Audience et demandes",
@@ -533,25 +422,25 @@
     {
       "side": "left",
       "emoji": "01",
-      "year": "Ouenzé",
-      "title": "Ancrage municipal",
-      "desc": "Romi Oyo commence son parcours public dans le cinquième arrondissement de Brazzaville, Ouenzé, avec une présence locale auprès des quartiers 56 et 57.",
+      "year": "2017",
+      "title": "Investiture PCT à Ouenzé 3",
+      "desc": "ADIAC rapporte son investiture par le PCT pour les législatives 2017 dans la troisième circonscription de Ouenzé.",
       "tag": "Terrain"
     },
     {
       "side": "right",
       "emoji": "02",
-      "year": "PCT",
-      "title": "Investiture politique",
-      "desc": "Initialement positionné localement, il est investi par le Parti Congolais du Travail pour porter une candidature dans la troisième circonscription de Ouenzé.",
+      "year": "Quartiers 56 et 57",
+      "title": "Ancrage local",
+      "desc": "La communication politique situe son terrain dans les quartiers 56 et 57, avec une volonté de représentation directe.",
       "tag": "Parti"
     },
     {
       "side": "left",
       "emoji": "03",
-      "year": "Assemblée nationale",
-      "title": "Député de Ouenzé 3",
-      "desc": "Il représente la troisième circonscription de Ouenzé à Brazzaville et porte les préoccupations locales dans son action parlementaire.",
+      "year": "2024",
+      "title": "Accompagnement des jeunes",
+      "desc": "Les contenus ADIAC récents mettent en avant l’accompagnement de jeunes à Ouenzé 3.",
       "tag": "Mandat"
     },
     {

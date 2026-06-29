@@ -478,6 +478,9 @@ function loadContent() {
                </div>
                <span class="actu-vedette-badge"${v.badgeColor?` style="background:${escHtml(v.badgeColor)}"`:''}">${escHtml(cleanLabel(v.badge||''))}</span>`;
           const tagsHtml = (v.tags||[]).map(t=>`<span class="actu-tag">${escHtml(cleanLabel(t))}</span>`).join('');
+          const sourceHtml = v.sourceUrl
+            ? `<a class="actu-source-link" href="${escHtml(v.sourceUrl)}" target="_blank" rel="noopener">Source : ${escHtml(v.source || 'lire')}</a>`
+            : (v.source ? `<span class="actu-source-link is-static">Source : ${escHtml(v.source)}</span>` : '');
           return `<div class="actu-vedette rev"${i<ac.vedettes.length-1?' style="margin-bottom:32px"':''}>
             <div class="actu-vedette-img"${v.imageBg&&!v.image?` style="background:${v.imageBg}"`:''}">${imgSide}</div>
             <div class="actu-vedette-body">
@@ -488,6 +491,7 @@ function loadContent() {
               ${v.quote?`<div class="actu-vedette-quote"${v.tagColor?` style="border-color:${escHtml(v.tagColor)}"`:''}">${escHtml(v.quote)}</div>`:''}
               ${v.text2?`<p class="actu-vedette-txt">${escHtml(v.text2)}</p>`:''}
               ${tagsHtml?`<div class="actu-vedette-tags">${tagsHtml}</div>`:''}
+              ${sourceHtml}
             </div>
           </div>`;
         }).join('');
@@ -508,6 +512,9 @@ function loadContent() {
             </div>
             <div class="actu-card-title">${escHtml(c.title||'')}</div>
             <div class="actu-card-desc">${escHtml(c.desc||'')}</div>
+            ${c.sourceUrl
+              ? `<a class="actu-card-source" href="${escHtml(c.sourceUrl)}" target="_blank" rel="noopener">Source : ${escHtml(c.source || 'lire')}</a>`
+              : (c.source ? `<span class="actu-card-source is-static">Source : ${escHtml(c.source)}</span>` : '')}
           </div>`).join('');
         cardsGrid.querySelectorAll(".rev").forEach(el=>rObs.observe(el));
       }
@@ -715,6 +722,9 @@ function applyDynLang(lang) {
                </div>
                <span class="actu-vedette-badge"${v.badgeColor?` style="background:${escHtml(v.badgeColor)}"`:''}">${escHtml(cleanLabel(v.badge||''))}</span>`;
           const tagsHtml = (v.tags||[]).map(t=>`<span class="actu-tag">${escHtml(cleanLabel(t))}</span>`).join('');
+          const sourceHtml = v.sourceUrl
+            ? `<a class="actu-source-link" href="${escHtml(v.sourceUrl)}" target="_blank" rel="noopener">Source : ${escHtml(v.source || 'lire')}</a>`
+            : (v.source ? `<span class="actu-source-link is-static">Source : ${escHtml(v.source)}</span>` : '');
           return `<div class="actu-vedette rev"${i<merged.length-1?' style="margin-bottom:32px"':''}>
             <div class="actu-vedette-img"${v.imageBg&&!v.image?` style="background:${v.imageBg}"`:''}">${imgSide}</div>
             <div class="actu-vedette-body">
@@ -725,6 +735,7 @@ function applyDynLang(lang) {
               ${v.quote?`<div class="actu-vedette-quote"${v.tagColor?` style="border-color:${escHtml(v.tagColor)}"`:''}">${escHtml(v.quote)}</div>`:''}
               ${v.text2?`<p class="actu-vedette-txt">${escHtml(v.text2)}</p>`:''}
               ${tagsHtml?`<div class="actu-vedette-tags">${tagsHtml}</div>`:''}
+              ${sourceHtml}
             </div>
           </div>`;
         }).join('');
@@ -748,6 +759,9 @@ function applyDynLang(lang) {
             </div>
             <div class="actu-card-title">${escHtml(c.title||'')}</div>
             <div class="actu-card-desc">${escHtml(c.desc||'')}</div>
+            ${c.sourceUrl
+              ? `<a class="actu-card-source" href="${escHtml(c.sourceUrl)}" target="_blank" rel="noopener">Source : ${escHtml(c.source || 'lire')}</a>`
+              : (c.source ? `<span class="actu-card-source is-static">Source : ${escHtml(c.source)}</span>` : '')}
           </div>`).join('');
         cardsGrid2.querySelectorAll(".rev").forEach(el=>rObs.observe(el));
       }
