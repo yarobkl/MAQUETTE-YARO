@@ -894,7 +894,7 @@ document.querySelectorAll(".rev,.rev-l,.rev-r").forEach(el=>rObs.observe(el));
 // ── Envoi des formulaires vers le serveur ────────────────────────────
 const FORMSPREE = {};
 async function sendForm(storageKey, _unused, formData, btn, successMsg) {
-  btn.textContent = "⏳ Envoi en cours…";
+  btn.textContent = "Envoi en cours...";
   btn.disabled = true;
 
   // Construire l'objet à envoyer
@@ -903,6 +903,9 @@ async function sendForm(storageKey, _unused, formData, btn, successMsg) {
   entry.type  = storageKey;
   entry._date = new Date().toLocaleString("fr-FR");
   entry._id   = Date.now() + "-" + Math.random().toString(36).slice(2, 8);
+  if (storageKey === "yaro_audiences" && !entry.numero_suivi) {
+    entry.numero_suivi = generateAudienceNumber();
+  }
 
   // 1. Envoi au serveur (persistance)
   let serverOk = false;
@@ -923,11 +926,14 @@ async function sendForm(storageKey, _unused, formData, btn, successMsg) {
   } catch (_) {}
 
   if (!serverOk) {
-    btn.textContent = "Envoyé en mode hors ligne";
+    btn.textContent = "Enregistre localement";
     btn.style.background = "#f39c12";
   } else {
     btn.textContent = successMsg;
     btn.style.background = "#2ecc71";
+  }
+  if (storageKey === "yaro_audiences") {
+    showAudienceTracking(entry, serverOk);
   }
   // Réinitialiser le formulaire après 3 secondes
   const originalText = btn.dataset.originalText || "Soumettre";
@@ -938,6 +944,52 @@ async function sendForm(storageKey, _unused, formData, btn, successMsg) {
     btn.textContent = originalText;
     btn.disabled = false;
   }, 3000);
+}
+
+function generateAudienceNumber() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const day = String(now.getDate()).padStart(2, "0");
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const suffix = String(Math.floor(1000 + Math.random() * 9000));
+  return `AUD-${year}${month}${day}-${suffix}`;
+}
+
+function showAudienceTracking(entry, serverOk) {
+  const box = document.getElementById("tracking-result");
+  if (!box) return;
+  const num = entry.numero_suivi || "";
+  box.hidden = false;
+  box.innerHTML = `
+    <div class="tracking-result-title">Demande enregistrée</div>
+    <div class="tracking-result-num">${escHtml(num)}</div>
+    <div class="tracking-result-copy">Conservez ce numéro. Il permet de suivre votre dossier d’audience depuis cette page${serverOk ? " et dans l’espace admin." : "."}</div>
+  `;
+  const input = document.getElementById("tracking-input");
+  if (input) input.value = num;
+}
+
+function trackAudienceCase() {
+  const input = document.getElementById("tracking-input");
+  const status = document.getElementById("tracking-status");
+  if (!input || !status) return;
+  const num = input.value.trim().toUpperCase();
+  const list = JSON.parse(localStorage.getItem("yaro_audiences") || "[]");
+  const found = list.find(item => String(item.numero_suivi || "").toUpperCase() === num);
+  status.hidden = false;
+  if (!num) {
+    status.className = "tracking-status is-warn";
+    status.textContent = "Entrez un numéro de dossier pour lancer le suivi.";
+    return;
+  }
+  if (!found) {
+    status.className = "tracking-status is-warn";
+    status.textContent = "Aucun dossier trouvé sur cet appareil. Vérifiez le numéro ou contactez l’équipe.";
+    return;
+  }
+  const statusLabel = found._status || "reçu";
+  status.className = "tracking-status is-ok";
+  status.innerHTML = `<strong>${escHtml(found.numero_suivi)}</strong><br>Dossier ${escHtml(statusLabel)} · ${escHtml(found.objet || "Demande d’audience")} · ${escHtml(found._date || "")}`;
 }
 
 function fSub(e, f) {
@@ -954,6 +1006,10 @@ function fSub(e, f) {
   }
 
   const fd = new FormData(f);
+  const tracking = generateAudienceNumber();
+  const trackingInput = document.getElementById("numero-suivi");
+  if (trackingInput) trackingInput.value = tracking;
+  fd.set("numero_suivi", tracking);
   const successMsg = isRecl
     ? "Signalement enregistré — Le Client et son équipe ont été alertés"
     : "Demande enregistrée — Réponse sous 48h";
