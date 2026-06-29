@@ -58,6 +58,17 @@
         "sourceUrl": ""
       },
       {
+        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "alt": "Harris-Oyo Fondation action sociale à Ouenzé",
+        "chipColor": "#2e7d32",
+        "chip": "Action sociale",
+        "date": "9 septembre 2025 · ADIAC",
+        "title": "Harris-Oyo Fondation au plus proche de sa communauté",
+        "subtitle": "ADIAC rapporte une campagne de sensibilisation et de distribution de kits de santé au profit du CSI Jeanne-Vialle et de familles vulnérables de Ouenzé.",
+        "source": "ADIAC / Les Dépêches de Brazzaville",
+        "sourceUrl": "https://www.adiac-congo.com/content/action-sociale-harris-oyo-fondation-au-plus-proche-de-sa-communaute-166908"
+      },
+      {
         "image": "images/romi-oyo-assemblee.png",
         "alt": "Romi Oyo à l’Assemblée nationale",
         "chipColor": "#2e7d32",
@@ -112,6 +123,27 @@
         ],
         "source": "ADIAC / Les Dépêches de Brazzaville",
         "sourceUrl": "https://www.adiac-congo.com/content/legislatives-2017-romi-oyo-donne-les-raisons-de-son-investiture-par-le-pct-66163"
+      },
+      {
+        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "badgeColor": "#2e7d32",
+        "badge": "Social",
+        "tagColor": "#2e7d32",
+        "tag": "Harris-Oyo Fondation",
+        "date": "9 septembre 2025 · Ouenzé · ADIAC",
+        "title": "Action sociale : Harris-Oyo Fondation au plus proche de sa communauté",
+        "text1": "Selon ADIAC, Harris-Oyo Fondation, en partenariat avec l’association Source de Bien, a organisé une campagne de sensibilisation et de distribution de kits de santé à Ouenzé.",
+        "quote": "L’action concernait notamment le centre de santé intégré Jeanne-Vialle et des familles vulnérables de l’arrondissement 5, avec un volet prévention contre le choléra.",
+        "text2": "La maquette présente cette action comme une preuve concrète de proximité sociale, avec renvoi direct vers la source officielle.",
+        "tags": [
+          "Action sociale",
+          "HOF",
+          "Ouenzé",
+          "Santé",
+          "ADIAC"
+        ],
+        "source": "ADIAC / Les Dépêches de Brazzaville",
+        "sourceUrl": "https://www.adiac-congo.com/content/action-sociale-harris-oyo-fondation-au-plus-proche-de-sa-communaute-166908"
       },
       {
         "image": "images/romi-oyo-assemblee.png",
@@ -191,6 +223,20 @@
         "source": "ADIAC",
         "sourceUrl": "https://www.adiac-congo.com/content/legislatives-2017-romi-oyo-donne-les-raisons-de-son-investiture-par-le-pct-66163",
         "image": "images/romi-oyo-portrait-casquette.png"
+      },
+      {
+        "catColor": "#2e7d32",
+        "borderColor": "#2e7d32",
+        "cat": "Social",
+        "icon": "09",
+        "day": "09",
+        "month": "Sep",
+        "year": "2025",
+        "title": "HOF proche de sa communauté",
+        "desc": "Distribution de kits de santé et sensibilisation au profit du CSI Jeanne-Vialle et de familles vulnérables à Ouenzé.",
+        "source": "ADIAC",
+        "sourceUrl": "https://www.adiac-congo.com/content/action-sociale-harris-oyo-fondation-au-plus-proche-de-sa-communaute-166908",
+        "image": "images/harris-oyo-fondation-action-sociale.png"
       },
       {
         "catColor": "#2e7d32",
@@ -302,6 +348,13 @@
         "alt": "Romi Oyo en costume"
       },
       {
+        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "emoji": "",
+        "title": "Action sociale HOF",
+        "subtitle": "Campagne de santé et de sensibilisation à Ouenzé.",
+        "alt": "Harris-Oyo Fondation action sociale"
+      },
+      {
         "image": "images/romi-oyo-portrait-casquette.png",
         "emoji": "",
         "title": "Portrait de proximité",
@@ -331,6 +384,11 @@
       }
     ],
     "grid": [
+      {
+        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "alt": "Harris-Oyo Fondation action sociale",
+        "emoji": ""
+      },
       {
         "image": "images/romi-oyo-costume-rayure.png",
         "alt": "Romi Oyo costume",
