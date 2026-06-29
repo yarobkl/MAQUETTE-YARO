@@ -132,7 +132,7 @@
         <path d="M10 19v-5h4v5"></path>
       </svg>
     </div>
-    <div class="nlogo-txt">Accueil <small>Romi Oyo · Ouenzé 3</small></div>
+    <div class="nlogo-txt">Accueil</div>
   </a>
   <ul class="nlinks">
     <li><a href="#about" data-i18n="nav.biography">Biographie</a></li>
@@ -149,11 +149,22 @@
     <button class="lang-btn" data-lang="zh" onclick="applyI18n('zh')" title="中文">ZH</button>
     <button class="lang-btn" data-lang="ru" onclick="applyI18n('ru')" title="Русский">RU</button>
   </div>
+  <div class="nav-name">ROMI OYO<small>Ouenzé 3</small></div>
   <button class="hbg" id="hbg" aria-label="Ouvrir le menu" aria-expanded="false" data-i18n="aria.menu.open" data-i18n-attr="aria-label">
     <span class="hbg-text">Menu</span>
     <span class="hbg-bars" aria-hidden="true"><span></span><span></span><span></span></span>
   </button>
 </nav>
+
+<!-- CAMPAGNE TICKER -->
+<div class="hero-eyebrow" aria-hidden="true">
+  <div class="hero-eyebrow-line"></div>
+  <div class="hero-eyebrow-ticker">
+    <span data-i18n="hero.eyebrow">CAMPAGNE LÉGISLATIVE &nbsp;·&nbsp; RÉPUBLIQUE DU CONGO &nbsp;·&nbsp; </span>
+    <span>CAMPAGNE LÉGISLATIVE &nbsp;·&nbsp; RÉPUBLIQUE DU CONGO &nbsp;·&nbsp; </span>
+    <span>CAMPAGNE LÉGISLATIVE &nbsp;·&nbsp; RÉPUBLIQUE DU CONGO &nbsp;·&nbsp; </span>
+  </div>
+</div>
 
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
@@ -195,14 +206,6 @@
     <div class="hero-btns">
       <a href="#engagement" class="btn btn-r" id="dyn-hero-btn1" data-i18n="hero.btn1">Demander une démo</a>
       <a href="#programme" class="btn btn-o" id="dyn-hero-btn2" data-i18n="hero.btn2">Voir les modules</a>
-    </div>
-    <div class="hero-eyebrow">
-      <div class="hero-eyebrow-line"></div>
-      <div class="hero-eyebrow-ticker">
-        <span data-i18n="hero.eyebrow">République du Congo · Campagne législative · Ouenzé 3 &nbsp;·&nbsp; </span>
-        <span>République du Congo · Campagne législative · Ouenzé 3 &nbsp;·&nbsp; </span>
-        <span>République du Congo · Campagne législative · Ouenzé 3 &nbsp;·&nbsp; </span>
-      </div>
     </div>
   </div>
   <a href="#about" class="hero-scroll">
@@ -819,22 +822,50 @@ html, body { overflow-x: hidden !important; max-width: 100%; }
 
 /* ── HERO ANIMATIONS WAOUH ─────────────────────────── */
 
-/* Eyebrow ticker — bandeau rouge doux */
+/* NAV NAME — nom à droite dans la navbar */
+.nav-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: right;
+  line-height: 1.2;
+  margin-left: auto;
+  padding-right: 16px;
+}
+.nav-name small {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+  color: rgba(255,255,255,.4);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+@media(max-width:900px){
+  .nav-name { margin-left: auto; padding-right: 12px; font-size: 12px; }
+}
+
+/* Eyebrow ticker — bandeau fixe sous la navbar */
 .hero-eyebrow {
+  position: fixed;
+  top: calc(72px + env(safe-area-inset-top));
+  left: 0;
+  right: 0;
+  z-index: 998;
   display: flex !important;
   align-items: center;
   overflow: hidden;
-  background: rgba(160, 18, 18, 0.82);
-  border-radius: 0;
-  padding: 10px 0;
-  margin-top: 28px;
-  margin-bottom: 0;
-  margin-left: -6vw;
-  width: calc(100% + 12vw);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(200, 40, 40, 0.35);
-  box-shadow: 0 2px 18px rgba(160,10,10,.35);
+  background: rgba(160, 18, 18, 0.97);
+  padding: 9px 0;
+  box-shadow: 0 2px 18px rgba(160,10,10,.4);
   gap: 0 !important;
+  transition: top 0.3s ease;
+}
+nav.sc + .hero-eyebrow {
+  top: calc(60px + env(safe-area-inset-top));
 }
 .hero-eyebrow-line { display: none; }
 .hero-eyebrow-ticker {

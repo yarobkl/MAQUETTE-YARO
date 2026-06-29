@@ -62,7 +62,7 @@ nav.sc{background:rgba(6,6,6,.96);backdrop-filter:blur(24px);border-bottom:1px s
 .hero-img-side img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(15%) contrast(1.05)}
 .hero-img-side::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--n) 0%,transparent 40%);z-index:2}
 .hero-img-side::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,6,.6) 0%,transparent 40%);z-index:2}
-.hero-content{position:relative;z-index:10;max-width:1480px;margin:0 auto;padding:140px clamp(22px,6vw,88px) 100px;width:100%}
+.hero-content{position:relative;z-index:10;max-width:1480px;margin:0 auto;padding:175px clamp(22px,6vw,88px) 100px;width:100%}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:12px;margin:28px 0 0;animation:fadeUp .8s ease both}
 .hero-eyebrow-line{width:40px;height:1px;background:var(--r)}
 .hero-eyebrow-txt{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--g);font-weight:600}
@@ -497,7 +497,7 @@ footer{background:#030303;border-top:1px solid rgba(200,16,46,.1);padding:70px 6
   section,.about-grid,.prog-wrap,.ct-wrap{padding-left:4%;padding-right:4%}
   #hero{padding-left:4%;padding-right:4%}
   #about,#parcours,#programme,#galerie,#actu,#engagement,#contact{padding:60px 4%}
-  .hero-content{padding:88px 4% 60px}
+  .hero-content{padding:125px 4% 60px}
   .hero-name{font-size:clamp(30px,9vw,46px)}
   .hero-role{letter-spacing:2px;font-size:11px}
   .hero-btns{grid-template-columns:1fr;max-width:none}
