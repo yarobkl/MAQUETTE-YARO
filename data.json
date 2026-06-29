@@ -80,6 +80,17 @@
         "sourceUrl": "https://www.vox.cg/la-fondation-harrys-oyo-forme-223-jeunes-pour-booster-leur-employabilite/"
       },
       {
+        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "alt": "Action sociale Harris-Oyo Fondation à Ouenzé",
+        "chipColor": "#2e7d32",
+        "chip": "Santé",
+        "date": "1 août 2020 · AllAfrica / Les Dépêches de Brazzaville",
+        "title": "Harris Oyo Fondation et le CSI Jane Vialle",
+        "subtitle": "AllAfrica, via Les Dépêches de Brazzaville, rapporte le lancement des travaux de réhabilitation du centre de santé intégré Jane Vialle à Brazzaville.",
+        "source": "AllAfrica / Les Dépêches de Brazzaville",
+        "sourceUrl": "https://fr.allafrica.com/stories/202008020100.html"
+      },
+      {
         "image": "images/romi-oyo-assemblee.png",
         "alt": "Romi Oyo à l’Assemblée nationale",
         "chipColor": "#2e7d32",
@@ -176,6 +187,27 @@
         ],
         "source": "VOX Congo",
         "sourceUrl": "https://www.vox.cg/la-fondation-harrys-oyo-forme-223-jeunes-pour-booster-leur-employabilite/"
+      },
+      {
+        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "badgeColor": "#2e7d32",
+        "badge": "Santé",
+        "tagColor": "#2e7d32",
+        "tag": "CSI Jane Vialle",
+        "date": "1 août 2020 · AllAfrica / Les Dépêches de Brazzaville",
+        "title": "Œuvres sociales : réhabilitation du centre de santé intégré Jane Vialle",
+        "text1": "AllAfrica relaie un article des Dépêches de Brazzaville indiquant que Romi Oyo, président d’honneur de l’organisation caritative Harris Oyo, a lancé à Brazzaville les travaux de réhabilitation du CSI Jane Vialle.",
+        "quote": "L’article précise que le centre de santé doit bénéficier d’un espace d’accouchement et que l’initiative vise à redonner de meilleures conditions au personnel de santé.",
+        "text2": "Cette source renforce la rubrique action sociale et santé de la maquette avec une date, un média identifié et un lien direct vers l’article original.",
+        "tags": [
+          "Santé",
+          "CSI Jane Vialle",
+          "Harris Oyo",
+          "Ouenzé",
+          "AllAfrica"
+        ],
+        "source": "AllAfrica / Les Dépêches de Brazzaville",
+        "sourceUrl": "https://fr.allafrica.com/stories/202008020100.html"
       },
       {
         "image": "images/romi-oyo-assemblee.png",
@@ -283,6 +315,20 @@
         "source": "VOX Congo",
         "sourceUrl": "https://www.vox.cg/la-fondation-harrys-oyo-forme-223-jeunes-pour-booster-leur-employabilite/",
         "image": "images/harrys-oyo-formation-223-jeunes.png"
+      },
+      {
+        "catColor": "#2e7d32",
+        "borderColor": "#2e7d32",
+        "cat": "Santé",
+        "icon": "08",
+        "day": "01",
+        "month": "Août",
+        "year": "2020",
+        "title": "Réhabilitation du CSI Jane Vialle",
+        "desc": "Travaux annoncés pour renforcer le centre de santé intégré Jane Vialle, avec une maternité et de meilleures conditions d’accueil.",
+        "source": "AllAfrica / Les Dépêches de Brazzaville",
+        "sourceUrl": "https://fr.allafrica.com/stories/202008020100.html",
+        "image": "images/harris-oyo-fondation-action-sociale.png"
       },
       {
         "catColor": "#2e7d32",
