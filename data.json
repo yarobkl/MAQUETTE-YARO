@@ -5,7 +5,7 @@
     "eyebrow": "République du Congo · Ouenzé 3 · Campagne législative",
     "role": "Député de la troisième circonscription de Ouenzé · PCT",
     "slogan": "La proximité <em>terrain</em>.<br>Le dialogue <em>direct</em> avec les habitants.",
-    "subtitle": "Maquette V2 institutionnelle pour présenter un élu, ses actions, son programme, ses actualités, ses demandes d’audience et son espace admin.",
+    "subtitle": "Un espace clair pour présenter son parcours, ses actions de proximité, son engagement social et le lien direct avec les habitants de Ouenzé.",
     "btn1": "Demande d’audience",
     "btn2": "Lire le programme"
   },
@@ -14,12 +14,12 @@
     "badgeNum": "Ouenzé 3",
     "badgeLbl": "Circonscription",
     "title": "Romi Oyo, une présence <span class=\"r\">de terrain</span>",
-    "intro": "Romi Oyo est député congolais de la troisième circonscription de Ouenzé à Brazzaville, membre du Parti Congolais du Travail (PCT), avec une communication fortement axée sur la proximité, les quartiers 56 et 57 et l’accompagnement des habitants.",
+    "intro": "Né à Brazzaville, Romi Oyo incarne une génération politique tournée vers le terrain, l’écoute et l’action concrète. Député de la troisième circonscription de Ouenzé, il construit son engagement autour de la proximité avec les habitants, de la jeunesse et de la solidarité envers les publics les plus fragiles.",
     "paragraphs": [
-      "Selon ADIAC, Romi Oyo a été investi par le PCT pour les législatives 2017 après avoir initialement envisagé une candidature indépendante dans la troisième circonscription de Ouenzé, précisément les quartiers 56 et 57.",
-      "L’article rappelle son ancrage local : il se présente comme ancien conseiller municipal du même arrondissement et met en avant la nécessité de construire avec les populations un futur répondant à leurs aspirations.",
-      "Les contenus récents autour de Ouenzé 3 insistent sur l’accompagnement des jeunes, les actions sociales, les rencontres directes avec les habitants et la valorisation du terrain.",
-      "Cette Maquette V2 reprend la structure complète du projet Bininga : site public, actualités sourcées, galerie, programme, demandes d’audience, suivi, chatbot, espace admin et base prête à personnaliser pour un client politique ou institutionnel."
+      "Son parcours public s’est affirmé dans la troisième circonscription de Ouenzé, notamment auprès des quartiers 56 et 57, avec une présence régulière auprès des familles, des jeunes et des acteurs de terrain.",
+      "Issu d’une jeunesse brazzavilloise connectée aux réalités populaires, il met en avant une manière directe de faire de la politique : rencontrer, écouter, comprendre les besoins et transformer les échanges en actions visibles.",
+      "Son engagement social se traduit aussi par une attention particulière aux enfants vulnérables, aux orphelins, aux familles en difficulté et aux initiatives qui redonnent des perspectives à la jeunesse.",
+      "Cette Maquette V2 met en valeur cette présence de proximité : parcours, programme, actualités sourcées, galerie, demandes d’audience, suivi des dossiers, chatbot et espace admin prêt à personnaliser pour un client politique ou institutionnel."
     ],
     "badges": [
       "Député de Ouenzé 3",
@@ -27,7 +27,8 @@
       "Quartiers 56 et 57",
       "Proximité terrain",
       "Jeunesse",
-      "Actualités sourcées"
+      "Solidarité",
+      "Orphelins"
     ]
   },
   "stats": [
