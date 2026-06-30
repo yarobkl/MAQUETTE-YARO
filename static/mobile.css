@@ -141,6 +141,12 @@ img {
   .hero-content {
     padding-top: clamp(280px, 42vh, 430px);
     padding-bottom: clamp(24px, 6vw, 40px);
+    text-align: center;
+  }
+
+  .hero-rule {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-name {
@@ -151,15 +157,21 @@ img {
 
   .hero-slogan {
     font-size: clamp(18px, 5vw, 28px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-sub {
     font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-btns {
     grid-template-columns: 1fr;
     max-width: none;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-btns .btn {
@@ -797,6 +809,15 @@ img {
 
   .hero-content {
     padding-top: clamp(260px, 34vh, 390px);
+    text-align: center;
+  }
+
+  .hero-rule,
+  .hero-slogan,
+  .hero-sub,
+  .hero-btns {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-name {
