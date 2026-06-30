@@ -153,6 +153,9 @@ img {
     /* Évite la double déclaration conflictuelle */
     font-size: clamp(32px, 10vw, 52px);
     line-height: 1;
+    top: clamp(142px, 19vh, 188px);
+    right: clamp(4px, 1.5vw, 14px);
+    max-width: 74vw;
   }
 
   .hero-slogan {
