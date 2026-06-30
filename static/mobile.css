@@ -139,7 +139,7 @@ img {
 /* ── 8. HERO — PETITS ÉCRANS ──────────────────────────────── */
 @media (max-width: 600px) {
   .hero-content {
-    padding-top: clamp(80px, 18vw, 110px);
+    padding-top: clamp(280px, 42vh, 430px);
     padding-bottom: clamp(24px, 6vw, 40px);
   }
 
@@ -779,6 +779,10 @@ img {
   .kpi-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+  }
+
+  .hero-content {
+    padding-top: clamp(260px, 34vh, 390px);
   }
 
   .hero-name {
