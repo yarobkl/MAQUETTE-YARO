@@ -91,8 +91,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="static/index.css?v=20260630-maquette-v2c">
-<link rel="stylesheet" href="static/mobile.css?v=20260630-maquette-v2c">
+<link rel="stylesheet" href="static/index.css?v=20260630-maquette-v2d">
+<link rel="stylesheet" href="static/mobile.css?v=20260630-maquette-v2d">
 <style>
 /* ── Sélecteur de langue ─────────────────────────────────── */
 .lang-switcher{display:flex;align-items:center;gap:4px;margin-left:10px}
@@ -105,7 +105,7 @@
 .lang-btn.lang-active{opacity:1;border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.1);box-shadow:0 0 0 2px rgba(200,16,46,.35)}
 @media(max-width:900px){.lang-switcher{display:none}}
 </style>
-<script src="static/i18n.js?v=20260630-maquette-v2c"></script>
+<script src="static/i18n.js?v=20260630-maquette-v2d"></script>
 </head>
 <body>
 <a href="#hero" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--r);color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;transition:top .2s" onfocus="this.style.top='0'" onblur="this.style.top='-40px'" data-i18n="skip.link">Aller au contenu principal</a>
@@ -634,11 +634,11 @@
 </nav>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="static/i18n-data.en.js?v=20260630-maquette-v2c"></script>
-<script src="static/i18n-data.es.js?v=20260630-maquette-v2c"></script>
-<script src="static/i18n-data.zh.js?v=20260630-maquette-v2c"></script>
-<script src="static/i18n-data.ru.js?v=20260630-maquette-v2c"></script>
-<script src="static/index.js?v=20260630-maquette-v2c" defer></script>
+<script src="static/i18n-data.en.js?v=20260630-maquette-v2d"></script>
+<script src="static/i18n-data.es.js?v=20260630-maquette-v2d"></script>
+<script src="static/i18n-data.zh.js?v=20260630-maquette-v2d"></script>
+<script src="static/i18n-data.ru.js?v=20260630-maquette-v2d"></script>
+<script src="static/index.js?v=20260630-maquette-v2d" defer></script>
 
 <!-- ══ MODALES LÉGALES ══════════════════════════════════════════════ -->
 
@@ -775,7 +775,7 @@
 </div>
 
 <!-- ── CHATBOT WIDGET ────────────────────────────────────── -->
-<link rel="stylesheet" href="static/chat.css?v=20260630-maquette-v2c">
+<link rel="stylesheet" href="static/chat.css?v=20260630-maquette-v2d">
 
 <div class="chat-bubble" id="chatBubble" onclick="document.getElementById('chatBubble').classList.remove('visible');toggleChat()">
   Bonjour, je suis là pour vous aider.<span class="bubble-dots"><span></span><span></span><span></span></span>
@@ -814,7 +814,7 @@
   </div>
 </div>
 
-<script src="static/chat.js?v=20260630-maquette-v2c" defer></script>
+<script src="static/chat.js?v=20260630-maquette-v2d" defer></script>
 
 <style>
 /* ── ANTI-SCROLL HORIZONTAL ────────────────────────── */
@@ -824,10 +824,6 @@ html, body { overflow-x: hidden !important; max-width: 100%; }
 
 /* NAV NAME — nom à droite dans la navbar */
 .nav-name {
-  position: absolute;
-  right: clamp(92px, 8vw, 132px);
-  top: calc(50% + env(safe-area-inset-top) / 2);
-  transform: translateY(-50%);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 13px;
   font-weight: 800;
@@ -836,9 +832,8 @@ html, body { overflow-x: hidden !important; max-width: 100%; }
   color: #fff;
   text-align: right;
   line-height: 1.2;
-  margin-left: 0;
-  padding-right: 0;
-  pointer-events: none;
+  margin-left: auto;
+  padding-right: 16px;
 }
 .nav-name small {
   display: block;
@@ -850,35 +845,31 @@ html, body { overflow-x: hidden !important; max-width: 100%; }
   margin-top: 1px;
 }
 @media(max-width:900px){
-  .nav-name { right: 82px; font-size: 12px; }
+  .nav-name { margin-left: auto; padding-right: 12px; font-size: 12px; }
 }
 @media(max-width:420px){
-  .nav-name { right: 76px; font-size: 10px; letter-spacing: 1.4px; }
+  .nav-name { font-size: 10px; letter-spacing: 1.4px; }
   .nav-name small { font-size: 8px; letter-spacing: 2px; }
 }
 
-/* Eyebrow ticker — bandeau fixe sous la navbar */
+/* Eyebrow ticker — bandeau haut, sans gêner la navbar */
 .hero-eyebrow {
-  position: fixed;
-  top: calc(78px + env(safe-area-inset-top));
+  position: absolute;
+  top: calc(92px + env(safe-area-inset-top));
   left: 0;
   right: 0;
-  z-index: 930;
+  z-index: 8;
   display: flex !important;
   align-items: center;
   overflow: hidden;
   background: rgba(160, 18, 18, 0.97);
   padding: 9px 0;
+  margin: 0;
   box-shadow: 0 2px 18px rgba(160,10,10,.4);
   gap: 0 !important;
-  transition: top 0.3s ease;
-}
-nav.sc + .hero-eyebrow {
-  top: calc(66px + env(safe-area-inset-top));
 }
 @media(max-width:900px){
-  .hero-eyebrow { top: calc(66px + env(safe-area-inset-top)); }
-  nav.sc + .hero-eyebrow { top: calc(62px + env(safe-area-inset-top)); }
+  .hero-eyebrow { top: calc(74px + env(safe-area-inset-top)); }
 }
 .hero-eyebrow-line { display: none; }
 .hero-eyebrow-ticker {
