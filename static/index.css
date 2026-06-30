@@ -66,7 +66,7 @@ nav.sc{background:rgba(6,6,6,.96);backdrop-filter:blur(24px);border-bottom:1px s
 .hero-eyebrow{display:inline-flex;align-items:center;gap:12px;margin:28px 0 0;animation:fadeUp .8s ease both}
 .hero-eyebrow-line{width:40px;height:1px;background:var(--r)}
 .hero-eyebrow-txt{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--g);font-weight:600}
-.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,8vw,110px);font-weight:700;line-height:.95;width:max-content;max-width:88vw;margin:0 clamp(24px,9vw,150px) 8px auto;text-align:right;animation:fadeUp .8s .1s ease both}
+.hero-name{position:absolute;top:clamp(220px,34vh,330px);right:clamp(42px,9vw,150px);font-family:'Cormorant Garamond',serif;font-size:clamp(52px,8vw,110px);font-weight:700;line-height:.95;width:max-content;max-width:88vw;margin:0;text-align:right;animation:fadeUp .8s .1s ease both;pointer-events:none}
 .hero-name span{display:block;color:var(--r);-webkit-text-stroke:1px var(--r)}
 .hero-rule{width:0;height:2px;background:linear-gradient(to right,var(--r),var(--g));margin:22px 0;animation:expandLine 1s .4s ease forwards}
 @keyframes expandLine{to{width:120px}}
@@ -503,7 +503,7 @@ footer{background:#030303;border-top:1px solid rgba(200,16,46,.1);padding:70px 6
   #hero{padding-left:4%;padding-right:4%}
   #about,#parcours,#programme,#galerie,#actu,#engagement,#contact{padding:60px 4%}
   .hero-content{padding:150px 4% 60px}
-  .hero-name{font-size:clamp(30px,9vw,46px);max-width:82vw;margin:0 clamp(14px,4vw,26px) 8px auto;text-align:right}
+  .hero-name{top:clamp(185px,28vh,260px);right:clamp(24px,5vw,42px);font-size:clamp(38px,11vw,68px);max-width:82vw;text-align:right}
   .hero-role{letter-spacing:2px;font-size:11px}
   .hero-btns{grid-template-columns:1fr;max-width:none}
   .hero-btns .btn{width:100%;justify-content:center}

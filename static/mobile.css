@@ -783,6 +783,8 @@ img {
 
   .hero-name {
     font-size: clamp(44px, 7vw, 72px);
+    top: clamp(180px, 25vh, 250px);
+    right: clamp(28px, 6vw, 70px);
   }
 
   .hero-slogan {
@@ -811,6 +813,8 @@ img {
 @media (max-width: 360px) {
   .hero-name {
     font-size: clamp(28px, 9vw, 38px);
+    top: 174px;
+    right: 18px;
   }
 
   .btn {
