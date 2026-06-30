@@ -204,7 +204,7 @@ body.route-page-videos [data-route-section="videos"]{display:block!important}
 body.route-page-active [data-route-section]{padding-top:120px}
 
 /* Panneau latéral */
-.side-drawer{position:fixed;right:0;top:37%;width:266px;transform:translate(100%,-50%);z-index:940;pointer-events:none;transition:transform .46s cubic-bezier(.16,1,.3,1);will-change:transform}
+.side-drawer{position:fixed;right:0;top:37%;width:266px;max-width:calc(100vw - 44px);transform:translate(100%,-50%);z-index:940;pointer-events:none;transition:transform .46s cubic-bezier(.16,1,.3,1);will-change:transform}
 .side-drawer.open{transform:translateX(0) translateY(-50%)!important}
 .side-drawer-handle{pointer-events:auto;position:absolute;right:100%;top:50%;transform:translateY(-50%);width:38px;min-height:124px;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 0;border:1px solid rgba(184,151,58,.24);border-right:0;border-radius:9px 0 0 9px;background:rgba(6,6,6,.62);color:rgba(255,255,255,.9);font-family:inherit;font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;writing-mode:vertical-rl;text-orientation:mixed;cursor:pointer;backdrop-filter:blur(16px);box-shadow:0 18px 45px rgba(0,0,0,.26);transition:var(--t)}
 .side-drawer-handle:hover,.side-drawer-handle:focus-visible,.side-drawer.open .side-drawer-handle{background:var(--r);border-color:var(--r);color:#fff;box-shadow:0 18px 50px rgba(200,16,46,.34);outline:none}
@@ -554,8 +554,8 @@ footer{background:#030303;border-top:1px solid rgba(200,16,46,.1);padding:70px 6
 }
 
 /* MOBILE NAV */
-.mob-nav{position:fixed;inset:0;background:rgba(6,6,6,.98);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transform:translateX(100%);transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
-.mob-nav.open{transform:none}
+.mob-nav{position:fixed;inset:0;width:100vw;max-width:100vw;overflow:hidden;background:rgba(6,6,6,.98);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;visibility:hidden;pointer-events:none;clip-path:inset(0 0 0 100%);transition:clip-path .5s cubic-bezier(.25,.46,.45,.94),opacity .28s ease,visibility 0s linear .5s}
+.mob-nav.open{opacity:1;visibility:visible;pointer-events:auto;clip-path:inset(0);transition:clip-path .5s cubic-bezier(.25,.46,.45,.94),opacity .28s ease,visibility 0s}
 .mob-nav a{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--w);text-decoration:none;letter-spacing:2px;transition:var(--t)}
 .mob-nav a:hover{color:var(--r)}
 .mob-close{position:absolute;top:25px;right:25px;background:none;border:none;color:var(--w);font-size:28px;cursor:pointer}
@@ -717,4 +717,27 @@ footer{background:#030303;border-top:1px solid rgba(200,16,46,.1);padding:70px 6
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+
+/* ── Correctifs audit mobile Romi Oyo ── */
+html,body{max-width:100%;overflow-x:hidden}
+.hero-eyebrow{max-width:100vw;overflow:hidden;contain:paint}
+.hero-eyebrow-ticker{max-width:none;will-change:transform}
+#galerie,#actu{overflow-x:hidden}
+.gal-slider,.actu-hero{max-width:100%;overflow:hidden;contain:paint}
+.gal-track,.actu-hero-track{width:100%;max-width:100%;will-change:transform}
+@media(max-width:768px){
+  .rev-l,.rev-r{transform:translate3d(0,42px,0)}
+  .rev-l.vis,.rev-r.vis{transform:translate3d(0,0,0)}
+  .side-drawer{top:46%!important;width:min(262px,calc(100vw - 50px))!important}
+  .side-drawer-handle{width:30px!important;min-height:106px!important;font-size:8px!important;letter-spacing:.13em!important}
+}
+@media(max-width:600px){
+  .hero-name{top:clamp(150px,20vh,190px)!important;right:clamp(32px,9vw,46px)!important;font-size:clamp(34px,9.5vw,52px)!important;max-width:56vw!important;text-align:right!important}
+  .hero-content{padding-top:clamp(250px,36vh,310px)!important}
+}
+@media(max-width:380px){
+  .side-drawer{top:49%!important;width:min(250px,calc(100vw - 44px))!important}
+  .side-drawer-handle{width:28px!important;min-height:96px!important;font-size:7.5px!important}
+  .hero-name{top:142px!important;right:42px!important;font-size:clamp(30px,9vw,40px)!important;max-width:50vw!important}
 }

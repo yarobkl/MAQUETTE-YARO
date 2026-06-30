@@ -6,4 +6,4 @@ Disallow: /ministre.html
 Disallow: /gestion.html
 Disallow: /api/
 
-Sitemap: https://maquette-yaro.fr/sitemap.xml
+Sitemap: https://maquette-romi-oyo.vercel.app/sitemap.xml

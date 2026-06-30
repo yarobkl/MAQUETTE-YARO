@@ -139,7 +139,7 @@ def _send_notif_email(entry: dict, notif_type: str):
         </table>
       </div>
       <p style="font-size:11px;color:#aaa;margin-top:16px;text-align:center">
-        Notif automatique — site maquette-yaro.fr
+        Notif automatique — site maquette-romi-oyo.vercel.app
       </p>
     </div>
     """
@@ -216,7 +216,7 @@ ADMIN_SECRET_PATH = os.environ.get("ADMIN_SECRET_PATH", "espace-ministre-ab-2025
 # Origines autorisées pour CORS
 ALLOWED_ORIGINS = [o.strip() for o in os.environ.get(
     "YARO_ORIGINS",
-    "https://maquette-yaro.fr,https://www.maquette-yaro.fr,"
+    "https://maquette-romi-oyo.vercel.app,https://maquette-romi-oyo.vercel.app,"
     "http://localhost:8080,https://localhost:8443,http://127.0.0.1:8080"
 ).split(",") if o.strip()]
 BASE_DIR        = os.path.realpath(os.getcwd())
@@ -2582,6 +2582,29 @@ class YaroHandler(http.server.SimpleHTTPRequestHandler):
                 role = hero.get("role", "Garde des Sceaux, Ministre de la Justice, Site de démonstration")
                 reply = None
 
+                # Réponses rapides alignées sur la maquette Romi Oyo.
+                if any(w in q for w in ["bonjour", "bonsoir", "salut", "hello", "hi", "hey"]):
+                    reply = f"Bonjour ! Je suis DA, l'assistant virtuel de l'honorable {nom}. Je peux vous orienter sur son parcours, le programme, les actualités, les vidéos, une demande d'audience ou le contact."
+                elif any(w in q for w in ["prix", "tarif", "devis", "coût", "cout", "combien"]):
+                    reply = "Je ne traite pas les tarifs depuis cet espace. Pour une demande commerciale ou technique, utilisez la rubrique Contact afin que l'équipe concernée vous réponde."
+                elif any(w in q for w in ["admin", "espace", "dashboard", "tableau", "gestion"]):
+                    reply = "L'espace admin sert au suivi interne des demandes, des contacts, des contenus et des indicateurs. L'accès est réservé à l'équipe autorisée."
+                elif any(w in q for w in ["programme", "projet", "engagement", "jeunesse", "social", "quartier", "ouenze"]):
+                    reply = "Le programme met en avant la proximité avec les habitants, la jeunesse, l'emploi local, l'accompagnement social, les quartiers de Ouenzé et le suivi des demandes."
+                elif any(w in q for w in ["photo", "image", "galerie", "visuel", "contenu"]):
+                    reply = "La galerie rassemble les photos, actions publiques et moments de terrain. Vous pouvez y accéder depuis le raccourci Galerie."
+                elif any(w in q for w in ["video", "vidéo", "youtube", "baseron", "mike tyson", "fally"]):
+                    reply = "La rubrique Vidéos regroupe les reportages, interventions et contenus publics liés à Romi Oyo. Utilisez le raccourci Vidéos pour les consulter."
+                elif any(w in q for w in ["audience", "rendez-vous", "rendez vous", "rdv", "demande", "dossier", "suivi", "numero", "numéro"]):
+                    reply = "Pour une demande d'audience, utilisez le formulaire Audience. Un numéro de suivi est généré après l'envoi pour retrouver l'état du dossier."
+                elif any(w in q for w in ["contact", "telephone", "téléphone", "mail", "email", "adresse", "equipe", "équipe"]):
+                    reply = "Pour contacter l'équipe, allez dans la section Contact. Vous pourrez envoyer un message ou une information utile au suivi."
+                else:
+                    reply = "Je ne peux pas vous aider sur ce point depuis cette page. Pour une demande précise, rapprochez-vous de l'équipe via le formulaire de contact."
+
+                self._json({"ok": True, "reply": reply})
+                return
+
                 # ── Salutations ───────────────────────────────────────────────
                 if any(w in q for w in ["bonjour", "bonsoir", "salut", "bonne journée", "bonne soirée", "hey"]) and not any(w in q for w in ["hello", "hi", "how are", "english", "speak"]):
                     reply = random.choice([
@@ -4389,7 +4412,7 @@ def resolve_ssl_certs():
 
     Priorité :
       1. Variables d'environnement YARO_CERT / YARO_KEY
-      2. Certificats Let's Encrypt pour maquette-yaro.fr
+      2. Certificats Let's Encrypt pour maquette-romi-oyo.vercel.app
       3. Certificat auto-signé local (cert.pem / key.pem)
     Retourne (cert_path, key_path, source) ou (None, None, None).
     """
@@ -4400,7 +4423,7 @@ def resolve_ssl_certs():
         return env_cert, env_key, "variables d'env"
 
     # 2. Let's Encrypt
-    le_base = "/etc/letsencrypt/live/maquette-yaro.fr"
+    le_base = "/etc/letsencrypt/live/maquette-romi-oyo.vercel.app"
     le_cert = os.path.join(le_base, "fullchain.pem")
     le_key  = os.path.join(le_base, "privkey.pem")
     if os.path.isfile(le_cert) and os.path.isfile(le_key):
@@ -4488,7 +4511,7 @@ if __name__ == "__main__":
 
     # Génère un certificat auto-signé si aucun n'existe du tout
     if not (os.path.isfile("cert.pem") and os.path.isfile("key.pem")
-            or os.path.isfile("/etc/letsencrypt/live/maquette-yaro.fr/fullchain.pem")):
+            or os.path.isfile("/etc/letsencrypt/live/maquette-romi-oyo.vercel.app/fullchain.pem")):
         generate_self_signed_cert()
 
     CERT_FILE, KEY_FILE, CERT_SOURCE = resolve_ssl_certs()
@@ -4504,8 +4527,8 @@ if __name__ == "__main__":
 ╔══════════════════════════════════════════════╗
   ║   YARO — Serveur                         ║
   ║                                            ║
-  ║   Site  →  {protocol}://maquette-yaro.fr:{PORT}       ║
-  ║   Admin →  {protocol}://maquette-yaro.fr:{PORT}/admin.html ║
+  ║   Site  →  {protocol}://maquette-romi-oyo.vercel.app:{PORT}       ║
+  ║   Admin →  {protocol}://maquette-romi-oyo.vercel.app:{PORT}/admin.html ║
   ║                                            ║
   ║   SSL : {ssl_label:<38}║
   ╚══════════════════════════════════════════════╝
@@ -4528,7 +4551,7 @@ if __name__ == "__main__":
 
         class _RedirectHandler(http.server.BaseHTTPRequestHandler):
             def do_GET(self):
-                host = self.headers.get("Host", f"maquette-yaro.fr").split(":")[0]
+                host = self.headers.get("Host", f"maquette-romi-oyo.vercel.app").split(":")[0]
                 location = f"https://{host}{self.path}" if HTTPS_PORT == 443 else f"https://{host}:{HTTPS_PORT}{self.path}"
                 self.send_response(301)
                 self.send_header("Location", location)
@@ -4543,7 +4566,7 @@ if __name__ == "__main__":
         print(f"🔄 Redirection HTTP:{REDIRECT_PORT} → HTTPS:{HTTPS_PORT}")
         print(f"🔒 HTTPS activé ({CERT_SOURCE})")
 
-    print(f"✅ Serveur lancé sur {protocol}://maquette-yaro.fr:{PORT}\n")
+    print(f"✅ Serveur lancé sur {protocol}://maquette-romi-oyo.vercel.app:{PORT}\n")
 
     try:
         server.serve_forever()

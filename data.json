@@ -60,7 +60,7 @@
         "sourceUrl": "https://24newsagency.com/congo-a-ouenze-le-depute-romi-oyo-privilegie-le-contact-direct-avec-les-electeurs/"
       },
       {
-        "image": "images/harrys-oyo-formation-223-jeunes.png",
+        "image": "images/harrys-oyo-formation-223-jeunes.jpg",
         "alt": "223 jeunes formés par HARRYS OYO",
         "chipColor": "#1a237e",
         "chip": "Formation",
@@ -71,7 +71,7 @@
         "sourceUrl": "https://www.vox.cg/la-fondation-harrys-oyo-forme-223-jeunes-pour-booster-leur-employabilite/"
       },
       {
-        "image": "images/harrys-oyo-formation-223-jeunes.png",
+        "image": "images/harrys-oyo-formation-223-jeunes.jpg",
         "alt": "Plus de 1000 jeunes formés aux métiers porteurs",
         "chipColor": "#1a237e",
         "chip": "Insertion",
@@ -82,7 +82,7 @@
         "sourceUrl": "https://www.lecourrierdekinshasa.com/node/169191"
       },
       {
-        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "image": "images/harris-oyo-fondation-action-sociale.jpg",
         "alt": "HOF proche de sa communauté",
         "chipColor": "#2e7d32",
         "chip": "Santé",
@@ -104,7 +104,7 @@
         "sourceUrl": "https://www.adiac-congo.com/content/ouenze-3-environ-1000-jeunes-accompagner-en-2024-154685"
       },
       {
-        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "image": "images/harris-oyo-fondation-action-sociale.jpg",
         "alt": "Plus de 1000 élèves reçoivent des kits scolaires",
         "chipColor": "#b8973a",
         "chip": "Éducation",
@@ -160,7 +160,7 @@
         "sourceUrl": "https://24newsagency.com/congo-a-ouenze-le-depute-romi-oyo-privilegie-le-contact-direct-avec-les-electeurs/"
       },
       {
-        "image": "images/harrys-oyo-formation-223-jeunes.png",
+        "image": "images/harrys-oyo-formation-223-jeunes.jpg",
         "badgeColor": "#1a237e",
         "badge": "Formation",
         "tagColor": "#1a237e",
@@ -181,7 +181,7 @@
         "sourceUrl": "https://www.vox.cg/la-fondation-harrys-oyo-forme-223-jeunes-pour-booster-leur-employabilite/"
       },
       {
-        "image": "images/harrys-oyo-formation-223-jeunes.png",
+        "image": "images/harrys-oyo-formation-223-jeunes.jpg",
         "badgeColor": "#1a237e",
         "badge": "Insertion",
         "tagColor": "#1a237e",
@@ -202,7 +202,7 @@
         "sourceUrl": "https://www.lecourrierdekinshasa.com/node/169191"
       },
       {
-        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "image": "images/harris-oyo-fondation-action-sociale.jpg",
         "badgeColor": "#2e7d32",
         "badge": "Santé",
         "tagColor": "#2e7d32",
@@ -244,7 +244,7 @@
         "sourceUrl": "https://www.adiac-congo.com/content/ouenze-3-environ-1000-jeunes-accompagner-en-2024-154685"
       },
       {
-        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "image": "images/harris-oyo-fondation-action-sociale.jpg",
         "badgeColor": "#b8973a",
         "badge": "Éducation",
         "tagColor": "#b8973a",
@@ -328,7 +328,7 @@
         "sourceUrl": "https://www.vox.cg/une-vingtaine-de-bacheliers-visitent-le-nouveau-siege-du-parlement/"
       },
       {
-        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "image": "images/harris-oyo-fondation-action-sociale.jpg",
         "badgeColor": "#b8973a",
         "badge": "Éducation",
         "tagColor": "#b8973a",
@@ -376,7 +376,7 @@
         "desc": "VOX Congo rapporte la remise de certificats à 223 jeunes de Ouenzé 3 après une formation professionnelle.",
         "source": "VOX Congo",
         "sourceUrl": "https://www.vox.cg/la-fondation-harrys-oyo-forme-223-jeunes-pour-booster-leur-employabilite/",
-        "image": "images/harrys-oyo-formation-223-jeunes.png"
+        "image": "images/harrys-oyo-formation-223-jeunes.jpg"
       },
       {
         "catColor": "#1a237e",
@@ -390,7 +390,7 @@
         "desc": "Le Courrier de Kinshasa évoque le programme Agir pour les jeunes, avec certificats et kits d’accompagnement.",
         "source": "Le Courrier de Kinshasa",
         "sourceUrl": "https://www.lecourrierdekinshasa.com/node/169191",
-        "image": "images/harrys-oyo-formation-223-jeunes.png"
+        "image": "images/harrys-oyo-formation-223-jeunes.jpg"
       },
       {
         "catColor": "#2e7d32",
@@ -404,7 +404,7 @@
         "desc": "Distribution de kits de santé et sensibilisation au profit du CSI Jeanne-Vialle et de familles vulnérables à Ouenzé.",
         "source": "ADIAC",
         "sourceUrl": "https://www.adiac-congo.com/content/action-sociale-harris-oyo-fondation-au-plus-proche-de-sa-communaute-166908",
-        "image": "images/harris-oyo-fondation-action-sociale.png"
+        "image": "images/harris-oyo-fondation-action-sociale.jpg"
       },
       {
         "catColor": "#2e7d32",
@@ -432,7 +432,7 @@
         "desc": "Africa Press rapporte une distribution de kits scolaires à plus de 1000 enfants des quartiers 56 et 57.",
         "source": "Africa Press",
         "sourceUrl": "https://www.africa-press.net/congo-brazzaville/toutes-les-actualites/ouenze-3-plus-de-1000-eleves-recoivent-des-kits-scolaires",
-        "image": "images/harris-oyo-fondation-action-sociale.png"
+        "image": "images/harris-oyo-fondation-action-sociale.jpg"
       },
       {
         "catColor": "#1a237e",
@@ -488,7 +488,7 @@
         "desc": "Le Courrier de Kinshasa rapporte un don de plus de mille kits scolaires dans le cadre du projet École d’abord, sport d’accord.",
         "source": "Le Courrier de Kinshasa",
         "sourceUrl": "https://www.lecourrierdekinshasa.com/node/131249",
-        "image": "images/harris-oyo-fondation-action-sociale.png"
+        "image": "images/harris-oyo-fondation-action-sociale.jpg"
       },
       {
         "catColor": "#2e7d32",
@@ -502,7 +502,7 @@
         "desc": "AllAfrica relaie Les Dépêches de Brazzaville sur les travaux de réhabilitation du centre de santé intégré Jane Vialle.",
         "source": "AllAfrica / Les Dépêches de Brazzaville",
         "sourceUrl": "https://fr.allafrica.com/stories/202008020100.html",
-        "image": "images/harris-oyo-fondation-action-sociale.png"
+        "image": "images/harris-oyo-fondation-action-sociale.jpg"
       },
       {
         "catColor": "#b8973a",
@@ -516,7 +516,7 @@
         "desc": "AllAfrica relaie Les Dépêches de Brazzaville sur une distribution de kits scolaires aux jeunes athlètes de Ouenzé.",
         "source": "AllAfrica / Les Dépêches de Brazzaville",
         "sourceUrl": "https://fr.allafrica.com/stories/201910020284.html",
-        "image": "images/harris-oyo-fondation-action-sociale.png"
+        "image": "images/harris-oyo-fondation-action-sociale.jpg"
       },
       {
         "catColor": "#1a237e",
@@ -572,7 +572,7 @@
         "desc": "Le Courrier de Kinshasa rapporte une remise de cadeaux de Noël aux enfants des quartiers 56 et 57 de Ouenzé.",
         "source": "Le Courrier de Kinshasa",
         "sourceUrl": "https://www.lecourrierdekinshasa.com/node/76124",
-        "image": "images/harris-oyo-noel-ouenze.png"
+        "image": "images/harris-oyo-noel-ouenze.jpg"
       },
       {
         "catColor": "#1a237e",
@@ -614,7 +614,7 @@
         "desc": "Le Courrier de Kinshasa rapporte une remise de fournitures scolaires par Harris Oyo Fondation aux élèves du 5e arrondissement.",
         "source": "Le Courrier de Kinshasa",
         "sourceUrl": "https://www.lecourrierdekinshasa.com/node/56522",
-        "image": "images/harris-oyo-noel-ouenze.png"
+        "image": "images/harris-oyo-noel-ouenze.jpg"
       },
       {
         "catColor": "#1a237e",
@@ -635,7 +635,7 @@
   "gallery": {
     "slides": [
       {
-        "image": "images/romi-oyo-costume-rayure.png",
+        "image": "images/romi-oyo-costume-rayure.jpg",
         "emoji": "",
         "title": "Portrait institutionnel",
         "subtitle": "Photo officielle ajoutée à la maquette.",
@@ -649,14 +649,14 @@
         "alt": "Logo Harris Oyo Foundation"
       },
       {
-        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "image": "images/harris-oyo-fondation-action-sociale.jpg",
         "emoji": "",
         "title": "Action sociale HOF",
         "subtitle": "Campagne de santé et de sensibilisation à Ouenzé.",
         "alt": "Harris-Oyo Fondation action sociale"
       },
       {
-        "image": "images/harrys-oyo-formation-223-jeunes.png",
+        "image": "images/harrys-oyo-formation-223-jeunes.jpg",
         "emoji": "",
         "title": "Formation de 223 jeunes",
         "subtitle": "Cérémonie de remise des certificats de formation professionnelle.",
@@ -677,7 +677,7 @@
         "alt": "Romi Oyo Assemblée"
       },
       {
-        "image": "images/romi-oyo-mike-tyson.png",
+        "image": "images/romi-oyo-mike-tyson.jpg",
         "emoji": "",
         "title": "Avec Mike Tyson",
         "subtitle": "Contenu image publique lié à la vidéo fournie.",
@@ -698,17 +698,17 @@
         "emoji": ""
       },
       {
-        "image": "images/harris-oyo-fondation-action-sociale.png",
+        "image": "images/harris-oyo-fondation-action-sociale.jpg",
         "alt": "Harris-Oyo Fondation action sociale",
         "emoji": ""
       },
       {
-        "image": "images/harrys-oyo-formation-223-jeunes.png",
+        "image": "images/harrys-oyo-formation-223-jeunes.jpg",
         "alt": "Fondation HARRYS OYO formation jeunes",
         "emoji": ""
       },
       {
-        "image": "images/romi-oyo-costume-rayure.png",
+        "image": "images/romi-oyo-costume-rayure.jpg",
         "alt": "Romi Oyo costume",
         "emoji": ""
       },
@@ -723,7 +723,7 @@
         "emoji": ""
       },
       {
-        "image": "images/romi-oyo-mike-tyson.png",
+        "image": "images/romi-oyo-mike-tyson.jpg",
         "alt": "Romi Oyo Mike Tyson",
         "emoji": ""
       }
@@ -911,10 +911,10 @@
     ]
   },
   "seo": {
-    "title": "Maquette V2 · Romi Oyo",
-    "description": "Maquette V2 Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville, avec espace admin, actualités, programme et demandes d’audience.",
-    "keywords": "Romi Oyo, Ouenzé 3, député Congo, PCT, Brazzaville, Maquette V2",
-    "author": "YARO Agency"
+    "title": "Romi Oyo · Ouenzé 3",
+    "description": "Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville, avec actualités, programme, galerie, vidéos et demandes d’audience.",
+    "keywords": "Romi Oyo, Ouenzé 3, député Congo, PCT, Brazzaville, audience, programme, actualités",
+    "author": "Equipe Romi Oyo"
   },
   "contact": {
     "sectionTag": "Contact",
@@ -923,7 +923,7 @@
     "sidebarTitle": "Bureau\nde proximité",
     "sidebarDesc": "L’équipe reçoit les messages, demandes d’audience, signalements et contacts depuis l’espace admin.",
     "phone": "+242 06 XXX XXXX",
-    "email": "contact@maquette-yaro.fr",
+    "email": "contact@romi-oyo.cg",
     "address": "Ouenzé, Brazzaville, République du Congo",
     "social": "@RomiOyo",
     "socialLinks": {
@@ -940,7 +940,7 @@
   "footer": {
     "logoName": "Romi OYO",
     "logoSub": "Député · Ouenzé 3",
-    "brandText": "Maquette V2 Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville.",
-    "copyright": "© 2026 Maquette V2 · YARO Agency"
+    "brandText": "Romi Oyo, député de la troisième circonscription de Ouenzé à Brazzaville.",
+    "copyright": "© 2026 Romi Oyo · PCT"
   }
 }

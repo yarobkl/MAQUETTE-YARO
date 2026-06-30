@@ -1,5 +1,5 @@
 
-const IMG = "images/romi-oyo-costume-rayure.png";
+const IMG = "images/romi-oyo-costume-rayure.jpg";
 const THEME_STORAGE_KEY = "maquette_theme";
 function escHtml(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 function cleanLabel(s){
