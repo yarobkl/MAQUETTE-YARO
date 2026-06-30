@@ -66,7 +66,7 @@
     if (_ttsOn) {
       btn.classList.add("tts-on");
       btn.title = "Désactiver la voix";
-      speak("Voix activée. Je suis DA, l'assistant virtuel de la Maquette V2.");
+      speak("Voix activée. Je suis DA, l'assistant virtuel de l'honorable Romi Oyo.");
     } else {
       window.speechSynthesis.cancel();
       btn.classList.remove("tts-on", "tts-speaking");
@@ -118,13 +118,21 @@
     const wrap = document.createElement("div");
     wrap.className = "chat-suggestions";
     wrap.id = "chatSuggestions";
-    chips.forEach(label => {
+    chips.forEach(item => {
+      const label = typeof item === "string" ? item : item.label;
+      const href = typeof item === "string" ? "" : item.href;
       const btn = document.createElement("button");
       btn.className = "chat-suggestion-chip";
       btn.textContent = label;
       btn.onclick = () => {
         const suggestions = document.getElementById("chatSuggestions");
         if (suggestions) suggestions.remove();
+        if (href) {
+          addMessage("user", label);
+          addMessage("bot", "Très bien, je vous y emmène directement.");
+          setTimeout(() => { window.location.hash = href; }, 180);
+          return;
+        }
         const inp = document.getElementById("chatInput");
         if (inp) inp.value = label;
         sendChat();
@@ -185,7 +193,7 @@
       return "Avec plaisir. Je reste disponible si vous voulez accéder au programme, aux vidéos, aux actualités, au contact ou au suivi d'une demande.";
     }
     if (/\b(qui es tu|tu es qui|assistant|da|chatbot|bot)\b/.test(q)) {
-      return "Je suis DA, l'assistant virtuel de cette maquette. Je réponds aux questions utiles sur Romi Oyo, le programme, les actualités, les vidéos, les demandes d'audience et le contact.";
+      return "Je suis DA, l'assistant virtuel de l'honorable Romi Oyo. Je réponds aux questions utiles sur Romi Oyo, le programme, les actualités, les vidéos, les demandes d'audience et le contact.";
     }
     if (/\b(romi|oyo|depute|pct|ouenze|troisieme circonscription)\b/.test(q)) {
       return "Romi Oyo est présenté ici comme député de la troisième circonscription de Ouenzé. La maquette met en avant son parcours, ses actions de proximité, son engagement social et le lien avec les habitants.";
@@ -230,12 +238,12 @@
     _ready = true;
     _welcomed = true;
     addTimestamp();
-    addMessage("bot", "Bonjour. Je suis DA, l'assistant virtuel de la Maquette V2. Je suis prêt à vous orienter sur Romi Oyo, le programme, les vidéos, les actualités, les demandes d'audience et le contact.");
+    addMessage("bot", "Bonjour. Je suis DA, l'assistant virtuel de l'honorable Romi Oyo. Je suis prêt à vous orienter sur Romi Oyo, le programme, les vidéos, les actualités, les demandes d'audience et le contact.");
     addSuggestions([
-      "Faire une demande d'audience",
-      "Voir les vidéos",
-      "Voir le programme",
-      "Contacter l'équipe"
+      { label: "Faire une demande d'audience", href: "#engagement" },
+      { label: "Voir les vidéos", href: "#videos" },
+      { label: "Voir le programme", href: "#programme" },
+      { label: "Contacter l'équipe", href: "#contact" }
     ]);
   }
 
