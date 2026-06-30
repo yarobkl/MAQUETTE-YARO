@@ -1178,7 +1178,7 @@ function fCt(e, f) {
 }
 
 // ── RUBRIQUES LONGUES HORS FIL PRINCIPAL ─────────────────
-const ROUTE_SECTIONS = new Set(["publication", "galerie", "actu"]);
+const ROUTE_SECTIONS = new Set(["publication", "galerie", "actu", "videos"]);
 
 function updateRouteSections() {
   const key = (location.hash || "").replace("#", "").split("?")[0];
@@ -1186,7 +1186,8 @@ function updateRouteSections() {
     "route-page-active",
     "route-page-publication",
     "route-page-galerie",
-    "route-page-actu"
+    "route-page-actu",
+    "route-page-videos"
   );
   if (ROUTE_SECTIONS.has(key)) {
     document.body.classList.add("route-page-active", "route-page-" + key);
@@ -1390,8 +1391,12 @@ function loadVideo(placeholder) {
 
 // ── PLAYLIST YOUTUBE ROMI OYO ──────────────────────────────
 (function(){
-  const iframe = document.getElementById("main-video");
-  const source = document.getElementById("main-video-source");
+  const playlist = document.querySelector("#video-section .video-playlist");
+  const videosInner = document.querySelector("#videos .video-inner");
+  if(playlist && videosInner) videosInner.appendChild(playlist);
+
+  const iframe = document.getElementById("videos-player");
+  const source = document.getElementById("videos-source");
   const cards = document.querySelectorAll(".video-card[data-video-id]");
   if(!iframe || !cards.length) return;
 

@@ -91,8 +91,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="static/index.css?v=20260630-maquette-v2m">
-<link rel="stylesheet" href="static/mobile.css?v=20260630-maquette-v2m">
+<link rel="stylesheet" href="static/index.css?v=20260630-maquette-v2n">
+<link rel="stylesheet" href="static/mobile.css?v=20260630-maquette-v2n">
 <style>
 /* ── Sélecteur de langue ─────────────────────────────────── */
 .lang-switcher{display:flex;align-items:center;gap:4px;margin-left:10px}
@@ -105,7 +105,7 @@
 .lang-btn.lang-active{opacity:1;border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.1);box-shadow:0 0 0 2px rgba(200,16,46,.35)}
 @media(max-width:900px){.lang-switcher{display:none}}
 </style>
-<script src="static/i18n.js?v=20260630-maquette-v2m"></script>
+<script src="static/i18n.js?v=20260630-maquette-v2n"></script>
 </head>
 <body>
 <a href="#hero" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--r);color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;transition:top .2s" onfocus="this.style.top='0'" onblur="this.style.top='-40px'" data-i18n="skip.link">Aller au contenu principal</a>
@@ -386,6 +386,7 @@
         loading="lazy"></iframe>
     </div>
     <a class="video-source-link" id="main-video-source" href="https://www.youtube.com/watch?v=LNLeYavOczg" target="_blank" rel="noopener">Voir la vidéo sur YouTube</a>
+    <a class="video-source-link video-all-link" href="#videos">Voir toutes les vidéos</a>
     <div class="video-playlist" aria-label="Playlist vidéo Romi Oyo">
       <button class="video-card is-active" type="button" data-video-id="LNLeYavOczg" data-video-title="ROMI OYO APPELLE LES JEUNES DE OUENZÉ À VOTER EN FAVEUR DE DENIS SASSOU NGUESSO">
         <span class="video-rank">01</span>
@@ -438,6 +439,25 @@
         <span class="video-card-meta">Porte-à-porte · Ouenzé 3</span>
       </button>
     </div>
+  </div>
+</section>
+
+<section id="videos" data-route-section="videos">
+  <div class="video-inner rev">
+    <span class="stag">Médiathèque</span>
+    <h2 class="stitle">Toutes les <span class="r">vidéos</span></h2>
+    <div class="sline" style="margin:16px auto 0"></div>
+    <p class="ssub">Retrouvez les reportages, descentes de terrain, actions sociales et temps forts publics de Romi Oyo.</p>
+    <div class="video-frame-wrap youtube-frame">
+      <iframe
+        id="videos-player"
+        src="https://www.youtube-nocookie.com/embed/LNLeYavOczg?rel=0&modestbranding=1"
+        title="ROMI OYO APPELLE LES JEUNES DE OUENZÉ À VOTER EN FAVEUR DE DENIS SASSOU NGUESSO"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy"></iframe>
+    </div>
+    <a class="video-source-link" id="videos-source" href="https://www.youtube.com/watch?v=LNLeYavOczg" target="_blank" rel="noopener">Voir la vidéo sur YouTube</a>
   </div>
 </section>
 
@@ -657,6 +677,7 @@
       <a class="side-drawer-action" href="#publication"><span class="side-action-mark" aria-hidden="true">01</span><span class="side-action-text">Publication</span></a>
       <a class="side-drawer-action" href="#galerie"><span class="side-action-mark" aria-hidden="true">02</span><span class="side-action-text">Galerie</span></a>
       <a class="side-drawer-action" href="#actu"><span class="side-action-mark" aria-hidden="true">03</span><span class="side-action-text">Actualités</span></a>
+      <a class="side-drawer-action" href="#videos"><span class="side-action-mark" aria-hidden="true">04</span><span class="side-action-text">Vidéos</span></a>
     </div>
   </div>
 </aside>
@@ -686,11 +707,11 @@
 </nav>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="static/i18n-data.en.js?v=20260630-maquette-v2m"></script>
-<script src="static/i18n-data.es.js?v=20260630-maquette-v2m"></script>
-<script src="static/i18n-data.zh.js?v=20260630-maquette-v2m"></script>
-<script src="static/i18n-data.ru.js?v=20260630-maquette-v2m"></script>
-<script src="static/index.js?v=20260630-maquette-v2m" defer></script>
+<script src="static/i18n-data.en.js?v=20260630-maquette-v2n"></script>
+<script src="static/i18n-data.es.js?v=20260630-maquette-v2n"></script>
+<script src="static/i18n-data.zh.js?v=20260630-maquette-v2n"></script>
+<script src="static/i18n-data.ru.js?v=20260630-maquette-v2n"></script>
+<script src="static/index.js?v=20260630-maquette-v2n" defer></script>
 
 <!-- ══ MODALES LÉGALES ══════════════════════════════════════════════ -->
 
@@ -827,7 +848,7 @@
 </div>
 
 <!-- ── CHATBOT WIDGET ────────────────────────────────────── -->
-<link rel="stylesheet" href="static/chat.css?v=20260630-maquette-v2m">
+<link rel="stylesheet" href="static/chat.css?v=20260630-maquette-v2n">
 
 <div class="chat-bubble" id="chatBubble" onclick="document.getElementById('chatBubble').classList.remove('visible');toggleChat()">
   Bonjour, je suis là pour vous aider.<span class="bubble-dots"><span></span><span></span><span></span></span>
@@ -866,7 +887,7 @@
   </div>
 </div>
 
-<script src="static/chat.js?v=20260630-maquette-v2m" defer></script>
+<script src="static/chat.js?v=20260630-maquette-v2n" defer></script>
 
 <style>
 /* ── ANTI-SCROLL HORIZONTAL ────────────────────────── */
