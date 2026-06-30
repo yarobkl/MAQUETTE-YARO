@@ -4,6 +4,7 @@
   let _loading  = false;
   let _history  = [];
   let _welcomed = false;
+  let _ready    = false;
   let _ttsOn    = false;
   let _ttsVoice = null;
 
@@ -86,21 +87,7 @@
     if (fab) fab.classList.toggle("open", _open);
     if (_open) {
       if (badge) badge.style.display = "none";
-      if (!_welcomed) {
-        _welcomed = true;
-        addTimestamp();
-        setTimeout(() => {
-          addMessage("bot", "Bonjour. Je suis DA, l'assistant virtuel de la Maquette V2. Je peux vous orienter sur le programme, les actualités, les demandes d'audience, le suivi de dossier et le contact.");
-          setTimeout(() => {
-            addSuggestions([
-              "Faire une demande d'audience",
-              "Voir le programme",
-              "Consulter les actualités",
-              "Contacter l'équipe"
-            ]);
-          }, 600);
-        }, 400);
-      }
+      initChatReady();
       if (window.innerWidth > 600) setTimeout(() => { const i = document.getElementById("chatInput"); if(i) i.focus(); }, 300);
       scrollMessages();
     } else {
@@ -194,6 +181,18 @@
     if (/\b(bonjour|salut|coucou|hello|bonsoir|comment ca va|comment vas tu|ca va)\b/.test(q)) {
       return "Bonjour, ça va merci, et vous ? Je peux vous aider à trouver le programme, les actualités, le formulaire d'audience ou le contact.";
     }
+    if (/\b(merci|super|ok|d accord|parfait)\b/.test(q)) {
+      return "Avec plaisir. Je reste disponible si vous voulez accéder au programme, aux vidéos, aux actualités, au contact ou au suivi d'une demande.";
+    }
+    if (/\b(qui es tu|tu es qui|assistant|da|chatbot|bot)\b/.test(q)) {
+      return "Je suis DA, l'assistant virtuel de cette maquette. Je réponds aux questions utiles sur Romi Oyo, le programme, les actualités, les vidéos, les demandes d'audience et le contact.";
+    }
+    if (/\b(romi|oyo|depute|pct|ouenze|troisieme circonscription)\b/.test(q)) {
+      return "Romi Oyo est présenté ici comme député de la troisième circonscription de Ouenzé. La maquette met en avant son parcours, ses actions de proximité, son engagement social et le lien avec les habitants.";
+    }
+    if (/\b(fondation|harris|hof|orphelin|entraide|partage|amour)\b/.test(q)) {
+      return "La Harris Oyo Foundation est présentée dans la galerie et les actualités autour de l'entraide, du partage, de la jeunesse, des familles vulnérables et des actions sociales.";
+    }
     if (/\b(audience|rendez vous|rdv|demande|reservation|rencontrer|dossier|suivi|numero)\b/.test(q)) {
       return "Pour une demande d'audience, utilisez le formulaire Audience. Après l'envoi, un numéro de suivi est généré afin de retrouver l'etat du dossier depuis la zone de suivi.";
     }
@@ -206,6 +205,9 @@
     if (/\b(photo|image|galerie|video|youtube|mike tyson|baseron)\b/.test(q)) {
       return "La galerie et la rubrique vidéo présentent les contenus visuels de la maquette. Les raccourcis permettent d'y accéder rapidement sans rallonger le fil principal.";
     }
+    if (/\b(instagram|facebook|twitter|reseau|reseaux|x.com|x )\b/.test(q)) {
+      return "Les liens Instagram, Facebook et X de Romi Oyo sont disponibles dans la section Contact et dans le pied de page du site.";
+    }
     if (/\b(contact|telephone|mail|email|adresse|whatsapp|equipe)\b/.test(q)) {
       return "Pour contacter l'equipe, allez dans la section Contact. Vous pouvez envoyer un message, une demande ou une information utile au suivi.";
     }
@@ -216,6 +218,25 @@
       return "Je comprends. Je reste disponible pour vous orienter clairement sur le site : audience, programme, actualités, galerie, suivi ou contact.";
     }
     return outOfScope;
+  }
+
+  function isBasicLocal(text) {
+    const q = normalizeQuestion(text);
+    return /\b(bonjour|salut|coucou|hello|bonsoir|comment ca va|comment vas tu|ca va|merci|super|ok|d accord|parfait|qui es tu|tu es qui|assistant|da|chatbot|bot|romi|oyo|depute|pct|ouenze|fondation|harris|hof|audience|rendez vous|rdv|demande|programme|projet|actualite|article|photo|image|galerie|video|youtube|contact|telephone|mail|email|instagram|facebook|twitter|reseau|reseaux|admin|crm)\b/.test(q);
+  }
+
+  function initChatReady() {
+    if (_ready) return;
+    _ready = true;
+    _welcomed = true;
+    addTimestamp();
+    addMessage("bot", "Bonjour. Je suis DA, l'assistant virtuel de la Maquette V2. Je suis prêt à vous orienter sur Romi Oyo, le programme, les vidéos, les actualités, les demandes d'audience et le contact.");
+    addSuggestions([
+      "Faire une demande d'audience",
+      "Voir les vidéos",
+      "Voir le programme",
+      "Contacter l'équipe"
+    ]);
   }
 
   async function sendChat() {
@@ -231,6 +252,19 @@
     _loading = true;
     if (btn) btn.disabled = true;
     const typing = showTyping();
+    if (isBasicLocal(text)) {
+      setTimeout(() => {
+        if (typing) typing.remove();
+        const reply = localReply(text);
+        addMessage("bot", reply);
+        _history.push({ role: "assistant", content: reply });
+        if (_history.length > 20) _history = _history.slice(-20);
+        _loading = false;
+        if (btn) btn.disabled = false;
+        if (inp) inp.focus();
+      }, 320);
+      return;
+    }
     try {
       const ctrl = new AbortController();
       const timer = setTimeout(() => ctrl.abort(), 25000);
@@ -345,6 +379,11 @@
   })();
 
   initVoice();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initChatReady, { once: true });
+  } else {
+    initChatReady();
+  }
   window.toggleChat = toggleChat;
   window.sendChat   = sendChat;
   window.toggleTTS  = toggleTTS;

@@ -162,12 +162,15 @@ img {
     font-size: clamp(18px, 5vw, 28px);
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 3px 18px rgba(0,0,0,.9);
   }
 
   .hero-sub {
     font-size: 14px;
     margin-left: auto;
     margin-right: auto;
+    color: rgba(255,255,255,.82);
+    text-shadow: 0 2px 14px rgba(0,0,0,.85);
   }
 
   .hero-btns {
