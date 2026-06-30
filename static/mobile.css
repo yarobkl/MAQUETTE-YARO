@@ -139,7 +139,7 @@ img {
 /* ── 8. HERO — PETITS ÉCRANS ──────────────────────────────── */
 @media (max-width: 600px) {
   .hero-content {
-    padding-top: clamp(280px, 42vh, 430px);
+    padding-top: clamp(190px, 26vh, 245px);
     padding-bottom: clamp(24px, 6vw, 40px);
     text-align: center;
   }
@@ -808,7 +808,7 @@ img {
   }
 
   .hero-content {
-    padding-top: clamp(260px, 34vh, 390px);
+    padding-top: clamp(220px, 28vh, 300px);
     text-align: center;
   }
 
