@@ -1373,6 +1373,29 @@ function loadVideo(placeholder) {
   placeholder.remove();
   wrap.appendChild(iframe);
 }
+
+// ── PLAYLIST YOUTUBE ROMI OYO ──────────────────────────────
+(function(){
+  const iframe = document.getElementById("main-video");
+  const source = document.getElementById("main-video-source");
+  const cards = document.querySelectorAll(".video-card[data-video-id]");
+  if(!iframe || !cards.length) return;
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const id = card.dataset.videoId;
+      const title = card.dataset.videoTitle || card.textContent.trim();
+      if(!id) return;
+
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1&autoplay=1`;
+      iframe.title = title;
+      if(source) source.href = `https://www.youtube.com/watch?v=${id}`;
+
+      cards.forEach(item => item.classList.toggle("is-active", item === card));
+      iframe.closest(".video-frame-wrap")?.scrollIntoView({ behavior:"smooth", block:"center" });
+    });
+  });
+})();
 document.querySelectorAll(".lmodal-overlay").forEach(o=>o.addEventListener("click",e=>{if(e.target===o){const id=o.id.replace("modal-","");closeLegal(id)}}));
 document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".lmodal-overlay.open").forEach(o=>o.classList.remove("open"))&&(document.body.style.overflow="")});
 

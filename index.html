@@ -91,8 +91,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="static/index.css?v=20260630-maquette-v2h">
-<link rel="stylesheet" href="static/mobile.css?v=20260630-maquette-v2h">
+<link rel="stylesheet" href="static/index.css?v=20260630-maquette-v2i">
+<link rel="stylesheet" href="static/mobile.css?v=20260630-maquette-v2i">
 <style>
 /* ── Sélecteur de langue ─────────────────────────────────── */
 .lang-switcher{display:flex;align-items:center;gap:4px;margin-left:10px}
@@ -105,7 +105,7 @@
 .lang-btn.lang-active{opacity:1;border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.1);box-shadow:0 0 0 2px rgba(200,16,46,.35)}
 @media(max-width:900px){.lang-switcher{display:none}}
 </style>
-<script src="static/i18n.js?v=20260630-maquette-v2h"></script>
+<script src="static/i18n.js?v=20260630-maquette-v2i"></script>
 </head>
 <body>
 <a href="#hero" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--r);color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;transition:top .2s" onfocus="this.style.top='0'" onblur="this.style.top='-40px'" data-i18n="skip.link">Aller au contenu principal</a>
@@ -375,17 +375,69 @@
     <span class="stag" data-i18n="video.tag">La maquette en action</span>
     <h2 class="stitle">Homme du <span class="r" data-i18n="video.title.accent">peuple</span></h2>
     <div class="sline" style="margin:16px auto 0"></div>
-    <p class="ssub" data-i18n="video.desc">Pendant ce temps l’Honorable Romi Oyo et la légende Mike Tyson, puis une séquence populaire autour de la BASERON.</p>
+    <p class="ssub" data-i18n="video.desc">Une sélection vidéo classée pour présenter les actions de proximité, la jeunesse, les rencontres et les temps forts de Romi Oyo.</p>
     <div class="video-frame-wrap youtube-frame">
       <iframe
         id="main-video"
-        src="https://www.youtube-nocookie.com/embed/vPAVuuOhPoM?rel=0&modestbranding=1"
-        title="Honorable Romi Oyo avec Mike Tyson"
+        src="https://www.youtube-nocookie.com/embed/LNLeYavOczg?rel=0&modestbranding=1"
+        title="ROMI OYO APPELLE LES JEUNES DE OUENZÉ À VOTER EN FAVEUR DE DENIS SASSOU NGUESSO"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
         loading="lazy"></iframe>
     </div>
-    <a class="video-source-link" href="https://www.youtube.com/watch?v=vPAVuuOhPoM" target="_blank" rel="noopener">Voir la vidéo sur YouTube</a>
+    <a class="video-source-link" id="main-video-source" href="https://www.youtube.com/watch?v=LNLeYavOczg" target="_blank" rel="noopener">Voir la vidéo sur YouTube</a>
+    <div class="video-playlist" aria-label="Playlist vidéo Romi Oyo">
+      <button class="video-card is-active" type="button" data-video-id="LNLeYavOczg" data-video-title="ROMI OYO APPELLE LES JEUNES DE OUENZÉ À VOTER EN FAVEUR DE DENIS SASSOU NGUESSO">
+        <span class="video-rank">01</span>
+        <span class="video-card-title">ROMI OYO appelle les jeunes de Ouenzé</span>
+        <span class="video-card-meta">Jeunesse · Campagne</span>
+      </button>
+      <button class="video-card" type="button" data-video-id="r5iWTD6KfoM" data-video-title="REPORTAGE - LANCE CHEZ ROMI OYO">
+        <span class="video-rank">02</span>
+        <span class="video-card-title">Reportage chez Romi Oyo</span>
+        <span class="video-card-meta">Reportage · Terrain</span>
+      </button>
+      <button class="video-card" type="button" data-video-id="iiylItUOcV8" data-video-title="Reportage : Romi OYO remet des attestations aux jeunes formés à Ouenze">
+        <span class="video-rank">03</span>
+        <span class="video-card-title">Remise des attestations aux jeunes formés</span>
+        <span class="video-card-meta">Formation · Jeunesse</span>
+      </button>
+      <button class="video-card" type="button" data-video-id="z4gef8A371k" data-video-title="Descente de l'honorable Romi Oyo au quartier 57 Ouénzé">
+        <span class="video-rank">04</span>
+        <span class="video-card-title">Descente au quartier 57 de Ouenzé</span>
+        <span class="video-card-meta">Proximité · Quartier 57</span>
+      </button>
+      <button class="video-card" type="button" data-video-id="Ap0mGK8scco" data-video-title="ROMI OYO à l'IFC avec les élèves des écoles de sa circonscription électorale">
+        <span class="video-rank">05</span>
+        <span class="video-card-title">Avec les élèves de sa circonscription à l’IFC</span>
+        <span class="video-card-meta">Éducation · Jeunesse</span>
+      </button>
+      <button class="video-card" type="button" data-video-id="oJGfnOWI_oo" data-video-title="ROMI OYO réhabilite le Centre de Santé Intégré Jane Vialle de Ouenzé">
+        <span class="video-rank">06</span>
+        <span class="video-card-title">Réhabilitation du CSI Jane Vialle</span>
+        <span class="video-card-meta">Santé · Ouenzé</span>
+      </button>
+      <button class="video-card" type="button" data-video-id="5UbPtYadkXE" data-video-title="DESCENTE PARLEMENTAIRE DE ROMI OYO">
+        <span class="video-rank">07</span>
+        <span class="video-card-title">Descente parlementaire de Romi Oyo</span>
+        <span class="video-card-meta">Assemblée · Terrain</span>
+      </button>
+      <button class="video-card" type="button" data-video-id="d9GThrp-Oq4" data-video-title="Romi Oyo dans la campagne de proximité en faveur du candidat DSN">
+        <span class="video-rank">08</span>
+        <span class="video-card-title">Campagne de proximité en faveur du candidat DSN</span>
+        <span class="video-card-meta">Campagne · Proximité</span>
+      </button>
+      <button class="video-card" type="button" data-video-id="38r2SWjBbZQ" data-video-title="ROMI OYO EN CAMPAGNE DE PROXIMITÉ DANS LES QUARTIERS 56 ET 57 À OUENZÉ 3">
+        <span class="video-rank">09</span>
+        <span class="video-card-title">Campagne dans les quartiers 56 et 57</span>
+        <span class="video-card-meta">Ouenzé 3 · Quartiers</span>
+      </button>
+      <button class="video-card" type="button" data-video-id="kaSDQwW7hqQ" data-video-title="ROMI OYO MÈNE UNE CAMPAGNE PORTE-À-PORTE À OUENZÉ 3 POUR DENIS SASSOU NGUESSO">
+        <span class="video-rank">10</span>
+        <span class="video-card-title">Campagne porte-à-porte à Ouenzé 3</span>
+        <span class="video-card-meta">Porte-à-porte · Ouenzé 3</span>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -634,11 +686,11 @@
 </nav>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="static/i18n-data.en.js?v=20260630-maquette-v2h"></script>
-<script src="static/i18n-data.es.js?v=20260630-maquette-v2h"></script>
-<script src="static/i18n-data.zh.js?v=20260630-maquette-v2h"></script>
-<script src="static/i18n-data.ru.js?v=20260630-maquette-v2h"></script>
-<script src="static/index.js?v=20260630-maquette-v2h" defer></script>
+<script src="static/i18n-data.en.js?v=20260630-maquette-v2i"></script>
+<script src="static/i18n-data.es.js?v=20260630-maquette-v2i"></script>
+<script src="static/i18n-data.zh.js?v=20260630-maquette-v2i"></script>
+<script src="static/i18n-data.ru.js?v=20260630-maquette-v2i"></script>
+<script src="static/index.js?v=20260630-maquette-v2i" defer></script>
 
 <!-- ══ MODALES LÉGALES ══════════════════════════════════════════════ -->
 
@@ -775,7 +827,7 @@
 </div>
 
 <!-- ── CHATBOT WIDGET ────────────────────────────────────── -->
-<link rel="stylesheet" href="static/chat.css?v=20260630-maquette-v2h">
+<link rel="stylesheet" href="static/chat.css?v=20260630-maquette-v2i">
 
 <div class="chat-bubble" id="chatBubble" onclick="document.getElementById('chatBubble').classList.remove('visible');toggleChat()">
   Bonjour, je suis là pour vous aider.<span class="bubble-dots"><span></span><span></span><span></span></span>
@@ -814,7 +866,7 @@
   </div>
 </div>
 
-<script src="static/chat.js?v=20260630-maquette-v2h" defer></script>
+<script src="static/chat.js?v=20260630-maquette-v2i" defer></script>
 
 <style>
 /* ── ANTI-SCROLL HORIZONTAL ────────────────────────── */

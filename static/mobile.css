@@ -333,6 +333,20 @@ img {
   position: relative;
 }
 
+.video-playlist {
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.video-card {
+  min-height: 84px;
+  padding: 14px;
+}
+
+.video-card-title {
+  font-size: 13px;
+}
+
 /* ── 17. PUBLICATION MOBILE ───────────────────────────────── */
 @media (max-width: 600px) {
   .pub-wrap {
