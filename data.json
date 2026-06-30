@@ -643,6 +643,13 @@
         "alt": "Romi Oyo en costume"
       },
       {
+        "image": "images/harris-oyo-foundation-logo.jpg",
+        "emoji": "",
+        "title": "Harris Oyo Foundation",
+        "subtitle": "Logo officiel de la fondation : amour, partage, entraide.",
+        "alt": "Logo Harris Oyo Foundation"
+      },
+      {
         "image": "images/harris-oyo-fondation-action-sociale.png",
         "emoji": "",
         "title": "Action sociale HOF",
@@ -686,6 +693,11 @@
       }
     ],
     "grid": [
+      {
+        "image": "images/harris-oyo-foundation-logo.jpg",
+        "alt": "Logo Harris Oyo Foundation",
+        "emoji": ""
+      },
       {
         "image": "images/harris-oyo-fondation-action-sociale.png",
         "alt": "Harris-Oyo Fondation action sociale",
@@ -915,6 +927,11 @@
     "email": "contact@maquette-yaro.fr",
     "address": "Ouenzé, Brazzaville, République du Congo",
     "social": "@RomiOyo",
+    "socialLinks": {
+      "Instagram": "https://www.instagram.com/romioyo?igsh=MWQ4cGV1cnZ6MGRxdg==",
+      "Facebook": "https://www.facebook.com/share/19EqGfZUxo/?mibextid=wwXIfr",
+      "X": "https://x.com/romi_oyo?s=21"
+    },
     "formTitle2": "Envoyez un message",
     "bp": "BP : 1375",
     "fax": "04 002 90 90",

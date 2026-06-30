@@ -430,7 +430,21 @@ function loadContent() {
       if (ct.sidebarDesc)   { const el=document.getElementById("dyn-ct-sidebar-desc"); if(el) el.textContent=ct.sidebarDesc; }
       if (ct.address)       { const el=document.getElementById("dyn-ct-address");      if(el) el.textContent=ct.address; }
       if (ct.email)         { const el=document.getElementById("dyn-ct-email");        if(el) el.textContent=ct.email; }
-      if (ct.social)        { const el=document.getElementById("dyn-ct-social");       if(el) el.textContent=ct.social; }
+      if (ct.socialLinks) {
+        const el=document.getElementById("dyn-ct-social");
+        if(el) {
+          el.innerHTML = "";
+          Object.entries(ct.socialLinks).forEach(([name, url]) => {
+            if(!url) return;
+            const a = document.createElement("a");
+            a.href = url;
+            a.target = "_blank";
+            a.rel = "noopener";
+            a.textContent = name;
+            el.appendChild(a);
+          });
+        }
+      } else if (ct.social) { const el=document.getElementById("dyn-ct-social");       if(el) el.textContent=ct.social; }
 
       // ── Footer ───────────────────────────────────────────────────────
       const ft = d.footer || {};

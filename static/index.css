@@ -409,6 +409,9 @@ body.theme-light .side-action-code{background:rgba(139,10,30,.07);color:#17120d;
 .ct-ic{width:42px;height:42px;background:rgba(200,16,46,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;letter-spacing:.06em;flex-shrink:0}
 .ct-lbl{font-size:10px;color:var(--r);letter-spacing:2px;font-weight:700;text-transform:uppercase;display:block;margin-bottom:3px}
 .ct-val{font-size:14px;color:var(--w);font-weight:500}
+.ct-social-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:5px}
+.ct-social-links a{color:var(--w);text-decoration:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:999px;padding:7px 10px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;transition:var(--t)}
+.ct-social-links a:hover{border-color:rgba(184,151,58,.55);color:var(--g);transform:translateY(-1px)}
 .ct-form{background:var(--n3);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:44px}
 .ct-form .fgrp input,.ct-form .fgrp select,.ct-form .fgrp textarea{background:var(--n2);border:1px solid rgba(255,255,255,.08);color:var(--w)}
 .ct-form .fgrp label{color:rgba(255,255,255,.4)}
