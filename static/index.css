@@ -157,6 +157,11 @@ nav.sc{background:rgba(6,6,6,.96);backdrop-filter:blur(24px);border-bottom:1px s
 
 /* GALERIE */
 #galerie{padding:120px 6%;background:var(--n)}
+.galerie-heading{text-align:left}
+.galerie-heading .stag{margin-bottom:12px}
+.galerie-heading .stitle{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;width:100%;margin-bottom:0}
+.galerie-heading .stitle .g{text-align:right;white-space:nowrap}
+.galerie-heading .sline{margin:18px 0 0 auto}
 .gal-wrap{max-width:1300px;margin:60px auto 0}
 .gal-slider{position:relative;border-radius:8px;overflow:hidden;margin-bottom:20px}
 .gal-track{display:flex;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
@@ -513,6 +518,8 @@ footer{background:#030303;border-top:1px solid rgba(200,16,46,.1);padding:70px 6
   .prog-card{padding:24px 18px}
   .gal-grid{grid-template-columns:1fr 1fr}
   .gal-slider{border-radius:4px}
+  .galerie-heading .stitle{display:block}
+  .galerie-heading .stitle .g{display:block;text-align:right;margin-top:4px}
   .gal-cap{padding:30px 20px 18px}
   .gal-cap h3{font-size:18px}
   .tl-card{padding:0 16px}
